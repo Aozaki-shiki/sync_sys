@@ -8,7 +8,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- =========================
 DROP TABLE IF EXISTS user_info;
 CREATE TABLE user_info (
-  user_id        BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id        BIGINT PRIMARY KEY,
   username       VARCHAR(50) NOT NULL UNIQUE,
   password_hash  VARCHAR(255) NOT NULL,
   email          VARCHAR(120) NOT NULL UNIQUE,
@@ -24,7 +24,7 @@ CREATE TABLE user_info (
 -- =========================
 DROP TABLE IF EXISTS category_info;
 CREATE TABLE category_info (
-  category_id   BIGINT PRIMARY KEY AUTO_INCREMENT,
+  category_id   BIGINT PRIMARY KEY,
   category_name VARCHAR(80) NOT NULL UNIQUE,
   description   VARCHAR(255),
 
@@ -38,7 +38,7 @@ CREATE TABLE category_info (
 -- =========================
 DROP TABLE IF EXISTS supplier_info;
 CREATE TABLE supplier_info (
-  supplier_id   BIGINT PRIMARY KEY AUTO_INCREMENT,
+  supplier_id   BIGINT PRIMARY KEY,
   supplier_name VARCHAR(120) NOT NULL UNIQUE,
   contact_name  VARCHAR(80),
   contact_phone VARCHAR(40),
@@ -55,7 +55,7 @@ CREATE TABLE supplier_info (
 -- =========================
 DROP TABLE IF EXISTS product_info;
 CREATE TABLE product_info (
-  product_id    BIGINT PRIMARY KEY AUTO_INCREMENT,
+  product_id    BIGINT PRIMARY KEY,
   product_name  VARCHAR(120) NOT NULL,
   category_id   BIGINT NOT NULL,
   supplier_id   BIGINT NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE product_info (
 -- =========================
 DROP TABLE IF EXISTS order_info;
 CREATE TABLE order_info (
-  order_id        BIGINT PRIMARY KEY AUTO_INCREMENT,
+  order_id        BIGINT PRIMARY KEY,
   user_id         BIGINT NOT NULL,
   product_id      BIGINT NOT NULL,
   quantity        INT NOT NULL,

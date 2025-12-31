@@ -18,7 +18,7 @@ IF OBJECT_ID('dbo.sync_run_daily','U') IS NOT NULL DROP TABLE dbo.sync_run_daily
 GO
 
 CREATE TABLE dbo.user_info (
-  user_id        BIGINT IDENTITY(1,1) PRIMARY KEY,
+  user_id        BIGINT PRIMARY KEY,
   username       NVARCHAR(50) NOT NULL UNIQUE,
   password_hash  NVARCHAR(255) NOT NULL,
   email          NVARCHAR(120) NOT NULL UNIQUE,
@@ -31,7 +31,7 @@ CREATE TABLE dbo.user_info (
 GO
 
 CREATE TABLE dbo.category_info (
-  category_id    BIGINT IDENTITY(1,1) PRIMARY KEY,
+  category_id    BIGINT PRIMARY KEY,
   category_name  NVARCHAR(80) NOT NULL UNIQUE,
   description    NVARCHAR(255) NULL,
 
@@ -42,7 +42,7 @@ CREATE TABLE dbo.category_info (
 GO
 
 CREATE TABLE dbo.supplier_info (
-  supplier_id    BIGINT IDENTITY(1,1) PRIMARY KEY,
+  supplier_id    BIGINT PRIMARY KEY,
   supplier_name  NVARCHAR(120) NOT NULL UNIQUE,
   contact_name   NVARCHAR(80) NULL,
   contact_phone  NVARCHAR(40) NULL,
@@ -56,7 +56,7 @@ CREATE TABLE dbo.supplier_info (
 GO
 
 CREATE TABLE dbo.product_info (
-  product_id     BIGINT IDENTITY(1,1) PRIMARY KEY,
+  product_id     BIGINT PRIMARY KEY,
   product_name   NVARCHAR(120) NOT NULL,
   category_id    BIGINT NOT NULL,
   supplier_id    BIGINT NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE dbo.product_info (
 GO
 
 CREATE TABLE dbo.order_info (
-  order_id        BIGINT IDENTITY(1,1) PRIMARY KEY,
+  order_id        BIGINT PRIMARY KEY,
   user_id         BIGINT NOT NULL,
   product_id      BIGINT NOT NULL,
   quantity        INT NOT NULL,
