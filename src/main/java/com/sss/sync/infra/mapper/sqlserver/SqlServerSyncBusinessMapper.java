@@ -1,0 +1,73 @@
+package com.sss.sync.infra.mapper.sqlserver;
+
+import org.apache.ibatis.annotations.*;
+
+import java.util.Map;
+
+@Mapper
+public interface SqlServerSyncBusinessMapper {
+
+  @Select("""
+    SELECT TOP 1 version AS version, updated_at AS updatedAt
+    FROM dbo.product_info
+    WHERE product_id = #{id}
+  """)
+  Map<String, Object> getProductMeta(@Param("id") long id);
+
+  @Select("""
+    SELECT TOP 1 version AS version, updated_at AS updatedAt
+    FROM dbo.order_info
+    WHERE order_id = #{id}
+  """)
+  Map<String, Object> getOrderMeta(@Param("id") long id);
+
+  @Select("""
+    SELECT TOP 1 (
+      SELECT p.* FOR JSON PATH, WITHOUT_ARRAY_WRAPPER
+    ) AS json
+    FROM dbo.product_info p
+    WHERE product_id = #{id}
+  """)
+  String getProductAsJson(@Param("id") long id);
+
+  @Select("""
+    SELECT TOP 1 (
+      SELECT o.* FOR JSON PATH, WITHOUT_ARRAY_WRAPPER
+    ) AS json
+    FROM dbo.order_info o
+    WHERE order_id = #{id}
+  """)
+  String getOrderAsJson(@Param("id") long id);
+
+  // ✅ 只更新，不插入，避免 IDENTITY_INSERT 问题
+  @Update("""
+    UPDATE dbo.product_info
+    SET product_name = #{productName},
+        category_id = #{categoryId},
+        supplier_id = #{supplierId},
+        price = #{price},
+        stock = #{stock},
+        description = #{description},
+        listed_at = #{listedAt},
+        version = #{version},
+        updated_at = #{updatedAt},
+        deleted = #{deleted}
+    WHERE product_id = #{productId}
+  """)
+  int updateProduct(Map<String, Object> row);
+
+  @Update("""
+    UPDATE dbo.order_info
+    SET user_id = #{userId},
+        product_id = #{productId},
+        quantity = #{quantity},
+        order_status = #{orderStatus},
+        ordered_at = #{orderedAt},
+        shipping_address = #{shippingAddress},
+        version = #{version},
+        updated_at = #{updatedAt},
+        deleted = #{deleted}
+    WHERE order_id = #{orderId}
+  """)
+  int updateOrder(Map<String, Object> row);
+}

@@ -19,6 +19,7 @@ spring:
           auth: true
           ssl:
             enable: true
+
 sss:
   jwt:
     issuer: "sss-sync"
@@ -41,21 +42,22 @@ sss:
       username: sa
       password: "myPassWord++"
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    sync:
-      enabled: false
-      pollIntervalMillis: 1000        # 实时轮询间隔（1秒）
-      batchSize: 200                  # 每次最多同步多少条 change_log
-      scheduled:
-        enabled: false
-        fixedDelayMillis: 10000
 
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  sync:
+    enabled: true
+    pollIntervalMillis: 1000
+    batchSize: 200
+    scheduled:
+      enabled: false
+      fixedDelayMillis: 10000
 
   mail:
     enabled: true
     from: "mo1lly@163.com"
     adminTo: "mo1lly@163.com"
-    conflictViewBaseUrl: "http://localhost:8080"  # 邮件链接 base
+    conflictViewBaseUrl: "http://localhost:8080"
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

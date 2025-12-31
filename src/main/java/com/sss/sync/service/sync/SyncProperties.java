@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "sss.sync")
 public class SyncProperties {
-  private boolean enabled = true;
+  private boolean enabled = false; // 默认关，避免配置读取失败时自动跑同步
   private long pollIntervalMillis = 1000;
   private int batchSize = 200;
 
@@ -16,7 +16,7 @@ public class SyncProperties {
 
   @Data
   public static class Scheduled {
-    private boolean enabled = true;
+    private boolean enabled = false;
     private long fixedDelayMillis = 10000;
   }
 }
