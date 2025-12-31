@@ -316,8 +316,9 @@ public class SyncEngineService {
       LocalDateTime ldt = asLdt(v.asText());
       if (ldt != null) {
         m.put(key, ldt);
+        return;
       }
-      return;
+      // If conversion failed, try next candidate
     }
   }
 
@@ -345,8 +346,8 @@ public class SyncEngineService {
       if (s.endsWith("Z")) {
         return java.time.ZonedDateTime.parse(s).toLocalDateTime();
       }
+      // Check for timezone offset: '-' after position 10 (length of "yyyy-MM-dd") indicates timezone, not date separator
       if (s.contains("T") && (s.contains("+") || (s.contains("-") && s.lastIndexOf('-') > 10))) {
-        // Only treat '-' as offset if it appears after the date part (index > 10)
         return java.time.OffsetDateTime.parse(s).toLocalDateTime();
       }
       
