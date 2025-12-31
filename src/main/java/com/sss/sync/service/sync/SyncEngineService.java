@@ -17,6 +17,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.*;
 
 @Service
@@ -331,14 +333,13 @@ public class SyncEngineService {
     if (s.isEmpty()) return null;
     
     try {
-      // Try parsing ISO format with offset first (e.g., "2025-01-15T10:30:00+08:00" or "2025-01-15T10:30:00.123Z")
-      if (s.contains("T") && (s.contains("+") || s.contains("-") || s.endsWith("Z"))) {
-        // For formats with timezone/offset, parse as ZonedDateTime/OffsetDateTime and convert
-        if (s.endsWith("Z")) {
-          return java.time.ZonedDateTime.parse(s).toLocalDateTime();
-        } else {
-          return java.time.OffsetDateTime.parse(s).toLocalDateTime();
-        }
+      // Try parsing ISO format with offset/timezone first (e.g., "2025-01-15T10:30:00+08:00" or "2025-01-15T10:30:00.123Z")
+      if (s.endsWith("Z")) {
+        return java.time.ZonedDateTime.parse(s).toLocalDateTime();
+      }
+      if (s.contains("T") && (s.contains("+") || (s.contains("-") && s.lastIndexOf('-') > 10))) {
+        // Only treat '-' as offset if it appears after the date part (index > 10)
+        return java.time.OffsetDateTime.parse(s).toLocalDateTime();
       }
       
       // Try parsing as ISO LocalDateTime (e.g., "2025-01-15T10:30:00" or "2025-01-15T10:30:00.123")
@@ -348,8 +349,13 @@ public class SyncEngineService {
       
       // Try parsing space-separated format (e.g., "2025-01-15 10:30:00" or "2025-01-15 10:30:00.123")
       if (s.contains(" ")) {
-        String iso = s.replace(' ', 'T');
-        return LocalDateTime.parse(iso);
+        DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+            .appendPattern("yyyy-MM-dd HH:mm:ss")
+            .optionalStart()
+            .appendFraction(java.time.temporal.ChronoField.NANO_OF_SECOND, 0, 9, true)
+            .optionalEnd()
+            .toFormatter();
+        return LocalDateTime.parse(s, formatter);
       }
       
       // Fallback: try parsing directly
