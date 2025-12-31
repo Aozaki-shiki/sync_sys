@@ -2,10 +2,10 @@
 
 CREATE SCHEMA IF NOT EXISTS public;
 
--- 统一：用 BIGSERIAL 作为自增主键
+-- 统一：用 BIGINT 作为主键，应用层生成 Snowflake ID
 DROP TABLE IF EXISTS user_info CASCADE;
 CREATE TABLE user_info (
-  user_id        BIGSERIAL PRIMARY KEY,
+  user_id        BIGINT PRIMARY KEY,
   username       VARCHAR(50) NOT NULL UNIQUE,
   password_hash  VARCHAR(255) NOT NULL,
   email          VARCHAR(120) NOT NULL UNIQUE,
@@ -18,7 +18,7 @@ CREATE TABLE user_info (
 
 DROP TABLE IF EXISTS category_info CASCADE;
 CREATE TABLE category_info (
-  category_id    BIGSERIAL PRIMARY KEY,
+  category_id    BIGINT PRIMARY KEY,
   category_name  VARCHAR(80) NOT NULL UNIQUE,
   description    VARCHAR(255),
 
@@ -29,7 +29,7 @@ CREATE TABLE category_info (
 
 DROP TABLE IF EXISTS supplier_info CASCADE;
 CREATE TABLE supplier_info (
-  supplier_id    BIGSERIAL PRIMARY KEY,
+  supplier_id    BIGINT PRIMARY KEY,
   supplier_name  VARCHAR(120) NOT NULL UNIQUE,
   contact_name   VARCHAR(80),
   contact_phone  VARCHAR(40),
@@ -43,7 +43,7 @@ CREATE TABLE supplier_info (
 
 DROP TABLE IF EXISTS product_info CASCADE;
 CREATE TABLE product_info (
-  product_id     BIGSERIAL PRIMARY KEY,
+  product_id     BIGINT PRIMARY KEY,
   product_name   VARCHAR(120) NOT NULL,
   category_id    BIGINT NOT NULL REFERENCES category_info(category_id),
   supplier_id    BIGINT NOT NULL REFERENCES supplier_info(supplier_id),
@@ -59,7 +59,7 @@ CREATE TABLE product_info (
 
 DROP TABLE IF EXISTS order_info CASCADE;
 CREATE TABLE order_info (
-  order_id        BIGSERIAL PRIMARY KEY,
+  order_id        BIGINT PRIMARY KEY,
   user_id         BIGINT NOT NULL REFERENCES user_info(user_id),
   product_id      BIGINT NOT NULL REFERENCES product_info(product_id),
   quantity        INT NOT NULL,

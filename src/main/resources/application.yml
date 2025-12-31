@@ -21,6 +21,9 @@ spring:
             enable: true
 
 sss:
+  id:
+    workerId: 1
+
   jwt:
     issuer: "sss-sync"
     secret: "sss-sync-secret-key-please-change-32bytes"
