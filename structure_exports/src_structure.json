@@ -1,0 +1,928 @@
+{
+  "project_info": {
+    "name": "src",
+    "path": "D:\\迅雷下载\\sync_sys\\src",
+    "generated_at": "2025-12-31T17:41:57.4805351",
+    "total_files": 45,
+    "total_size": 41692
+  },
+  "structure": {
+    "main": {
+      "java": {
+        "com": {
+          "sss": {
+            "sync": {
+              "common": {
+                "api": {
+                  "ApiResponse.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 600,
+                      "last_modified": "2025-12-31T17:41:56.8326209",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                },
+                "exception": {
+                  "BizException.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 390,
+                      "last_modified": "2025-12-31T17:41:56.8809638",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "GlobalExceptionHandler.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 1589,
+                      "last_modified": "2025-12-31T17:41:56.9029676",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                }
+              },
+              "config": {
+                "datasource": {
+                  "DataSourceMysqlConfig.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 2556,
+                      "last_modified": "2025-12-31T17:41:56.9415625",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "DataSourceNames.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 269,
+                      "last_modified": "2025-12-31T17:41:56.9445894",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "DataSourcePostgresConfig.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 2607,
+                      "last_modified": "2025-12-31T17:41:56.9489662",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "DataSourceSqlServerConfig.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 2342,
+                      "last_modified": "2025-12-31T17:41:56.9513628",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "MyBatisPlusBaseConfig.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 526,
+                      "last_modified": "2025-12-31T17:41:56.9555054",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                },
+                "mybatis": {
+                  "MybatisPlusConfig.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 904,
+                      "last_modified": "2025-12-31T17:41:56.9826705",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                },
+                "security": {
+                  "JwtAuthFilter.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 1941,
+                      "last_modified": "2025-12-31T17:41:56.9871075",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "JwtProperties.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 397,
+                      "last_modified": "2025-12-31T17:41:57.0146161",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "JwtUtil.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 1315,
+                      "last_modified": "2025-12-31T17:41:57.0273039",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "SecurityConfig.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 1492,
+                      "last_modified": "2025-12-31T17:41:57.0507227",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                }
+              },
+              "domain": {
+                "entity": {
+                  "OrderInfo.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 429,
+                      "last_modified": "2025-12-31T17:41:57.0780254",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "ProductInfo.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 489,
+                      "last_modified": "2025-12-31T17:41:57.0893219",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "UserInfo.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 354,
+                      "last_modified": "2025-12-31T17:41:57.103776",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                },
+                "enums": {
+                  "UserRole.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 81,
+                      "last_modified": "2025-12-31T17:41:57.1201368",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "WriteDb.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 84,
+                      "last_modified": "2025-12-31T17:41:57.1327703",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                }
+              },
+              "infra": {
+                "mapper": {
+                  "mysql": {
+                    "MysqlOrderMapper.java": {
+                      "type": "file",
+                      "info": {
+                        "size": 272,
+                        "last_modified": "2025-12-31T17:41:57.1482564",
+                        "mime_type": "text/x-java-source",
+                        "extension": ".java"
+                      }
+                    },
+                    "MysqlProductMapper.java": {
+                      "type": "file",
+                      "info": {
+                        "size": 743,
+                        "last_modified": "2025-12-31T17:41:57.163547",
+                        "mime_type": "text/x-java-source",
+                        "extension": ".java"
+                      }
+                    },
+                    "MysqlUserMapper.java": {
+                      "type": "file",
+                      "info": {
+                        "size": 269,
+                        "last_modified": "2025-12-31T17:41:57.1764454",
+                        "mime_type": "text/x-java-source",
+                        "extension": ".java"
+                      }
+                    }
+                  },
+                  "postgres": {
+                    "PostgresOrderMapper.java": {
+                      "type": "file",
+                      "info": {
+                        "size": 278,
+                        "last_modified": "2025-12-31T17:41:57.1909402",
+                        "mime_type": "text/x-java-source",
+                        "extension": ".java"
+                      }
+                    },
+                    "PostgresProductMapper.java": {
+                      "type": "file",
+                      "info": {
+                        "size": 669,
+                        "last_modified": "2025-12-31T17:41:57.2035041",
+                        "mime_type": "text/x-java-source",
+                        "extension": ".java"
+                      }
+                    },
+                    "PostgresUserMapper.java": {
+                      "type": "file",
+                      "info": {
+                        "size": 275,
+                        "last_modified": "2025-12-31T17:41:57.215178",
+                        "mime_type": "text/x-java-source",
+                        "extension": ".java"
+                      }
+                    }
+                  },
+                  "read": {
+                    "ReadProductMapper.java": {
+                      "type": "file",
+                      "info": {
+                        "size": 276,
+                        "last_modified": "2025-12-31T17:41:57.230125",
+                        "mime_type": "text/x-java-source",
+                        "extension": ".java"
+                      }
+                    }
+                  },
+                  "sqlserver": {
+                  }
+                }
+              },
+              "service": {
+                "AuthService.java": {
+                  "type": "file",
+                  "info": {
+                    "size": 2154,
+                    "last_modified": "2025-12-31T17:41:57.2479573",
+                    "mime_type": "text/x-java-source",
+                    "extension": ".java"
+                  }
+                },
+                "conflict": {
+                  "ConflictLinkTokenService.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 1356,
+                      "last_modified": "2025-12-31T17:41:57.2699319",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                },
+                "mail": {
+                  "MailProperties.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 420,
+                      "last_modified": "2025-12-31T17:41:57.2742917",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "MailService.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 690,
+                      "last_modified": "2025-12-31T17:41:57.2763689",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                },
+                "OrderService.java": {
+                  "type": "file",
+                  "info": {
+                    "size": 2571,
+                    "last_modified": "2025-12-31T17:41:57.2805795",
+                    "mime_type": "text/x-java-source",
+                    "extension": ".java"
+                  }
+                },
+                "ProductQueryService.java": {
+                  "type": "file",
+                  "info": {
+                    "size": 677,
+                    "last_modified": "2025-12-31T17:41:57.2973934",
+                    "mime_type": "text/x-java-source",
+                    "extension": ".java"
+                  }
+                },
+                "sync": {
+                  "SyncProperties.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 596,
+                      "last_modified": "2025-12-31T17:41:57.3101243",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "SyncScheduler.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 1417,
+                      "last_modified": "2025-12-31T17:41:57.3121415",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                }
+              },
+              "SssSyncSystemApplication.java": {
+                "type": "file",
+                "info": {
+                  "size": 458,
+                  "last_modified": "2025-12-31T17:41:57.3165971",
+                  "mime_type": "text/x-java-source",
+                  "extension": ".java"
+                }
+              },
+              "tools": {
+                "MybatisStatementCheckRunner.java": {
+                  "type": "file",
+                  "info": {
+                    "size": 697,
+                    "last_modified": "2025-12-31T17:41:57.3202984",
+                    "mime_type": "text/x-java-source",
+                    "extension": ".java"
+                  }
+                },
+                "PasswordHashTool.java": {
+                  "type": "file",
+                  "info": {
+                    "size": 479,
+                    "last_modified": "2025-12-31T17:41:57.3223979",
+                    "mime_type": "text/x-java-source",
+                    "extension": ".java"
+                  }
+                }
+              },
+              "web": {
+                "controller": {
+                  "AuthController.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 848,
+                      "last_modified": "2025-12-31T17:41:57.3394499",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "ConflictViewController.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 3653,
+                      "last_modified": "2025-12-31T17:41:57.3606338",
+                      "mime_type": "text/html",
+                      "extension": ".java"
+                    }
+                  },
+                  "OrderController.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 976,
+                      "last_modified": "2025-12-31T17:41:57.3772595",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "ProductController.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 605,
+                      "last_modified": "2025-12-31T17:41:57.4002258",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                },
+                "dto": {
+                  "LoginRequest.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 226,
+                      "last_modified": "2025-12-31T17:41:57.4203371",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "LoginResponse.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 257,
+                      "last_modified": "2025-12-31T17:41:57.4307741",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "PlaceOrderRequest.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 525,
+                      "last_modified": "2025-12-31T17:41:57.4432108",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  },
+                  "PlaceOrderResponse.java": {
+                    "type": "file",
+                    "info": {
+                      "size": 207,
+                      "last_modified": "2025-12-31T17:41:57.4581078",
+                      "mime_type": "text/x-java-source",
+                      "extension": ".java"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "resources": {
+        "application.yml": {
+          "type": "file",
+          "info": {
+            "size": 1733,
+            "last_modified": "2025-12-31T17:41:57.4765232",
+            "mime_type": "text/x-yaml",
+            "extension": ".yml"
+          }
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "main\\java\\com\\sss\\sync\\common\\api\\ApiResponse.java",
+      "content": "package com.sss.sync.common.api;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\n@Data\r\n@NoArgsConstructor\r\n@AllArgsConstructor\r\npublic class ApiResponse<T> {\r\n  private int code;\r\n  private String message;\r\n  private T data;\r\n\r\n  public static <T> ApiResponse<T> ok(T data) {\r\n    return new ApiResponse<>(0, \"OK\", data);\r\n  }\r\n\r\n  public static ApiResponse<Void> ok() {\r\n    return new ApiResponse<>(0, \"OK\", null);\r\n  }\r\n\r\n  public static ApiResponse<Void> error(int code, String message) {\r\n    return new ApiResponse<>(code, message, null);\r\n  }\r\n}",
+      "info": {
+        "size": 600,
+        "last_modified": "2025-12-31T17:41:56.8326209",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\common\\exception\\BizException.java",
+      "content": "package com.sss.sync.common.exception;\r\n\r\npublic class BizException extends RuntimeException {\r\n  private final int code;\r\n\r\n  public BizException(int code, String message) {\r\n    super(message);\r\n    this.code = code;\r\n  }\r\n\r\n  public int getCode() {\r\n    return code;\r\n  }\r\n\r\n  public static BizException of(int code, String message) {\r\n    return new BizException(code, message);\r\n  }\r\n}",
+      "info": {
+        "size": 390,
+        "last_modified": "2025-12-31T17:41:56.8809638",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\common\\exception\\GlobalExceptionHandler.java",
+      "content": "package com.sss.sync.common.exception;\r\n\r\nimport com.sss.sync.common.api.ApiResponse;\r\nimport jakarta.validation.ConstraintViolationException;\r\nimport org.springframework.http.HttpStatus;\r\nimport org.springframework.web.bind.MethodArgumentNotValidException;\r\nimport org.springframework.web.bind.annotation.ExceptionHandler;\r\nimport org.springframework.web.bind.annotation.ResponseStatus;\r\nimport org.springframework.web.bind.annotation.RestControllerAdvice;\r\n\r\n@RestControllerAdvice\r\npublic class GlobalExceptionHandler {\r\n\r\n  @ExceptionHandler(BizException.class)\r\n  @ResponseStatus(HttpStatus.BAD_REQUEST)\r\n  public ApiResponse<Void> handleBiz(BizException e) {\r\n    return ApiResponse.error(e.getCode(), e.getMessage());\r\n  }\r\n\r\n  @ExceptionHandler(MethodArgumentNotValidException.class)\r\n  @ResponseStatus(HttpStatus.BAD_REQUEST)\r\n  public ApiResponse<Void> handleValid(MethodArgumentNotValidException e) {\r\n    String msg = e.getBindingResult().getFieldErrors().stream()\r\n      .findFirst()\r\n      .map(fe -> fe.getField() + \" \" + fe.getDefaultMessage())\r\n      .orElse(\"Validation error\");\r\n    return ApiResponse.error(400, msg);\r\n  }\r\n\r\n  @ExceptionHandler(ConstraintViolationException.class)\r\n  @ResponseStatus(HttpStatus.BAD_REQUEST)\r\n  public ApiResponse<Void> handleConstraint(ConstraintViolationException e) {\r\n    return ApiResponse.error(400, e.getMessage());\r\n  }\r\n\r\n  @ExceptionHandler(Exception.class)\r\n  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)\r\n  public ApiResponse<Void> handleUnknown(Exception e) {\r\n    return ApiResponse.error(500, e.getMessage());\r\n  }\r\n}",
+      "info": {
+        "size": 1589,
+        "last_modified": "2025-12-31T17:41:56.9029676",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\datasource\\DataSourceMysqlConfig.java",
+      "content": "package com.sss.sync.config.datasource;\r\n\r\nimport com.baomidou.mybatisplus.core.MybatisConfiguration;\r\nimport com.baomidou.mybatisplus.core.config.GlobalConfig;\r\nimport com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;\r\nimport com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;\r\nimport javax.sql.DataSource;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.apache.ibatis.session.SqlSessionFactory;\r\nimport org.mybatis.spring.SqlSessionTemplate;\r\nimport org.mybatis.spring.annotation.MapperScan;\r\nimport org.springframework.beans.factory.annotation.Qualifier;\r\nimport org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;\r\nimport org.springframework.boot.context.properties.ConfigurationProperties;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.jdbc.datasource.DataSourceTransactionManager;\r\n\r\n@Configuration\r\n@MapperScan(\r\n  basePackages = \"com.sss.sync.infra.mapper.mysql\",\r\n  sqlSessionFactoryRef = \"mysqlSqlSessionFactory\"\r\n)\r\n@RequiredArgsConstructor\r\npublic class DataSourceMysqlConfig {\r\n\r\n  private final MybatisPlusInterceptor mybatisPlusInterceptor;\r\n  private final GlobalConfig globalConfig;\r\n\r\n  @Bean\r\n  @ConfigurationProperties(\"sss.datasource.mysql\")\r\n  public DataSourceProperties mysqlDataSourceProperties() {\r\n    return new DataSourceProperties();\r\n  }\r\n\r\n  @Bean(name = \"mysqlDataSource\")\r\n  public DataSource mysqlDataSource(@Qualifier(\"mysqlDataSourceProperties\") DataSourceProperties props) {\r\n    return props.initializeDataSourceBuilder().build();\r\n  }\r\n\r\n  @Bean(name = \"mysqlSqlSessionFactory\")\r\n  public SqlSessionFactory mysqlSqlSessionFactory(@Qualifier(\"mysqlDataSource\") DataSource ds) throws Exception {\r\n    MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();\r\n    bean.setDataSource(ds);\r\n\r\n    MybatisConfiguration cfg = new MybatisConfiguration();\r\n    cfg.setMapUnderscoreToCamelCase(true);\r\n    bean.setConfiguration(cfg);\r\n\r\n    bean.setPlugins(mybatisPlusInterceptor);\r\n    bean.setGlobalConfig(globalConfig);\r\n\r\n    return bean.getObject();\r\n  }\r\n\r\n  @Bean(name = \"mysqlSqlSessionTemplate\")\r\n  public SqlSessionTemplate mysqlSqlSessionTemplate(@Qualifier(\"mysqlSqlSessionFactory\") SqlSessionFactory sf) {\r\n    return new SqlSessionTemplate(sf);\r\n  }\r\n\r\n  @Bean(name = \"mysqlTxManager\")\r\n  public DataSourceTransactionManager mysqlTxManager(@Qualifier(\"mysqlDataSource\") DataSource ds) {\r\n    return new DataSourceTransactionManager(ds);\r\n  }\r\n}",
+      "info": {
+        "size": 2556,
+        "last_modified": "2025-12-31T17:41:56.9415625",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\datasource\\DataSourceNames.java",
+      "content": "package com.sss.sync.config.datasource;\r\n\r\npublic final class DataSourceNames {\r\n  private DataSourceNames() {}\r\n  public static final String MYSQL = \"mysql\";\r\n  public static final String POSTGRES = \"postgres\";\r\n  public static final String SQLSERVER = \"sqlserver\";\r\n}",
+      "info": {
+        "size": 269,
+        "last_modified": "2025-12-31T17:41:56.9445894",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\datasource\\DataSourcePostgresConfig.java",
+      "content": "package com.sss.sync.config.datasource;\r\n\r\nimport com.baomidou.mybatisplus.core.MybatisConfiguration;\r\nimport com.baomidou.mybatisplus.core.config.GlobalConfig;\r\nimport com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;\r\nimport com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;\r\nimport javax.sql.DataSource;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.apache.ibatis.session.SqlSessionFactory;\r\nimport org.mybatis.spring.SqlSessionTemplate;\r\nimport org.mybatis.spring.annotation.MapperScan;\r\nimport org.springframework.beans.factory.annotation.Qualifier;\r\nimport org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;\r\nimport org.springframework.boot.context.properties.ConfigurationProperties;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.jdbc.datasource.DataSourceTransactionManager;\r\n\r\n@Configuration\r\n@MapperScan(\r\n  basePackages = \"com.sss.sync.infra.mapper.postgres\",\r\n  sqlSessionFactoryRef = \"postgresSqlSessionFactory\"\r\n)\r\n@RequiredArgsConstructor\r\npublic class DataSourcePostgresConfig {\r\n\r\n  private final MybatisPlusInterceptor mybatisPlusInterceptor;\r\n  private final GlobalConfig globalConfig;\r\n\r\n  @Bean\r\n  @ConfigurationProperties(\"sss.datasource.postgres\")\r\n  public DataSourceProperties postgresDataSourceProperties() {\r\n    return new DataSourceProperties();\r\n  }\r\n\r\n  @Bean(name = \"postgresDataSource\")\r\n  public DataSource postgresDataSource(@Qualifier(\"postgresDataSourceProperties\") DataSourceProperties props) {\r\n    return props.initializeDataSourceBuilder().build();\r\n  }\r\n\r\n  @Bean(name = \"postgresSqlSessionFactory\")\r\n  public SqlSessionFactory postgresSqlSessionFactory(@Qualifier(\"postgresDataSource\") DataSource ds) throws Exception {\r\n    MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();\r\n    bean.setDataSource(ds);\r\n\r\n    MybatisConfiguration cfg = new MybatisConfiguration();\r\n    cfg.setMapUnderscoreToCamelCase(true);\r\n    bean.setConfiguration(cfg);\r\n\r\n    bean.setPlugins(mybatisPlusInterceptor);\r\n    bean.setGlobalConfig(globalConfig);\r\n\r\n    return bean.getObject();\r\n  }\r\n\r\n  @Bean(name = \"postgresSqlSessionTemplate\")\r\n  public SqlSessionTemplate postgresSqlSessionTemplate(@Qualifier(\"postgresSqlSessionFactory\") SqlSessionFactory sf) {\r\n    return new SqlSessionTemplate(sf);\r\n  }\r\n\r\n  @Bean(name = \"postgresTxManager\")\r\n  public DataSourceTransactionManager postgresTxManager(@Qualifier(\"postgresDataSource\") DataSource ds) {\r\n    return new DataSourceTransactionManager(ds);\r\n  }\r\n}",
+      "info": {
+        "size": 2607,
+        "last_modified": "2025-12-31T17:41:56.9489662",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\datasource\\DataSourceSqlServerConfig.java",
+      "content": "package com.sss.sync.config.datasource;\r\n\r\nimport com.baomidou.mybatisplus.core.MybatisConfiguration;\r\nimport com.baomidou.mybatisplus.core.config.GlobalConfig;\r\nimport com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;\r\nimport com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;\r\nimport javax.sql.DataSource;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.apache.ibatis.session.SqlSessionFactory;\r\nimport org.mybatis.spring.SqlSessionTemplate;\r\nimport org.mybatis.spring.annotation.MapperScan;\r\nimport org.springframework.beans.factory.annotation.Qualifier;\r\nimport org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;\r\nimport org.springframework.boot.context.properties.ConfigurationProperties;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\n\r\n@Configuration\r\n@MapperScan(\r\n  basePackages = {\r\n    \"com.sss.sync.infra.mapper.read\",\r\n    \"com.sss.sync.infra.mapper.sqlserver\"\r\n  },\r\n  sqlSessionFactoryRef = \"readSqlSessionFactory\"\r\n)\r\n@RequiredArgsConstructor\r\npublic class DataSourceSqlServerConfig {\r\n\r\n  private final MybatisPlusInterceptor mybatisPlusInterceptor;\r\n  private final GlobalConfig globalConfig;\r\n\r\n  @Bean\r\n  @ConfigurationProperties(\"sss.datasource.sqlserver\")\r\n  public DataSourceProperties readDataSourceProperties() {\r\n    return new DataSourceProperties();\r\n  }\r\n\r\n  @Bean(name = \"readDataSource\")\r\n  public DataSource readDataSource(@Qualifier(\"readDataSourceProperties\") DataSourceProperties props) {\r\n    return props.initializeDataSourceBuilder().build();\r\n  }\r\n\r\n  @Bean(name = \"readSqlSessionFactory\")\r\n  public SqlSessionFactory readSqlSessionFactory(@Qualifier(\"readDataSource\") DataSource ds) throws Exception {\r\n    MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();\r\n    bean.setDataSource(ds);\r\n\r\n    MybatisConfiguration cfg = new MybatisConfiguration();\r\n    cfg.setMapUnderscoreToCamelCase(true);\r\n    bean.setConfiguration(cfg);\r\n\r\n    bean.setPlugins(mybatisPlusInterceptor);\r\n    bean.setGlobalConfig(globalConfig);\r\n\r\n    return bean.getObject();\r\n  }\r\n\r\n  @Bean(name = \"readSqlSessionTemplate\")\r\n  public SqlSessionTemplate readSqlSessionTemplate(@Qualifier(\"readSqlSessionFactory\") SqlSessionFactory sf) {\r\n    return new SqlSessionTemplate(sf);\r\n  }\r\n}",
+      "info": {
+        "size": 2342,
+        "last_modified": "2025-12-31T17:41:56.9513628",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\datasource\\MyBatisPlusBaseConfig.java",
+      "content": "package com.sss.sync.config.datasource;\r\n\r\nimport com.baomidou.mybatisplus.autoconfigure.MybatisPlusPropertiesCustomizer;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\n\r\n@Configuration\r\npublic class MyBatisPlusBaseConfig {\r\n  @Bean\r\n  public MybatisPlusPropertiesCustomizer mybatisPlusPropertiesCustomizer() {\r\n    return properties -> {\r\n      // 这里可统一设置 globalConfig 等（当前先不加逻辑删除，避免三库差异）\r\n    };\r\n  }\r\n}",
+      "info": {
+        "size": 526,
+        "last_modified": "2025-12-31T17:41:56.9555054",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\mybatis\\MybatisPlusConfig.java",
+      "content": "package com.sss.sync.config.mybatis;\r\n\r\nimport com.baomidou.mybatisplus.core.config.GlobalConfig;\r\nimport com.baomidou.mybatisplus.core.injector.DefaultSqlInjector;\r\nimport com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;\r\nimport com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\n\r\n@Configuration\r\npublic class MybatisPlusConfig {\r\n\r\n  @Bean\r\n  public MybatisPlusInterceptor mybatisPlusInterceptor() {\r\n    MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();\r\n    interceptor.addInnerInterceptor(new PaginationInnerInterceptor());\r\n    return interceptor;\r\n  }\r\n\r\n  @Bean\r\n  public GlobalConfig globalConfig() {\r\n    GlobalConfig gc = new GlobalConfig();\r\n    gc.setSqlInjector(new DefaultSqlInjector());\r\n    return gc;\r\n  }\r\n}",
+      "info": {
+        "size": 904,
+        "last_modified": "2025-12-31T17:41:56.9826705",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\security\\JwtAuthFilter.java",
+      "content": "package com.sss.sync.config.security;\r\n\r\nimport io.jsonwebtoken.Claims;\r\nimport jakarta.servlet.FilterChain;\r\nimport jakarta.servlet.ServletException;\r\nimport jakarta.servlet.http.HttpServletRequest;\r\nimport jakarta.servlet.http.HttpServletResponse;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.http.HttpHeaders;\r\nimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;\r\nimport org.springframework.security.core.authority.SimpleGrantedAuthority;\r\nimport org.springframework.security.core.context.SecurityContextHolder;\r\nimport org.springframework.util.StringUtils;\r\nimport org.springframework.web.filter.OncePerRequestFilter;\r\n\r\nimport java.io.IOException;\r\nimport java.util.List;\r\n\r\n@RequiredArgsConstructor\r\npublic class JwtAuthFilter extends OncePerRequestFilter {\r\n\r\n  private final JwtUtil jwtUtil;\r\n\r\n  @Override\r\n  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)\r\n    throws ServletException, IOException {\r\n\r\n    String auth = request.getHeader(HttpHeaders.AUTHORIZATION);\r\n    if (!StringUtils.hasText(auth) || !auth.startsWith(\"Bearer \")) {\r\n      filterChain.doFilter(request, response);\r\n      return;\r\n    }\r\n\r\n    String token = auth.substring(7);\r\n    try {\r\n      Claims claims = jwtUtil.parseClaims(token);\r\n      String userId = claims.getSubject();\r\n      String username = (String) claims.get(\"username\");\r\n      String role = (String) claims.get(\"role\");\r\n\r\n      var authorities = List.of(new SimpleGrantedAuthority(\"ROLE_\" + role));\r\n      var principal = username + \"|\" + userId;\r\n\r\n      var authentication = new UsernamePasswordAuthenticationToken(principal, null, authorities);\r\n      SecurityContextHolder.getContext().setAuthentication(authentication);\r\n    } catch (Exception ex) {\r\n      SecurityContextHolder.clearContext();\r\n    }\r\n\r\n    filterChain.doFilter(request, response);\r\n  }\r\n}",
+      "info": {
+        "size": 1941,
+        "last_modified": "2025-12-31T17:41:56.9871075",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\security\\JwtProperties.java",
+      "content": "package com.sss.sync.config.security;\r\n\r\nimport lombok.Data;\r\nimport org.springframework.boot.context.properties.ConfigurationProperties;\r\nimport org.springframework.context.annotation.Configuration;\r\n\r\n@Data\r\n@Configuration\r\n@ConfigurationProperties(prefix = \"sss.jwt\")\r\npublic class JwtProperties {\r\n  private String issuer;\r\n  private String secret;\r\n  private long accessTokenExpireMinutes;\r\n}",
+      "info": {
+        "size": 397,
+        "last_modified": "2025-12-31T17:41:57.0146161",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\security\\JwtUtil.java",
+      "content": "package com.sss.sync.config.security;\r\n\r\nimport io.jsonwebtoken.Jwts;\r\nimport io.jsonwebtoken.security.Keys;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.stereotype.Component;\r\n\r\nimport javax.crypto.SecretKey;\r\nimport java.nio.charset.StandardCharsets;\r\nimport java.time.Instant;\r\nimport java.time.temporal.ChronoUnit;\r\nimport java.util.Date;\r\nimport java.util.Map;\r\n\r\n@Component\r\n@RequiredArgsConstructor\r\npublic class JwtUtil {\r\n\r\n  private final JwtProperties props;\r\n\r\n  private SecretKey key() {\r\n    return Keys.hmacShaKeyFor(props.getSecret().getBytes(StandardCharsets.UTF_8));\r\n  }\r\n\r\n  public String generateAccessToken(Long userId, String username, String role) {\r\n    Instant now = Instant.now();\r\n    Instant exp = now.plus(props.getAccessTokenExpireMinutes(), ChronoUnit.MINUTES);\r\n\r\n    return Jwts.builder()\r\n      .issuer(props.getIssuer())\r\n      .subject(String.valueOf(userId))\r\n      .claims(Map.of(\r\n        \"username\", username,\r\n        \"role\", role\r\n      ))\r\n      .issuedAt(Date.from(now))\r\n      .expiration(Date.from(exp))\r\n      .signWith(key())\r\n      .compact();\r\n  }\r\n\r\n  public io.jsonwebtoken.Claims parseClaims(String token) {\r\n    return Jwts.parser()\r\n      .verifyWith(key())\r\n      .build()\r\n      .parseSignedClaims(token)\r\n      .getPayload();\r\n  }\r\n}",
+      "info": {
+        "size": 1315,
+        "last_modified": "2025-12-31T17:41:57.0273039",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\config\\security\\SecurityConfig.java",
+      "content": "package com.sss.sync.config.security;\r\n\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.http.HttpMethod;\r\nimport org.springframework.security.config.Customizer;\r\nimport org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;\r\nimport org.springframework.security.config.annotation.web.builders.HttpSecurity;\r\nimport org.springframework.security.config.http.SessionCreationPolicy;\r\nimport org.springframework.security.web.SecurityFilterChain;\r\n\r\n@Configuration\r\n@EnableMethodSecurity\r\n@RequiredArgsConstructor\r\npublic class SecurityConfig {\r\n\r\n  private final JwtUtil jwtUtil;\r\n\r\n  @Bean\r\n  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {\r\n    http\r\n      .csrf(csrf -> csrf.disable())\r\n      .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))\r\n      .authorizeHttpRequests(auth -> auth\r\n        .requestMatchers(\"/api/auth/**\").permitAll()\r\n        .requestMatchers(\"/swagger-ui/**\", \"/v3/api-docs/**\").permitAll()\r\n        .requestMatchers(HttpMethod.GET, \"/api/products/**\").permitAll()\r\n        .anyRequest().authenticated()\r\n      )\r\n      .addFilterBefore(new JwtAuthFilter(jwtUtil), org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class)\r\n      .httpBasic(Customizer.withDefaults());\r\n\r\n    return http.build();\r\n  }\r\n}",
+      "info": {
+        "size": 1492,
+        "last_modified": "2025-12-31T17:41:57.0507227",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\domain\\entity\\OrderInfo.java",
+      "content": "package com.sss.sync.domain.entity;\r\n\r\nimport lombok.Data;\r\n\r\nimport java.time.LocalDateTime;\r\n\r\n@Data\r\npublic class OrderInfo {\r\n  private Long orderId;\r\n  private Long userId;\r\n  private Long productId;\r\n  private Integer quantity;\r\n  private String orderStatus;\r\n  private LocalDateTime orderedAt;\r\n  private String shippingAddress;\r\n\r\n  private Long version;\r\n  private LocalDateTime updatedAt;\r\n  private Boolean deleted;\r\n}",
+      "info": {
+        "size": 429,
+        "last_modified": "2025-12-31T17:41:57.0780254",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\domain\\entity\\ProductInfo.java",
+      "content": "package com.sss.sync.domain.entity;\r\n\r\nimport lombok.Data;\r\n\r\nimport java.math.BigDecimal;\r\nimport java.time.LocalDateTime;\r\n\r\n@Data\r\npublic class ProductInfo {\r\n  private Long productId;\r\n  private String productName;\r\n  private Long categoryId;\r\n  private Long supplierId;\r\n  private BigDecimal price;\r\n  private Integer stock;\r\n  private String description;\r\n  private LocalDateTime listedAt;\r\n\r\n  private Long version;\r\n  private LocalDateTime updatedAt;\r\n  private Boolean deleted;\r\n}",
+      "info": {
+        "size": 489,
+        "last_modified": "2025-12-31T17:41:57.0893219",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\domain\\entity\\UserInfo.java",
+      "content": "package com.sss.sync.domain.entity;\r\n\r\nimport lombok.Data;\r\n\r\nimport java.time.LocalDateTime;\r\n\r\n@Data\r\npublic class UserInfo {\r\n  private Long userId;\r\n  private String username;\r\n  private String passwordHash;\r\n  private String email;\r\n  private String role;\r\n\r\n  private Long version;\r\n  private LocalDateTime updatedAt;\r\n  private Boolean deleted;\r\n}",
+      "info": {
+        "size": 354,
+        "last_modified": "2025-12-31T17:41:57.103776",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\domain\\enums\\UserRole.java",
+      "content": "package com.sss.sync.domain.enums;\r\n\r\npublic enum UserRole {\r\n  USER,\r\n  ADMIN\r\n}",
+      "info": {
+        "size": 81,
+        "last_modified": "2025-12-31T17:41:57.1201368",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\domain\\enums\\WriteDb.java",
+      "content": "package com.sss.sync.domain.enums;\r\n\r\npublic enum WriteDb {\r\n  MYSQL,\r\n  POSTGRES\r\n}",
+      "info": {
+        "size": 84,
+        "last_modified": "2025-12-31T17:41:57.1327703",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\infra\\mapper\\mysql\\MysqlOrderMapper.java",
+      "content": "package com.sss.sync.infra.mapper.mysql;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.sss.sync.domain.entity.OrderInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\n\r\n@Mapper\r\npublic interface MysqlOrderMapper extends BaseMapper<OrderInfo> {\r\n}",
+      "info": {
+        "size": 272,
+        "last_modified": "2025-12-31T17:41:57.1482564",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\infra\\mapper\\mysql\\MysqlProductMapper.java",
+      "content": "package com.sss.sync.infra.mapper.mysql;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\nimport org.apache.ibatis.annotations.Param;\r\nimport org.apache.ibatis.annotations.Update;\r\n\r\n@Mapper\r\npublic interface MysqlProductMapper extends BaseMapper<ProductInfo> {\r\n\r\n  // 用 SQL 保证库存不会减成负数（并发安全的一种简单写法）\r\n  @Update(\"\"\"\r\n    UPDATE product_info\r\n    SET stock = stock - #{qty},\r\n        version = version + 1\r\n    WHERE product_id = #{productId}\r\n      AND deleted = 0\r\n      AND stock >= #{qty}\r\n  \"\"\")\r\n  int decreaseStockIfEnough(@Param(\"productId\") Long productId, @Param(\"qty\") int qty);\r\n}",
+      "info": {
+        "size": 743,
+        "last_modified": "2025-12-31T17:41:57.163547",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\infra\\mapper\\mysql\\MysqlUserMapper.java",
+      "content": "package com.sss.sync.infra.mapper.mysql;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.sss.sync.domain.entity.UserInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\n\r\n@Mapper\r\npublic interface MysqlUserMapper extends BaseMapper<UserInfo> {\r\n}",
+      "info": {
+        "size": 269,
+        "last_modified": "2025-12-31T17:41:57.1764454",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\infra\\mapper\\postgres\\PostgresOrderMapper.java",
+      "content": "package com.sss.sync.infra.mapper.postgres;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.sss.sync.domain.entity.OrderInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\n\r\n@Mapper\r\npublic interface PostgresOrderMapper extends BaseMapper<OrderInfo> {\r\n}",
+      "info": {
+        "size": 278,
+        "last_modified": "2025-12-31T17:41:57.1909402",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\infra\\mapper\\postgres\\PostgresProductMapper.java",
+      "content": "package com.sss.sync.infra.mapper.postgres;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\nimport org.apache.ibatis.annotations.Param;\r\nimport org.apache.ibatis.annotations.Update;\r\n\r\n@Mapper\r\npublic interface PostgresProductMapper extends BaseMapper<ProductInfo> {\r\n\r\n  @Update(\"\"\"\r\n    UPDATE product_info\r\n    SET stock = stock - #{qty},\r\n        version = version + 1\r\n    WHERE product_id = #{productId}\r\n      AND deleted = false\r\n      AND stock >= #{qty}\r\n  \"\"\")\r\n  int decreaseStockIfEnough(@Param(\"productId\") Long productId, @Param(\"qty\") int qty);\r\n}",
+      "info": {
+        "size": 669,
+        "last_modified": "2025-12-31T17:41:57.2035041",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\infra\\mapper\\postgres\\PostgresUserMapper.java",
+      "content": "package com.sss.sync.infra.mapper.postgres;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.sss.sync.domain.entity.UserInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\n\r\n@Mapper\r\npublic interface PostgresUserMapper extends BaseMapper<UserInfo> {\r\n}",
+      "info": {
+        "size": 275,
+        "last_modified": "2025-12-31T17:41:57.215178",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\infra\\mapper\\read\\ReadProductMapper.java",
+      "content": "package com.sss.sync.infra.mapper.read;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\n\r\n@Mapper\r\npublic interface ReadProductMapper extends BaseMapper<ProductInfo> {\r\n}",
+      "info": {
+        "size": 276,
+        "last_modified": "2025-12-31T17:41:57.230125",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\service\\AuthService.java",
+      "content": "package com.sss.sync.service;\r\n\r\nimport com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;\r\nimport com.sss.sync.common.exception.BizException;\r\nimport com.sss.sync.config.security.JwtUtil;\r\nimport com.sss.sync.domain.entity.UserInfo;\r\nimport com.sss.sync.infra.mapper.mysql.MysqlUserMapper;\r\nimport com.sss.sync.infra.mapper.postgres.PostgresUserMapper;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;\r\nimport org.springframework.stereotype.Service;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\npublic class AuthService {\r\n\r\n  private final MysqlUserMapper mysqlUserMapper;\r\n  private final PostgresUserMapper postgresUserMapper;\r\n  private final JwtUtil jwtUtil;\r\n\r\n  private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();\r\n\r\n  public String login(String username, String password) {\r\n    UserInfo u = mysqlUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()\r\n      .eq(UserInfo::getUsername, username)\r\n      .eq(UserInfo::getDeleted, false)\r\n      .last(\"LIMIT 1\"));\r\n\r\n    if (u == null) {\r\n      // postgres 没有 LIMIT 语法差异：MyBatis-Plus last 直接拼接，PG也支持 LIMIT\r\n      u = postgresUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()\r\n        .eq(UserInfo::getUsername, username)\r\n        .eq(UserInfo::getDeleted, false)\r\n        .last(\"LIMIT 1\"));\r\n    }\r\n\r\n    if (u == null) {\r\n      throw BizException.of(401, \"USER_NOT_FOUND\");\r\n    }\r\n\r\n    if (!encoder.matches(password, u.getPasswordHash())) {\r\n      throw BizException.of(401, \"INVALID_PASSWORD\");\r\n    }\r\n\r\n    return jwtUtil.generateAccessToken(u.getUserId(), u.getUsername(), u.getRole());\r\n  }\r\n\r\n  public UserInfo findUser(String username) {\r\n    UserInfo u = mysqlUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()\r\n      .eq(UserInfo::getUsername, username)\r\n      .eq(UserInfo::getDeleted, false)\r\n      .last(\"LIMIT 1\"));\r\n    if (u != null) return u;\r\n\r\n    return postgresUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()\r\n      .eq(UserInfo::getUsername, username)\r\n      .eq(UserInfo::getDeleted, false)\r\n      .last(\"LIMIT 1\"));\r\n  }\r\n}",
+      "info": {
+        "size": 2154,
+        "last_modified": "2025-12-31T17:41:57.2479573",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\service\\conflict\\ConflictLinkTokenService.java",
+      "content": "package com.sss.sync.service.conflict;\r\n\r\nimport com.sss.sync.config.security.JwtProperties;\r\nimport io.jsonwebtoken.Jwts;\r\nimport io.jsonwebtoken.security.Keys;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport javax.crypto.SecretKey;\r\nimport java.nio.charset.StandardCharsets;\r\nimport java.time.Instant;\r\nimport java.time.temporal.ChronoUnit;\r\nimport java.util.Date;\r\nimport java.util.Map;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\npublic class ConflictLinkTokenService {\r\n\r\n  private final JwtProperties jwtProperties;\r\n\r\n  private SecretKey key() {\r\n    return Keys.hmacShaKeyFor(jwtProperties.getSecret().getBytes(StandardCharsets.UTF_8));\r\n  }\r\n\r\n  public String generate(long conflictId, String adminUsername) {\r\n    Instant now = Instant.now();\r\n    Instant exp = now.plus(24, ChronoUnit.HOURS);\r\n\r\n    return Jwts.builder()\r\n      .issuer(jwtProperties.getIssuer())\r\n      .subject(\"conflict-view\")\r\n      .claims(Map.of(\r\n        \"conflictId\", conflictId,\r\n        \"admin\", adminUsername\r\n      ))\r\n      .issuedAt(Date.from(now))\r\n      .expiration(Date.from(exp))\r\n      .signWith(key())\r\n      .compact();\r\n  }\r\n\r\n  public io.jsonwebtoken.Claims parse(String token) {\r\n    return Jwts.parser()\r\n      .verifyWith(key())\r\n      .build()\r\n      .parseSignedClaims(token)\r\n      .getPayload();\r\n  }\r\n}",
+      "info": {
+        "size": 1356,
+        "last_modified": "2025-12-31T17:41:57.2699319",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\service\\mail\\MailProperties.java",
+      "content": "package com.sss.sync.service.mail;\r\n\r\nimport lombok.Data;\r\nimport org.springframework.boot.context.properties.ConfigurationProperties;\r\nimport org.springframework.context.annotation.Configuration;\r\n\r\n@Data\r\n@Configuration\r\n@ConfigurationProperties(prefix = \"sss.mail\")\r\npublic class MailProperties {\r\n  private boolean enabled;\r\n  private String from;\r\n  private String adminTo;\r\n  private String conflictViewBaseUrl;\r\n}",
+      "info": {
+        "size": 420,
+        "last_modified": "2025-12-31T17:41:57.2742917",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\service\\mail\\MailService.java",
+      "content": "package com.sss.sync.service.mail;\r\n\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.mail.SimpleMailMessage;\r\nimport org.springframework.mail.javamail.JavaMailSender;\r\nimport org.springframework.stereotype.Service;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\npublic class MailService {\r\n\r\n  private final JavaMailSender mailSender;\r\n  private final MailProperties props;\r\n\r\n  public void sendText(String to, String subject, String text) {\r\n    if (!props.isEnabled()) return;\r\n\r\n    SimpleMailMessage msg = new SimpleMailMessage();\r\n    msg.setFrom(props.getFrom());\r\n    msg.setTo(to);\r\n    msg.setSubject(subject);\r\n    msg.setText(text);\r\n    mailSender.send(msg);\r\n  }\r\n}",
+      "info": {
+        "size": 690,
+        "last_modified": "2025-12-31T17:41:57.2763689",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\service\\OrderService.java",
+      "content": "package com.sss.sync.service;\r\n\r\nimport com.sss.sync.common.exception.BizException;\r\nimport com.sss.sync.domain.entity.OrderInfo;\r\nimport com.sss.sync.domain.enums.WriteDb;\r\nimport com.sss.sync.infra.mapper.mysql.MysqlOrderMapper;\r\nimport com.sss.sync.infra.mapper.mysql.MysqlProductMapper;\r\nimport com.sss.sync.infra.mapper.postgres.PostgresOrderMapper;\r\nimport com.sss.sync.infra.mapper.postgres.PostgresProductMapper;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.stereotype.Service;\r\nimport org.springframework.transaction.annotation.Transactional;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\npublic class OrderService {\r\n\r\n  private final MysqlOrderMapper mysqlOrderMapper;\r\n  private final MysqlProductMapper mysqlProductMapper;\r\n\r\n  private final PostgresOrderMapper postgresOrderMapper;\r\n  private final PostgresProductMapper postgresProductMapper;\r\n\r\n  @Transactional(transactionManager = \"mysqlTxManager\", rollbackFor = Exception.class)\r\n  public Long placeOrderOnMysql(Long userId, Long productId, int qty, String address) {\r\n    int affected = mysqlProductMapper.decreaseStockIfEnough(productId, qty);\r\n    if (affected != 1) {\r\n      throw BizException.of(400, \"INSUFFICIENT_STOCK_OR_PRODUCT_NOT_FOUND\");\r\n    }\r\n\r\n    OrderInfo o = new OrderInfo();\r\n    o.setUserId(userId);\r\n    o.setProductId(productId);\r\n    o.setQuantity(qty);\r\n    o.setOrderStatus(\"CREATED\");\r\n    o.setShippingAddress(address);\r\n    o.setVersion(1L);\r\n    // orderedAt/updatedAt 由数据库默认值处理也可以，这里不手动填\r\n\r\n    mysqlOrderMapper.insert(o);\r\n    return o.getOrderId();\r\n  }\r\n\r\n  @Transactional(transactionManager = \"postgresTxManager\", rollbackFor = Exception.class)\r\n  public Long placeOrderOnPostgres(Long userId, Long productId, int qty, String address) {\r\n    int affected = postgresProductMapper.decreaseStockIfEnough(productId, qty);\r\n    if (affected != 1) {\r\n      throw BizException.of(400, \"INSUFFICIENT_STOCK_OR_PRODUCT_NOT_FOUND\");\r\n    }\r\n\r\n    OrderInfo o = new OrderInfo();\r\n    o.setUserId(userId);\r\n    o.setProductId(productId);\r\n    o.setQuantity(qty);\r\n    o.setOrderStatus(\"CREATED\");\r\n    o.setShippingAddress(address);\r\n    o.setVersion(1L);\r\n\r\n    postgresOrderMapper.insert(o);\r\n    return o.getOrderId();\r\n  }\r\n\r\n  public Long placeOrder(WriteDb writeDb, Long userId, Long productId, int qty, String address) {\r\n    return switch (writeDb) {\r\n      case MYSQL -> placeOrderOnMysql(userId, productId, qty, address);\r\n      case POSTGRES -> placeOrderOnPostgres(userId, productId, qty, address);\r\n    };\r\n  }\r\n}",
+      "info": {
+        "size": 2571,
+        "last_modified": "2025-12-31T17:41:57.2805795",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\service\\ProductQueryService.java",
+      "content": "package com.sss.sync.service;\r\n\r\nimport com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;\r\nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport com.sss.sync.infra.mapper.read.ReadProductMapper;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport java.util.List;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\npublic class ProductQueryService {\r\n\r\n  private final ReadProductMapper readProductMapper;\r\n\r\n  public List<ProductInfo> listAll() {\r\n    return readProductMapper.selectList(new LambdaQueryWrapper<ProductInfo>()\r\n      .eq(ProductInfo::getDeleted, false)\r\n      .orderByDesc(ProductInfo::getProductId));\r\n  }\r\n}",
+      "info": {
+        "size": 677,
+        "last_modified": "2025-12-31T17:41:57.2973934",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\service\\sync\\SyncProperties.java",
+      "content": "package com.sss.sync.service.sync;\r\n\r\nimport lombok.Data;\r\nimport org.springframework.boot.context.properties.ConfigurationProperties;\r\nimport org.springframework.context.annotation.Configuration;\r\n\r\n@Data\r\n@Configuration\r\n@ConfigurationProperties(prefix = \"sss.sync\")\r\npublic class SyncProperties {\r\n  private boolean enabled = true;\r\n  private long pollIntervalMillis = 1000;\r\n  private int batchSize = 200;\r\n\r\n  private Scheduled scheduled = new Scheduled();\r\n\r\n  @Data\r\n  public static class Scheduled {\r\n    private boolean enabled = true;\r\n    private long fixedDelayMillis = 10000;\r\n  }\r\n}",
+      "info": {
+        "size": 596,
+        "last_modified": "2025-12-31T17:41:57.3101243",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\service\\sync\\SyncScheduler.java",
+      "content": "package com.sss.sync.service.sync;\r\n\r\nimport jakarta.annotation.PostConstruct;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.scheduling.annotation.EnableScheduling;\r\nimport org.springframework.scheduling.annotation.Scheduled;\r\nimport org.springframework.stereotype.Component;\r\n\r\n@Component\r\n@EnableScheduling\r\n@RequiredArgsConstructor\r\npublic class SyncScheduler {\r\n\r\n  private final SyncProperties props;\r\n  private final SyncEngineService engine;\r\n\r\n  // 定时同步（演示：固定延迟）\r\n  @Scheduled(fixedDelayString = \"${sss.sync.scheduled.fixedDelayMillis:10000}\")\r\n  public void scheduledSync() {\r\n    if (!props.getScheduled().isEnabled()) return;\r\n    engine.syncOnce();\r\n  }\r\n\r\n  // 近实时轮询（单独线程）\r\n  @PostConstruct\r\n  public void startRealtimeLoop() {\r\n    if (!props.isEnabled()) return;\r\n\r\n    Thread t = new Thread(() -> {\r\n      while (true) {\r\n        try {\r\n          engine.syncOnce();\r\n          Thread.sleep(props.getPollIntervalMillis());\r\n        } catch (InterruptedException ie) {\r\n          Thread.currentThread().interrupt();\r\n          return;\r\n        } catch (Exception e) {\r\n          // 不要让线程死掉，先简单打印\r\n          e.printStackTrace();\r\n          try { Thread.sleep(2000); } catch (InterruptedException ignored) {}\r\n        }\r\n      }\r\n    }, \"sync-realtime-loop\");\r\n\r\n    t.setDaemon(true);\r\n    t.start();\r\n  }\r\n}",
+      "info": {
+        "size": 1417,
+        "last_modified": "2025-12-31T17:41:57.3121415",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\SssSyncSystemApplication.java",
+      "content": "package com.sss.sync;\r\n\r\nimport org.springframework.boot.SpringApplication;\r\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\nimport org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;\r\n\r\n@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})\r\npublic class SssSyncSystemApplication {\r\n  public static void main(String[] args) {\r\n    SpringApplication.run(SssSyncSystemApplication.class, args);\r\n  }\r\n}",
+      "info": {
+        "size": 458,
+        "last_modified": "2025-12-31T17:41:57.3165971",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\tools\\MybatisStatementCheckRunner.java",
+      "content": "package com.sss.sync.tools;\r\n\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.apache.ibatis.session.SqlSessionFactory;\r\nimport org.springframework.boot.CommandLineRunner;\r\nimport org.springframework.stereotype.Component;\r\n\r\n@Component\r\n@RequiredArgsConstructor\r\npublic class MybatisStatementCheckRunner implements CommandLineRunner {\r\n\r\n  private final SqlSessionFactory mysqlSqlSessionFactory;\r\n\r\n  @Override\r\n  public void run(String... args) {\r\n    var cfg = mysqlSqlSessionFactory.getConfiguration();\r\n    String msId = \"com.sss.sync.infra.mapper.mysql.MysqlProductMapper.selectById\";\r\n    System.out.println(\"[CHECK] hasMappedStatement(\" + msId + \") = \" + cfg.hasStatement(msId));\r\n  }\r\n}",
+      "info": {
+        "size": 697,
+        "last_modified": "2025-12-31T17:41:57.3202984",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\tools\\PasswordHashTool.java",
+      "content": "package com.sss.sync.tools;\r\n\r\nimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;\r\n\r\npublic class PasswordHashTool {\r\n  public static void main(String[] args) {\r\n    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();\r\n\r\n    String adminHash = encoder.encode(\"admin123\");\r\n    String userHash = encoder.encode(\"user123\");\r\n\r\n    System.out.println(\"admin123 bcrypt = \" + adminHash);\r\n    System.out.println(\"user123  bcrypt = \" + userHash);\r\n  }\r\n}",
+      "info": {
+        "size": 479,
+        "last_modified": "2025-12-31T17:41:57.3223979",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\web\\controller\\AuthController.java",
+      "content": "package com.sss.sync.web.controller;\r\n\r\nimport com.sss.sync.common.api.ApiResponse;\r\nimport com.sss.sync.service.AuthService;\r\nimport com.sss.sync.web.dto.LoginRequest;\r\nimport com.sss.sync.web.dto.LoginResponse;\r\nimport jakarta.validation.Valid;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\n@RestController\r\n@RequestMapping(\"/api/auth\")\r\n@RequiredArgsConstructor\r\npublic class AuthController {\r\n\r\n  private final AuthService authService;\r\n\r\n  @PostMapping(\"/login\")\r\n  public ApiResponse<LoginResponse> login(@Valid @RequestBody LoginRequest req) {\r\n    String token = authService.login(req.getUsername(), req.getPassword());\r\n    var user = authService.findUser(req.getUsername());\r\n    return ApiResponse.ok(new LoginResponse(token, user.getUserId(), user.getUsername(), user.getRole()));\r\n  }\r\n}",
+      "info": {
+        "size": 848,
+        "last_modified": "2025-12-31T17:41:57.3394499",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\web\\controller\\ConflictViewController.java",
+      "content": "package com.sss.sync.web.controller;\r\n\r\nimport com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;\r\nimport com.sss.sync.common.api.ApiResponse;\r\nimport com.sss.sync.common.exception.BizException;\r\nimport com.sss.sync.service.conflict.ConflictLinkTokenService;\r\nimport io.jsonwebtoken.Claims;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\n@RestController\r\n@RequiredArgsConstructor\r\npublic class ConflictViewController {\r\n\r\n  private final ConflictLinkTokenService tokenService;\r\n  private final MysqlConflictRecordMapper conflictRecordMapper;\r\n\r\n  @GetMapping(\"/api/conflicts/view\")\r\n  public ApiResponse<ConflictRecord> view(@RequestParam(\"token\") String token) {\r\n    Claims c = tokenService.parse(token);\r\n    Object conflictIdObj = c.get(\"conflictId\");\r\n    if (conflictIdObj == null) throw BizException.of(401, \"INVALID_TOKEN\");\r\n\r\n    long conflictId = Long.parseLong(String.valueOf(conflictIdObj));\r\n\r\n    ConflictRecord record = conflictRecordMapper.selectOne(new LambdaQueryWrapper<ConflictRecord>()\r\n      .eq(ConflictRecord::getConflictId, conflictId)\r\n      .last(\"LIMIT 1\"));\r\n\r\n    if (record == null) throw BizException.of(404, \"CONFLICT_NOT_FOUND\");\r\n    return ApiResponse.ok(record);\r\n  }\r\n\r\n  // 简单 HTML 页面（浏览器直接打开查看，后续第7包换成 Vue）\r\n  @GetMapping(value = \"/conflicts/view\", produces = \"text/html; charset=UTF-8\")\r\n  public String viewHtml(@RequestParam(\"token\") String token) {\r\n    // 复用 API 逻辑：只验证 token 是否有效\r\n    Claims c = tokenService.parse(token);\r\n    Object conflictIdObj = c.get(\"conflictId\");\r\n    if (conflictIdObj == null) throw BizException.of(401, \"INVALID_TOKEN\");\r\n\r\n    long conflictId = Long.parseLong(String.valueOf(conflictIdObj));\r\n\r\n    return \"\"\"\r\n      <!doctype html>\r\n      <html lang=\"zh-CN\">\r\n      <head>\r\n        <meta charset=\"utf-8\"/>\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>\r\n        <title>同步冲突详情</title>\r\n        <style>\r\n          body { font-family: Arial, sans-serif; padding: 12px; }\r\n          pre { white-space: pre-wrap; word-break: break-all; background: #f5f5f5; padding: 12px; border-radius: 6px; }\r\n          .box { max-width: 980px; margin: 0 auto; }\r\n        </style>\r\n      </head>\r\n      <body>\r\n        <div class=\"box\">\r\n          <h2>同步冲突详情（conflictId=%d）</h2>\r\n          <p>本页面通过链接 token 鉴权，PC/手机浏览器均可打开。</p>\r\n          <p>接口：<code>/api/conflicts/view?token=...</code></p>\r\n          <hr/>\r\n          <div id=\"content\">加载中...</div>\r\n        </div>\r\n        <script>\r\n          fetch('/api/conflicts/view?token=%s')\r\n            .then(r => r.json())\r\n            .then(res => {\r\n              if(res.code !== 0){ document.getElementById('content').innerText = '加载失败：' + res.message; return; }\r\n              const d = res.data;\r\n              document.getElementById('content').innerHTML =\r\n                '<p><b>table</b>: ' + d.tableName + ' <b>pk</b>: ' + d.pkValue + '</p>'\r\n                + '<p><b>source</b>: ' + d.sourceDb + ' <b>target</b>: ' + d.targetDb + '</p>'\r\n                + '<p><b>status</b>: ' + d.status + '</p>'\r\n                + '<h3>source_payload_json</h3><pre>' + d.sourcePayloadJson + '</pre>'\r\n                + '<h3>target_payload_json</h3><pre>' + d.targetPayloadJson + '</pre>';\r\n            })\r\n            .catch(err => document.getElementById('content').innerText = '加载异常：' + err);\r\n        </script>\r\n      </body>\r\n      </html>\r\n      \"\"\".formatted(conflictId, token);\r\n  }\r\n}",
+      "info": {
+        "size": 3653,
+        "last_modified": "2025-12-31T17:41:57.3606338",
+        "mime_type": "text/html",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\web\\controller\\OrderController.java",
+      "content": "package com.sss.sync.web.controller;\r\n\r\nimport com.sss.sync.common.api.ApiResponse;\r\nimport com.sss.sync.service.OrderService;\r\nimport com.sss.sync.web.dto.PlaceOrderRequest;\r\nimport com.sss.sync.web.dto.PlaceOrderResponse;\r\nimport jakarta.validation.Valid;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.security.access.prepost.PreAuthorize;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\n@RestController\r\n@RequestMapping(\"/api/orders\")\r\n@RequiredArgsConstructor\r\npublic class OrderController {\r\n\r\n  private final OrderService orderService;\r\n\r\n  @PostMapping(\"/place\")\r\n  @PreAuthorize(\"hasAnyRole('USER','ADMIN')\")\r\n  public ApiResponse<PlaceOrderResponse> place(@Valid @RequestBody PlaceOrderRequest req) {\r\n    Long orderId = orderService.placeOrder(req.getWriteDb(), req.getUserId(), req.getProductId(), req.getQuantity(), req.getShippingAddress());\r\n    return ApiResponse.ok(new PlaceOrderResponse(orderId, req.getWriteDb().name()));\r\n  }\r\n}",
+      "info": {
+        "size": 976,
+        "last_modified": "2025-12-31T17:41:57.3772595",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\web\\controller\\ProductController.java",
+      "content": "package com.sss.sync.web.controller;\r\n\r\nimport com.sss.sync.common.api.ApiResponse;\r\nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport com.sss.sync.service.ProductQueryService;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\nimport java.util.List;\r\n\r\n@RestController\r\n@RequestMapping(\"/api/products\")\r\n@RequiredArgsConstructor\r\npublic class ProductController {\r\n\r\n  private final ProductQueryService productQueryService;\r\n\r\n  @GetMapping\r\n  public ApiResponse<List<ProductInfo>> list() {\r\n    return ApiResponse.ok(productQueryService.listAll());\r\n  }\r\n}",
+      "info": {
+        "size": 605,
+        "last_modified": "2025-12-31T17:41:57.4002258",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\web\\dto\\LoginRequest.java",
+      "content": "package com.sss.sync.web.dto;\r\n\r\nimport jakarta.validation.constraints.NotBlank;\r\nimport lombok.Data;\r\n\r\n@Data\r\npublic class LoginRequest {\r\n  @NotBlank\r\n  private String username;\r\n\r\n  @NotBlank\r\n  private String password;\r\n}",
+      "info": {
+        "size": 226,
+        "last_modified": "2025-12-31T17:41:57.4203371",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\web\\dto\\LoginResponse.java",
+      "content": "package com.sss.sync.web.dto;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\n\r\n@Data\r\n@AllArgsConstructor\r\npublic class LoginResponse {\r\n  private String accessToken;\r\n  private Long userId;\r\n  private String username;\r\n  private String role;\r\n}",
+      "info": {
+        "size": 257,
+        "last_modified": "2025-12-31T17:41:57.4307741",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\web\\dto\\PlaceOrderRequest.java",
+      "content": "package com.sss.sync.web.dto;\r\n\r\nimport com.sss.sync.domain.enums.WriteDb;\r\nimport jakarta.validation.constraints.Min;\r\nimport jakarta.validation.constraints.NotBlank;\r\nimport jakarta.validation.constraints.NotNull;\r\nimport lombok.Data;\r\n\r\n@Data\r\npublic class PlaceOrderRequest {\r\n  @NotNull\r\n  private Long userId;\r\n\r\n  @NotNull\r\n  private Long productId;\r\n\r\n  @NotNull\r\n  @Min(1)\r\n  private Integer quantity;\r\n\r\n  @NotBlank\r\n  private String shippingAddress;\r\n\r\n  @NotNull\r\n  private WriteDb writeDb; // MYSQL / POSTGRES\r\n}",
+      "info": {
+        "size": 525,
+        "last_modified": "2025-12-31T17:41:57.4432108",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\java\\com\\sss\\sync\\web\\dto\\PlaceOrderResponse.java",
+      "content": "package com.sss.sync.web.dto;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\n\r\n@Data\r\n@AllArgsConstructor\r\npublic class PlaceOrderResponse {\r\n  private Long orderId;\r\n  private String writeDb;\r\n}",
+      "info": {
+        "size": 207,
+        "last_modified": "2025-12-31T17:41:57.4581078",
+        "mime_type": "text/x-java-source",
+        "extension": ".java"
+      }
+    },
+    {
+      "path": "main\\resources\\application.yml",
+      "content": "server:\r\n  port: 8080\r\n\r\nspring:\r\n  application:\r\n    name: sss-sync-system\r\n\r\n  jackson:\r\n    time-zone: Asia/Shanghai\r\n\r\n  mail:\r\n    host: smtp.163.com\r\n    port: 465\r\n    username: mo1lly@163.com\r\n    password: \"TJcALtY5z39gyDax\"\r\n    properties:\r\n      mail:\r\n        smtp:\r\n          auth: true\r\n          ssl:\r\n            enable: true\r\nsss:\r\n  jwt:\r\n    issuer: \"sss-sync\"\r\n    secret: \"sss-sync-secret-key-please-change-32bytes\"\r\n    accessTokenExpireMinutes: 240\r\n\r\n  datasource:\r\n    mysql:\r\n      url: jdbc:mysql://127.0.0.1:3306/sss_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false\r\n      username: root\r\n      password: \"myPassWord++\"\r\n      driver-class-name: com.mysql.cj.jdbc.Driver\r\n    postgres:\r\n      url: jdbc:postgresql://127.0.0.1:5432/sss_db\r\n      username: postgres\r\n      password: \"myPassWord++\"\r\n      driver-class-name: org.postgresql.Driver\r\n    sqlserver:\r\n      url: jdbc:sqlserver://127.0.0.1:1433;databaseName=sss_db;encrypt=false;trustServerCertificate=true\r\n      username: sa\r\n      password: \"myPassWord++\"\r\n      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver\r\n    sync:\r\n      enabled: false\r\n      pollIntervalMillis: 1000        # 实时轮询间隔（1秒）\r\n      batchSize: 200                  # 每次最多同步多少条 change_log\r\n      scheduled:\r\n        enabled: false\r\n        fixedDelayMillis: 10000\r\n\r\nmybatis-plus:\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl\r\n\r\n  mail:\r\n    enabled: true\r\n    from: \"mo1lly@163.com\"\r\n    adminTo: \"mo1lly@163.com\"\r\n    conflictViewBaseUrl: \"http://localhost:8080\"  # 邮件链接 base",
+      "info": {
+        "size": 1733,
+        "last_modified": "2025-12-31T17:41:57.4765232",
+        "mime_type": "text/x-yaml",
+        "extension": ".yml"
+      }
+    }
+  ]
+}

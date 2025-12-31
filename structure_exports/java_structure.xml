@@ -1,0 +1,2196 @@
+<XmlStructure>
+  <XmlProjectInfo>
+    <name>java</name>
+    <path>D:\迅雷下载\sync_sys\src\main\java</path>
+    <generated_at>2025-12-31T17:43:28.3313834</generated_at>
+    <total_files>44</total_files>
+    <total_size>39959</total_size>
+  </XmlProjectInfo>
+  <XmlNode>
+    <XmlDirectory>
+      <name>com</name>
+      <XmlNode>
+        <XmlDirectory>
+          <name>sss</name>
+          <XmlNode>
+            <XmlDirectory>
+              <name>sync</name>
+              <XmlNode>
+                <XmlDirectory>
+                  <name>common</name>
+                  <XmlNode>
+                    <XmlDirectory>
+                      <name>api</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>ApiResponse.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>600</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                    <XmlDirectory>
+                      <name>exception</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>BizException.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>390</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>GlobalExceptionHandler.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>1589</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                  </XmlNode>
+                </XmlDirectory>
+                <XmlDirectory>
+                  <name>config</name>
+                  <XmlNode>
+                    <XmlDirectory>
+                      <name>datasource</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>DataSourceMysqlConfig.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>2556</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>DataSourceNames.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>269</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>DataSourcePostgresConfig.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>2607</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>DataSourceSqlServerConfig.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>2342</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>MyBatisPlusBaseConfig.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>526</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                    <XmlDirectory>
+                      <name>mybatis</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>MybatisPlusConfig.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>904</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                    <XmlDirectory>
+                      <name>security</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>JwtAuthFilter.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>1941</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>JwtProperties.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>397</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>JwtUtil.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>1315</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>SecurityConfig.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>1492</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                  </XmlNode>
+                </XmlDirectory>
+                <XmlDirectory>
+                  <name>domain</name>
+                  <XmlNode>
+                    <XmlDirectory>
+                      <name>entity</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>OrderInfo.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>429</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>ProductInfo.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>489</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>UserInfo.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>354</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                    <XmlDirectory>
+                      <name>enums</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>UserRole.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>81</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>WriteDb.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>84</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                  </XmlNode>
+                </XmlDirectory>
+                <XmlDirectory>
+                  <name>infra</name>
+                  <XmlNode>
+                    <XmlDirectory>
+                      <name>mapper</name>
+                      <XmlNode>
+                        <XmlDirectory>
+                          <name>mysql</name>
+                          <XmlNode>
+                            <XmlFileEntry>
+                              <name>MysqlOrderMapper.java</name>
+                              <type>file</type>
+                              <XmlFileInfo>
+                                <size>272</size>
+                                <modified></modified>
+                                <mime_type>text/x-java-source</mime_type>
+                                <extension>.java</extension>
+                              </XmlFileInfo>
+                            </XmlFileEntry>
+                            <XmlFileEntry>
+                              <name>MysqlProductMapper.java</name>
+                              <type>file</type>
+                              <XmlFileInfo>
+                                <size>743</size>
+                                <modified></modified>
+                                <mime_type>text/x-java-source</mime_type>
+                                <extension>.java</extension>
+                              </XmlFileInfo>
+                            </XmlFileEntry>
+                            <XmlFileEntry>
+                              <name>MysqlUserMapper.java</name>
+                              <type>file</type>
+                              <XmlFileInfo>
+                                <size>269</size>
+                                <modified></modified>
+                                <mime_type>text/x-java-source</mime_type>
+                                <extension>.java</extension>
+                              </XmlFileInfo>
+                            </XmlFileEntry>
+                          </XmlNode>
+                        </XmlDirectory>
+                        <XmlDirectory>
+                          <name>postgres</name>
+                          <XmlNode>
+                            <XmlFileEntry>
+                              <name>PostgresOrderMapper.java</name>
+                              <type>file</type>
+                              <XmlFileInfo>
+                                <size>278</size>
+                                <modified></modified>
+                                <mime_type>text/x-java-source</mime_type>
+                                <extension>.java</extension>
+                              </XmlFileInfo>
+                            </XmlFileEntry>
+                            <XmlFileEntry>
+                              <name>PostgresProductMapper.java</name>
+                              <type>file</type>
+                              <XmlFileInfo>
+                                <size>669</size>
+                                <modified></modified>
+                                <mime_type>text/x-java-source</mime_type>
+                                <extension>.java</extension>
+                              </XmlFileInfo>
+                            </XmlFileEntry>
+                            <XmlFileEntry>
+                              <name>PostgresUserMapper.java</name>
+                              <type>file</type>
+                              <XmlFileInfo>
+                                <size>275</size>
+                                <modified></modified>
+                                <mime_type>text/x-java-source</mime_type>
+                                <extension>.java</extension>
+                              </XmlFileInfo>
+                            </XmlFileEntry>
+                          </XmlNode>
+                        </XmlDirectory>
+                        <XmlDirectory>
+                          <name>read</name>
+                          <XmlNode>
+                            <XmlFileEntry>
+                              <name>ReadProductMapper.java</name>
+                              <type>file</type>
+                              <XmlFileInfo>
+                                <size>276</size>
+                                <modified></modified>
+                                <mime_type>text/x-java-source</mime_type>
+                                <extension>.java</extension>
+                              </XmlFileInfo>
+                            </XmlFileEntry>
+                          </XmlNode>
+                        </XmlDirectory>
+                        <XmlDirectory>
+                          <name>sqlserver</name>
+                          <XmlNode/>
+                        </XmlDirectory>
+                      </XmlNode>
+                    </XmlDirectory>
+                  </XmlNode>
+                </XmlDirectory>
+                <XmlDirectory>
+                  <name>service</name>
+                  <XmlNode>
+                    <XmlDirectory>
+                      <name>conflict</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>ConflictLinkTokenService.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>1356</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                    <XmlDirectory>
+                      <name>mail</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>MailProperties.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>420</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>MailService.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>690</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                    <XmlDirectory>
+                      <name>sync</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>SyncProperties.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>596</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>SyncScheduler.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>1417</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                    <XmlFileEntry>
+                      <name>AuthService.java</name>
+                      <type>file</type>
+                      <XmlFileInfo>
+                        <size>2154</size>
+                        <modified></modified>
+                        <mime_type>text/x-java-source</mime_type>
+                        <extension>.java</extension>
+                      </XmlFileInfo>
+                    </XmlFileEntry>
+                    <XmlFileEntry>
+                      <name>OrderService.java</name>
+                      <type>file</type>
+                      <XmlFileInfo>
+                        <size>2571</size>
+                        <modified></modified>
+                        <mime_type>text/x-java-source</mime_type>
+                        <extension>.java</extension>
+                      </XmlFileInfo>
+                    </XmlFileEntry>
+                    <XmlFileEntry>
+                      <name>ProductQueryService.java</name>
+                      <type>file</type>
+                      <XmlFileInfo>
+                        <size>677</size>
+                        <modified></modified>
+                        <mime_type>text/x-java-source</mime_type>
+                        <extension>.java</extension>
+                      </XmlFileInfo>
+                    </XmlFileEntry>
+                  </XmlNode>
+                </XmlDirectory>
+                <XmlDirectory>
+                  <name>tools</name>
+                  <XmlNode>
+                    <XmlFileEntry>
+                      <name>MybatisStatementCheckRunner.java</name>
+                      <type>file</type>
+                      <XmlFileInfo>
+                        <size>697</size>
+                        <modified></modified>
+                        <mime_type>text/x-java-source</mime_type>
+                        <extension>.java</extension>
+                      </XmlFileInfo>
+                    </XmlFileEntry>
+                    <XmlFileEntry>
+                      <name>PasswordHashTool.java</name>
+                      <type>file</type>
+                      <XmlFileInfo>
+                        <size>479</size>
+                        <modified></modified>
+                        <mime_type>text/x-java-source</mime_type>
+                        <extension>.java</extension>
+                      </XmlFileInfo>
+                    </XmlFileEntry>
+                  </XmlNode>
+                </XmlDirectory>
+                <XmlDirectory>
+                  <name>web</name>
+                  <XmlNode>
+                    <XmlDirectory>
+                      <name>controller</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>AuthController.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>848</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>ConflictViewController.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>3653</size>
+                            <modified></modified>
+                            <mime_type>text/html</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>OrderController.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>976</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>ProductController.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>605</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                    <XmlDirectory>
+                      <name>dto</name>
+                      <XmlNode>
+                        <XmlFileEntry>
+                          <name>LoginRequest.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>226</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>LoginResponse.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>257</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>PlaceOrderRequest.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>525</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                        <XmlFileEntry>
+                          <name>PlaceOrderResponse.java</name>
+                          <type>file</type>
+                          <XmlFileInfo>
+                            <size>207</size>
+                            <modified></modified>
+                            <mime_type>text/x-java-source</mime_type>
+                            <extension>.java</extension>
+                          </XmlFileInfo>
+                        </XmlFileEntry>
+                      </XmlNode>
+                    </XmlDirectory>
+                  </XmlNode>
+                </XmlDirectory>
+                <XmlFileEntry>
+                  <name>SssSyncSystemApplication.java</name>
+                  <type>file</type>
+                  <XmlFileInfo>
+                    <size>458</size>
+                    <modified></modified>
+                    <mime_type>text/x-java-source</mime_type>
+                    <extension>.java</extension>
+                  </XmlFileInfo>
+                </XmlFileEntry>
+              </XmlNode>
+            </XmlDirectory>
+          </XmlNode>
+        </XmlDirectory>
+      </XmlNode>
+    </XmlDirectory>
+  </XmlNode>
+  <XmlFiles>
+    <XmlFileContent>
+      <path>com\sss\sync\common\api\ApiResponse.java</path>
+      <content>package com.sss.sync.common.api;&#xd;
+&#xd;
+import lombok.AllArgsConstructor;&#xd;
+import lombok.Data;&#xd;
+import lombok.NoArgsConstructor;&#xd;
+&#xd;
+@Data&#xd;
+@NoArgsConstructor&#xd;
+@AllArgsConstructor&#xd;
+public class ApiResponse&lt;T> {&#xd;
+  private int code;&#xd;
+  private String message;&#xd;
+  private T data;&#xd;
+&#xd;
+  public static &lt;T> ApiResponse&lt;T> ok(T data) {&#xd;
+    return new ApiResponse&lt;>(0, "OK", data);&#xd;
+  }&#xd;
+&#xd;
+  public static ApiResponse&lt;Void> ok() {&#xd;
+    return new ApiResponse&lt;>(0, "OK", null);&#xd;
+  }&#xd;
+&#xd;
+  public static ApiResponse&lt;Void> error(int code, String message) {&#xd;
+    return new ApiResponse&lt;>(code, message, null);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>600</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\common\exception\BizException.java</path>
+      <content>package com.sss.sync.common.exception;&#xd;
+&#xd;
+public class BizException extends RuntimeException {&#xd;
+  private final int code;&#xd;
+&#xd;
+  public BizException(int code, String message) {&#xd;
+    super(message);&#xd;
+    this.code = code;&#xd;
+  }&#xd;
+&#xd;
+  public int getCode() {&#xd;
+    return code;&#xd;
+  }&#xd;
+&#xd;
+  public static BizException of(int code, String message) {&#xd;
+    return new BizException(code, message);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>390</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\common\exception\GlobalExceptionHandler.java</path>
+      <content>package com.sss.sync.common.exception;&#xd;
+&#xd;
+import com.sss.sync.common.api.ApiResponse;&#xd;
+import jakarta.validation.ConstraintViolationException;&#xd;
+import org.springframework.http.HttpStatus;&#xd;
+import org.springframework.web.bind.MethodArgumentNotValidException;&#xd;
+import org.springframework.web.bind.annotation.ExceptionHandler;&#xd;
+import org.springframework.web.bind.annotation.ResponseStatus;&#xd;
+import org.springframework.web.bind.annotation.RestControllerAdvice;&#xd;
+&#xd;
+@RestControllerAdvice&#xd;
+public class GlobalExceptionHandler {&#xd;
+&#xd;
+  @ExceptionHandler(BizException.class)&#xd;
+  @ResponseStatus(HttpStatus.BAD_REQUEST)&#xd;
+  public ApiResponse&lt;Void> handleBiz(BizException e) {&#xd;
+    return ApiResponse.error(e.getCode(), e.getMessage());&#xd;
+  }&#xd;
+&#xd;
+  @ExceptionHandler(MethodArgumentNotValidException.class)&#xd;
+  @ResponseStatus(HttpStatus.BAD_REQUEST)&#xd;
+  public ApiResponse&lt;Void> handleValid(MethodArgumentNotValidException e) {&#xd;
+    String msg = e.getBindingResult().getFieldErrors().stream()&#xd;
+      .findFirst()&#xd;
+      .map(fe -> fe.getField() + " " + fe.getDefaultMessage())&#xd;
+      .orElse("Validation error");&#xd;
+    return ApiResponse.error(400, msg);&#xd;
+  }&#xd;
+&#xd;
+  @ExceptionHandler(ConstraintViolationException.class)&#xd;
+  @ResponseStatus(HttpStatus.BAD_REQUEST)&#xd;
+  public ApiResponse&lt;Void> handleConstraint(ConstraintViolationException e) {&#xd;
+    return ApiResponse.error(400, e.getMessage());&#xd;
+  }&#xd;
+&#xd;
+  @ExceptionHandler(Exception.class)&#xd;
+  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)&#xd;
+  public ApiResponse&lt;Void> handleUnknown(Exception e) {&#xd;
+    return ApiResponse.error(500, e.getMessage());&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>1589</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\datasource\DataSourceMysqlConfig.java</path>
+      <content>package com.sss.sync.config.datasource;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.MybatisConfiguration;&#xd;
+import com.baomidou.mybatisplus.core.config.GlobalConfig;&#xd;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;&#xd;
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;&#xd;
+import javax.sql.DataSource;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.apache.ibatis.session.SqlSessionFactory;&#xd;
+import org.mybatis.spring.SqlSessionTemplate;&#xd;
+import org.mybatis.spring.annotation.MapperScan;&#xd;
+import org.springframework.beans.factory.annotation.Qualifier;&#xd;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;&#xd;
+import org.springframework.boot.context.properties.ConfigurationProperties;&#xd;
+import org.springframework.context.annotation.Bean;&#xd;
+import org.springframework.context.annotation.Configuration;&#xd;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;&#xd;
+&#xd;
+@Configuration&#xd;
+@MapperScan(&#xd;
+  basePackages = "com.sss.sync.infra.mapper.mysql",&#xd;
+  sqlSessionFactoryRef = "mysqlSqlSessionFactory"&#xd;
+)&#xd;
+@RequiredArgsConstructor&#xd;
+public class DataSourceMysqlConfig {&#xd;
+&#xd;
+  private final MybatisPlusInterceptor mybatisPlusInterceptor;&#xd;
+  private final GlobalConfig globalConfig;&#xd;
+&#xd;
+  @Bean&#xd;
+  @ConfigurationProperties("sss.datasource.mysql")&#xd;
+  public DataSourceProperties mysqlDataSourceProperties() {&#xd;
+    return new DataSourceProperties();&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "mysqlDataSource")&#xd;
+  public DataSource mysqlDataSource(@Qualifier("mysqlDataSourceProperties") DataSourceProperties props) {&#xd;
+    return props.initializeDataSourceBuilder().build();&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "mysqlSqlSessionFactory")&#xd;
+  public SqlSessionFactory mysqlSqlSessionFactory(@Qualifier("mysqlDataSource") DataSource ds) throws Exception {&#xd;
+    MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();&#xd;
+    bean.setDataSource(ds);&#xd;
+&#xd;
+    MybatisConfiguration cfg = new MybatisConfiguration();&#xd;
+    cfg.setMapUnderscoreToCamelCase(true);&#xd;
+    bean.setConfiguration(cfg);&#xd;
+&#xd;
+    bean.setPlugins(mybatisPlusInterceptor);&#xd;
+    bean.setGlobalConfig(globalConfig);&#xd;
+&#xd;
+    return bean.getObject();&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "mysqlSqlSessionTemplate")&#xd;
+  public SqlSessionTemplate mysqlSqlSessionTemplate(@Qualifier("mysqlSqlSessionFactory") SqlSessionFactory sf) {&#xd;
+    return new SqlSessionTemplate(sf);&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "mysqlTxManager")&#xd;
+  public DataSourceTransactionManager mysqlTxManager(@Qualifier("mysqlDataSource") DataSource ds) {&#xd;
+    return new DataSourceTransactionManager(ds);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>2556</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\datasource\DataSourceNames.java</path>
+      <content>package com.sss.sync.config.datasource;&#xd;
+&#xd;
+public final class DataSourceNames {&#xd;
+  private DataSourceNames() {}&#xd;
+  public static final String MYSQL = "mysql";&#xd;
+  public static final String POSTGRES = "postgres";&#xd;
+  public static final String SQLSERVER = "sqlserver";&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>269</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\datasource\DataSourcePostgresConfig.java</path>
+      <content>package com.sss.sync.config.datasource;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.MybatisConfiguration;&#xd;
+import com.baomidou.mybatisplus.core.config.GlobalConfig;&#xd;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;&#xd;
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;&#xd;
+import javax.sql.DataSource;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.apache.ibatis.session.SqlSessionFactory;&#xd;
+import org.mybatis.spring.SqlSessionTemplate;&#xd;
+import org.mybatis.spring.annotation.MapperScan;&#xd;
+import org.springframework.beans.factory.annotation.Qualifier;&#xd;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;&#xd;
+import org.springframework.boot.context.properties.ConfigurationProperties;&#xd;
+import org.springframework.context.annotation.Bean;&#xd;
+import org.springframework.context.annotation.Configuration;&#xd;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;&#xd;
+&#xd;
+@Configuration&#xd;
+@MapperScan(&#xd;
+  basePackages = "com.sss.sync.infra.mapper.postgres",&#xd;
+  sqlSessionFactoryRef = "postgresSqlSessionFactory"&#xd;
+)&#xd;
+@RequiredArgsConstructor&#xd;
+public class DataSourcePostgresConfig {&#xd;
+&#xd;
+  private final MybatisPlusInterceptor mybatisPlusInterceptor;&#xd;
+  private final GlobalConfig globalConfig;&#xd;
+&#xd;
+  @Bean&#xd;
+  @ConfigurationProperties("sss.datasource.postgres")&#xd;
+  public DataSourceProperties postgresDataSourceProperties() {&#xd;
+    return new DataSourceProperties();&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "postgresDataSource")&#xd;
+  public DataSource postgresDataSource(@Qualifier("postgresDataSourceProperties") DataSourceProperties props) {&#xd;
+    return props.initializeDataSourceBuilder().build();&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "postgresSqlSessionFactory")&#xd;
+  public SqlSessionFactory postgresSqlSessionFactory(@Qualifier("postgresDataSource") DataSource ds) throws Exception {&#xd;
+    MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();&#xd;
+    bean.setDataSource(ds);&#xd;
+&#xd;
+    MybatisConfiguration cfg = new MybatisConfiguration();&#xd;
+    cfg.setMapUnderscoreToCamelCase(true);&#xd;
+    bean.setConfiguration(cfg);&#xd;
+&#xd;
+    bean.setPlugins(mybatisPlusInterceptor);&#xd;
+    bean.setGlobalConfig(globalConfig);&#xd;
+&#xd;
+    return bean.getObject();&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "postgresSqlSessionTemplate")&#xd;
+  public SqlSessionTemplate postgresSqlSessionTemplate(@Qualifier("postgresSqlSessionFactory") SqlSessionFactory sf) {&#xd;
+    return new SqlSessionTemplate(sf);&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "postgresTxManager")&#xd;
+  public DataSourceTransactionManager postgresTxManager(@Qualifier("postgresDataSource") DataSource ds) {&#xd;
+    return new DataSourceTransactionManager(ds);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>2607</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\datasource\DataSourceSqlServerConfig.java</path>
+      <content>package com.sss.sync.config.datasource;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.MybatisConfiguration;&#xd;
+import com.baomidou.mybatisplus.core.config.GlobalConfig;&#xd;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;&#xd;
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;&#xd;
+import javax.sql.DataSource;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.apache.ibatis.session.SqlSessionFactory;&#xd;
+import org.mybatis.spring.SqlSessionTemplate;&#xd;
+import org.mybatis.spring.annotation.MapperScan;&#xd;
+import org.springframework.beans.factory.annotation.Qualifier;&#xd;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;&#xd;
+import org.springframework.boot.context.properties.ConfigurationProperties;&#xd;
+import org.springframework.context.annotation.Bean;&#xd;
+import org.springframework.context.annotation.Configuration;&#xd;
+&#xd;
+@Configuration&#xd;
+@MapperScan(&#xd;
+  basePackages = {&#xd;
+    "com.sss.sync.infra.mapper.read",&#xd;
+    "com.sss.sync.infra.mapper.sqlserver"&#xd;
+  },&#xd;
+  sqlSessionFactoryRef = "readSqlSessionFactory"&#xd;
+)&#xd;
+@RequiredArgsConstructor&#xd;
+public class DataSourceSqlServerConfig {&#xd;
+&#xd;
+  private final MybatisPlusInterceptor mybatisPlusInterceptor;&#xd;
+  private final GlobalConfig globalConfig;&#xd;
+&#xd;
+  @Bean&#xd;
+  @ConfigurationProperties("sss.datasource.sqlserver")&#xd;
+  public DataSourceProperties readDataSourceProperties() {&#xd;
+    return new DataSourceProperties();&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "readDataSource")&#xd;
+  public DataSource readDataSource(@Qualifier("readDataSourceProperties") DataSourceProperties props) {&#xd;
+    return props.initializeDataSourceBuilder().build();&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "readSqlSessionFactory")&#xd;
+  public SqlSessionFactory readSqlSessionFactory(@Qualifier("readDataSource") DataSource ds) throws Exception {&#xd;
+    MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();&#xd;
+    bean.setDataSource(ds);&#xd;
+&#xd;
+    MybatisConfiguration cfg = new MybatisConfiguration();&#xd;
+    cfg.setMapUnderscoreToCamelCase(true);&#xd;
+    bean.setConfiguration(cfg);&#xd;
+&#xd;
+    bean.setPlugins(mybatisPlusInterceptor);&#xd;
+    bean.setGlobalConfig(globalConfig);&#xd;
+&#xd;
+    return bean.getObject();&#xd;
+  }&#xd;
+&#xd;
+  @Bean(name = "readSqlSessionTemplate")&#xd;
+  public SqlSessionTemplate readSqlSessionTemplate(@Qualifier("readSqlSessionFactory") SqlSessionFactory sf) {&#xd;
+    return new SqlSessionTemplate(sf);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>2342</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\datasource\MyBatisPlusBaseConfig.java</path>
+      <content>package com.sss.sync.config.datasource;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.autoconfigure.MybatisPlusPropertiesCustomizer;&#xd;
+import org.springframework.context.annotation.Bean;&#xd;
+import org.springframework.context.annotation.Configuration;&#xd;
+&#xd;
+@Configuration&#xd;
+public class MyBatisPlusBaseConfig {&#xd;
+  @Bean&#xd;
+  public MybatisPlusPropertiesCustomizer mybatisPlusPropertiesCustomizer() {&#xd;
+    return properties -> {&#xd;
+      // 这里可统一设置 globalConfig 等（当前先不加逻辑删除，避免三库差异）&#xd;
+    };&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>526</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\mybatis\MybatisPlusConfig.java</path>
+      <content>package com.sss.sync.config.mybatis;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.config.GlobalConfig;&#xd;
+import com.baomidou.mybatisplus.core.injector.DefaultSqlInjector;&#xd;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;&#xd;
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;&#xd;
+import org.springframework.context.annotation.Bean;&#xd;
+import org.springframework.context.annotation.Configuration;&#xd;
+&#xd;
+@Configuration&#xd;
+public class MybatisPlusConfig {&#xd;
+&#xd;
+  @Bean&#xd;
+  public MybatisPlusInterceptor mybatisPlusInterceptor() {&#xd;
+    MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();&#xd;
+    interceptor.addInnerInterceptor(new PaginationInnerInterceptor());&#xd;
+    return interceptor;&#xd;
+  }&#xd;
+&#xd;
+  @Bean&#xd;
+  public GlobalConfig globalConfig() {&#xd;
+    GlobalConfig gc = new GlobalConfig();&#xd;
+    gc.setSqlInjector(new DefaultSqlInjector());&#xd;
+    return gc;&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>904</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\security\JwtAuthFilter.java</path>
+      <content>package com.sss.sync.config.security;&#xd;
+&#xd;
+import io.jsonwebtoken.Claims;&#xd;
+import jakarta.servlet.FilterChain;&#xd;
+import jakarta.servlet.ServletException;&#xd;
+import jakarta.servlet.http.HttpServletRequest;&#xd;
+import jakarta.servlet.http.HttpServletResponse;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.http.HttpHeaders;&#xd;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;&#xd;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;&#xd;
+import org.springframework.security.core.context.SecurityContextHolder;&#xd;
+import org.springframework.util.StringUtils;&#xd;
+import org.springframework.web.filter.OncePerRequestFilter;&#xd;
+&#xd;
+import java.io.IOException;&#xd;
+import java.util.List;&#xd;
+&#xd;
+@RequiredArgsConstructor&#xd;
+public class JwtAuthFilter extends OncePerRequestFilter {&#xd;
+&#xd;
+  private final JwtUtil jwtUtil;&#xd;
+&#xd;
+  @Override&#xd;
+  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)&#xd;
+    throws ServletException, IOException {&#xd;
+&#xd;
+    String auth = request.getHeader(HttpHeaders.AUTHORIZATION);&#xd;
+    if (!StringUtils.hasText(auth) || !auth.startsWith("Bearer ")) {&#xd;
+      filterChain.doFilter(request, response);&#xd;
+      return;&#xd;
+    }&#xd;
+&#xd;
+    String token = auth.substring(7);&#xd;
+    try {&#xd;
+      Claims claims = jwtUtil.parseClaims(token);&#xd;
+      String userId = claims.getSubject();&#xd;
+      String username = (String) claims.get("username");&#xd;
+      String role = (String) claims.get("role");&#xd;
+&#xd;
+      var authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));&#xd;
+      var principal = username + "|" + userId;&#xd;
+&#xd;
+      var authentication = new UsernamePasswordAuthenticationToken(principal, null, authorities);&#xd;
+      SecurityContextHolder.getContext().setAuthentication(authentication);&#xd;
+    } catch (Exception ex) {&#xd;
+      SecurityContextHolder.clearContext();&#xd;
+    }&#xd;
+&#xd;
+    filterChain.doFilter(request, response);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>1941</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\security\JwtProperties.java</path>
+      <content>package com.sss.sync.config.security;&#xd;
+&#xd;
+import lombok.Data;&#xd;
+import org.springframework.boot.context.properties.ConfigurationProperties;&#xd;
+import org.springframework.context.annotation.Configuration;&#xd;
+&#xd;
+@Data&#xd;
+@Configuration&#xd;
+@ConfigurationProperties(prefix = "sss.jwt")&#xd;
+public class JwtProperties {&#xd;
+  private String issuer;&#xd;
+  private String secret;&#xd;
+  private long accessTokenExpireMinutes;&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>397</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\security\JwtUtil.java</path>
+      <content>package com.sss.sync.config.security;&#xd;
+&#xd;
+import io.jsonwebtoken.Jwts;&#xd;
+import io.jsonwebtoken.security.Keys;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.stereotype.Component;&#xd;
+&#xd;
+import javax.crypto.SecretKey;&#xd;
+import java.nio.charset.StandardCharsets;&#xd;
+import java.time.Instant;&#xd;
+import java.time.temporal.ChronoUnit;&#xd;
+import java.util.Date;&#xd;
+import java.util.Map;&#xd;
+&#xd;
+@Component&#xd;
+@RequiredArgsConstructor&#xd;
+public class JwtUtil {&#xd;
+&#xd;
+  private final JwtProperties props;&#xd;
+&#xd;
+  private SecretKey key() {&#xd;
+    return Keys.hmacShaKeyFor(props.getSecret().getBytes(StandardCharsets.UTF_8));&#xd;
+  }&#xd;
+&#xd;
+  public String generateAccessToken(Long userId, String username, String role) {&#xd;
+    Instant now = Instant.now();&#xd;
+    Instant exp = now.plus(props.getAccessTokenExpireMinutes(), ChronoUnit.MINUTES);&#xd;
+&#xd;
+    return Jwts.builder()&#xd;
+      .issuer(props.getIssuer())&#xd;
+      .subject(String.valueOf(userId))&#xd;
+      .claims(Map.of(&#xd;
+        "username", username,&#xd;
+        "role", role&#xd;
+      ))&#xd;
+      .issuedAt(Date.from(now))&#xd;
+      .expiration(Date.from(exp))&#xd;
+      .signWith(key())&#xd;
+      .compact();&#xd;
+  }&#xd;
+&#xd;
+  public io.jsonwebtoken.Claims parseClaims(String token) {&#xd;
+    return Jwts.parser()&#xd;
+      .verifyWith(key())&#xd;
+      .build()&#xd;
+      .parseSignedClaims(token)&#xd;
+      .getPayload();&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>1315</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\config\security\SecurityConfig.java</path>
+      <content>package com.sss.sync.config.security;&#xd;
+&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.context.annotation.Bean;&#xd;
+import org.springframework.context.annotation.Configuration;&#xd;
+import org.springframework.http.HttpMethod;&#xd;
+import org.springframework.security.config.Customizer;&#xd;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;&#xd;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;&#xd;
+import org.springframework.security.config.http.SessionCreationPolicy;&#xd;
+import org.springframework.security.web.SecurityFilterChain;&#xd;
+&#xd;
+@Configuration&#xd;
+@EnableMethodSecurity&#xd;
+@RequiredArgsConstructor&#xd;
+public class SecurityConfig {&#xd;
+&#xd;
+  private final JwtUtil jwtUtil;&#xd;
+&#xd;
+  @Bean&#xd;
+  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {&#xd;
+    http&#xd;
+      .csrf(csrf -> csrf.disable())&#xd;
+      .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))&#xd;
+      .authorizeHttpRequests(auth -> auth&#xd;
+        .requestMatchers("/api/auth/**").permitAll()&#xd;
+        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()&#xd;
+        .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()&#xd;
+        .anyRequest().authenticated()&#xd;
+      )&#xd;
+      .addFilterBefore(new JwtAuthFilter(jwtUtil), org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class)&#xd;
+      .httpBasic(Customizer.withDefaults());&#xd;
+&#xd;
+    return http.build();&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>1492</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\domain\entity\OrderInfo.java</path>
+      <content>package com.sss.sync.domain.entity;&#xd;
+&#xd;
+import lombok.Data;&#xd;
+&#xd;
+import java.time.LocalDateTime;&#xd;
+&#xd;
+@Data&#xd;
+public class OrderInfo {&#xd;
+  private Long orderId;&#xd;
+  private Long userId;&#xd;
+  private Long productId;&#xd;
+  private Integer quantity;&#xd;
+  private String orderStatus;&#xd;
+  private LocalDateTime orderedAt;&#xd;
+  private String shippingAddress;&#xd;
+&#xd;
+  private Long version;&#xd;
+  private LocalDateTime updatedAt;&#xd;
+  private Boolean deleted;&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>429</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\domain\entity\ProductInfo.java</path>
+      <content>package com.sss.sync.domain.entity;&#xd;
+&#xd;
+import lombok.Data;&#xd;
+&#xd;
+import java.math.BigDecimal;&#xd;
+import java.time.LocalDateTime;&#xd;
+&#xd;
+@Data&#xd;
+public class ProductInfo {&#xd;
+  private Long productId;&#xd;
+  private String productName;&#xd;
+  private Long categoryId;&#xd;
+  private Long supplierId;&#xd;
+  private BigDecimal price;&#xd;
+  private Integer stock;&#xd;
+  private String description;&#xd;
+  private LocalDateTime listedAt;&#xd;
+&#xd;
+  private Long version;&#xd;
+  private LocalDateTime updatedAt;&#xd;
+  private Boolean deleted;&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>489</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\domain\entity\UserInfo.java</path>
+      <content>package com.sss.sync.domain.entity;&#xd;
+&#xd;
+import lombok.Data;&#xd;
+&#xd;
+import java.time.LocalDateTime;&#xd;
+&#xd;
+@Data&#xd;
+public class UserInfo {&#xd;
+  private Long userId;&#xd;
+  private String username;&#xd;
+  private String passwordHash;&#xd;
+  private String email;&#xd;
+  private String role;&#xd;
+&#xd;
+  private Long version;&#xd;
+  private LocalDateTime updatedAt;&#xd;
+  private Boolean deleted;&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>354</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\domain\enums\UserRole.java</path>
+      <content>package com.sss.sync.domain.enums;&#xd;
+&#xd;
+public enum UserRole {&#xd;
+  USER,&#xd;
+  ADMIN&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>81</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\domain\enums\WriteDb.java</path>
+      <content>package com.sss.sync.domain.enums;&#xd;
+&#xd;
+public enum WriteDb {&#xd;
+  MYSQL,&#xd;
+  POSTGRES&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>84</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\infra\mapper\mysql\MysqlOrderMapper.java</path>
+      <content>package com.sss.sync.infra.mapper.mysql;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;&#xd;
+import com.sss.sync.domain.entity.OrderInfo;&#xd;
+import org.apache.ibatis.annotations.Mapper;&#xd;
+&#xd;
+@Mapper&#xd;
+public interface MysqlOrderMapper extends BaseMapper&lt;OrderInfo> {&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>272</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\infra\mapper\mysql\MysqlProductMapper.java</path>
+      <content>package com.sss.sync.infra.mapper.mysql;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;&#xd;
+import com.sss.sync.domain.entity.ProductInfo;&#xd;
+import org.apache.ibatis.annotations.Mapper;&#xd;
+import org.apache.ibatis.annotations.Param;&#xd;
+import org.apache.ibatis.annotations.Update;&#xd;
+&#xd;
+@Mapper&#xd;
+public interface MysqlProductMapper extends BaseMapper&lt;ProductInfo> {&#xd;
+&#xd;
+  // 用 SQL 保证库存不会减成负数（并发安全的一种简单写法）&#xd;
+  @Update("""&#xd;
+    UPDATE product_info&#xd;
+    SET stock = stock - #{qty},&#xd;
+        version = version + 1&#xd;
+    WHERE product_id = #{productId}&#xd;
+      AND deleted = 0&#xd;
+      AND stock >= #{qty}&#xd;
+  """)&#xd;
+  int decreaseStockIfEnough(@Param("productId") Long productId, @Param("qty") int qty);&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>743</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\infra\mapper\mysql\MysqlUserMapper.java</path>
+      <content>package com.sss.sync.infra.mapper.mysql;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;&#xd;
+import com.sss.sync.domain.entity.UserInfo;&#xd;
+import org.apache.ibatis.annotations.Mapper;&#xd;
+&#xd;
+@Mapper&#xd;
+public interface MysqlUserMapper extends BaseMapper&lt;UserInfo> {&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>269</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\infra\mapper\postgres\PostgresOrderMapper.java</path>
+      <content>package com.sss.sync.infra.mapper.postgres;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;&#xd;
+import com.sss.sync.domain.entity.OrderInfo;&#xd;
+import org.apache.ibatis.annotations.Mapper;&#xd;
+&#xd;
+@Mapper&#xd;
+public interface PostgresOrderMapper extends BaseMapper&lt;OrderInfo> {&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>278</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\infra\mapper\postgres\PostgresProductMapper.java</path>
+      <content>package com.sss.sync.infra.mapper.postgres;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;&#xd;
+import com.sss.sync.domain.entity.ProductInfo;&#xd;
+import org.apache.ibatis.annotations.Mapper;&#xd;
+import org.apache.ibatis.annotations.Param;&#xd;
+import org.apache.ibatis.annotations.Update;&#xd;
+&#xd;
+@Mapper&#xd;
+public interface PostgresProductMapper extends BaseMapper&lt;ProductInfo> {&#xd;
+&#xd;
+  @Update("""&#xd;
+    UPDATE product_info&#xd;
+    SET stock = stock - #{qty},&#xd;
+        version = version + 1&#xd;
+    WHERE product_id = #{productId}&#xd;
+      AND deleted = false&#xd;
+      AND stock >= #{qty}&#xd;
+  """)&#xd;
+  int decreaseStockIfEnough(@Param("productId") Long productId, @Param("qty") int qty);&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>669</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\infra\mapper\postgres\PostgresUserMapper.java</path>
+      <content>package com.sss.sync.infra.mapper.postgres;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;&#xd;
+import com.sss.sync.domain.entity.UserInfo;&#xd;
+import org.apache.ibatis.annotations.Mapper;&#xd;
+&#xd;
+@Mapper&#xd;
+public interface PostgresUserMapper extends BaseMapper&lt;UserInfo> {&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>275</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\infra\mapper\read\ReadProductMapper.java</path>
+      <content>package com.sss.sync.infra.mapper.read;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;&#xd;
+import com.sss.sync.domain.entity.ProductInfo;&#xd;
+import org.apache.ibatis.annotations.Mapper;&#xd;
+&#xd;
+@Mapper&#xd;
+public interface ReadProductMapper extends BaseMapper&lt;ProductInfo> {&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>276</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\service\AuthService.java</path>
+      <content>package com.sss.sync.service;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;&#xd;
+import com.sss.sync.common.exception.BizException;&#xd;
+import com.sss.sync.config.security.JwtUtil;&#xd;
+import com.sss.sync.domain.entity.UserInfo;&#xd;
+import com.sss.sync.infra.mapper.mysql.MysqlUserMapper;&#xd;
+import com.sss.sync.infra.mapper.postgres.PostgresUserMapper;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;&#xd;
+import org.springframework.stereotype.Service;&#xd;
+&#xd;
+@Service&#xd;
+@RequiredArgsConstructor&#xd;
+public class AuthService {&#xd;
+&#xd;
+  private final MysqlUserMapper mysqlUserMapper;&#xd;
+  private final PostgresUserMapper postgresUserMapper;&#xd;
+  private final JwtUtil jwtUtil;&#xd;
+&#xd;
+  private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();&#xd;
+&#xd;
+  public String login(String username, String password) {&#xd;
+    UserInfo u = mysqlUserMapper.selectOne(new LambdaQueryWrapper&lt;UserInfo>()&#xd;
+      .eq(UserInfo::getUsername, username)&#xd;
+      .eq(UserInfo::getDeleted, false)&#xd;
+      .last("LIMIT 1"));&#xd;
+&#xd;
+    if (u == null) {&#xd;
+      // postgres 没有 LIMIT 语法差异：MyBatis-Plus last 直接拼接，PG也支持 LIMIT&#xd;
+      u = postgresUserMapper.selectOne(new LambdaQueryWrapper&lt;UserInfo>()&#xd;
+        .eq(UserInfo::getUsername, username)&#xd;
+        .eq(UserInfo::getDeleted, false)&#xd;
+        .last("LIMIT 1"));&#xd;
+    }&#xd;
+&#xd;
+    if (u == null) {&#xd;
+      throw BizException.of(401, "USER_NOT_FOUND");&#xd;
+    }&#xd;
+&#xd;
+    if (!encoder.matches(password, u.getPasswordHash())) {&#xd;
+      throw BizException.of(401, "INVALID_PASSWORD");&#xd;
+    }&#xd;
+&#xd;
+    return jwtUtil.generateAccessToken(u.getUserId(), u.getUsername(), u.getRole());&#xd;
+  }&#xd;
+&#xd;
+  public UserInfo findUser(String username) {&#xd;
+    UserInfo u = mysqlUserMapper.selectOne(new LambdaQueryWrapper&lt;UserInfo>()&#xd;
+      .eq(UserInfo::getUsername, username)&#xd;
+      .eq(UserInfo::getDeleted, false)&#xd;
+      .last("LIMIT 1"));&#xd;
+    if (u != null) return u;&#xd;
+&#xd;
+    return postgresUserMapper.selectOne(new LambdaQueryWrapper&lt;UserInfo>()&#xd;
+      .eq(UserInfo::getUsername, username)&#xd;
+      .eq(UserInfo::getDeleted, false)&#xd;
+      .last("LIMIT 1"));&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>2154</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\service\conflict\ConflictLinkTokenService.java</path>
+      <content>package com.sss.sync.service.conflict;&#xd;
+&#xd;
+import com.sss.sync.config.security.JwtProperties;&#xd;
+import io.jsonwebtoken.Jwts;&#xd;
+import io.jsonwebtoken.security.Keys;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.stereotype.Service;&#xd;
+&#xd;
+import javax.crypto.SecretKey;&#xd;
+import java.nio.charset.StandardCharsets;&#xd;
+import java.time.Instant;&#xd;
+import java.time.temporal.ChronoUnit;&#xd;
+import java.util.Date;&#xd;
+import java.util.Map;&#xd;
+&#xd;
+@Service&#xd;
+@RequiredArgsConstructor&#xd;
+public class ConflictLinkTokenService {&#xd;
+&#xd;
+  private final JwtProperties jwtProperties;&#xd;
+&#xd;
+  private SecretKey key() {&#xd;
+    return Keys.hmacShaKeyFor(jwtProperties.getSecret().getBytes(StandardCharsets.UTF_8));&#xd;
+  }&#xd;
+&#xd;
+  public String generate(long conflictId, String adminUsername) {&#xd;
+    Instant now = Instant.now();&#xd;
+    Instant exp = now.plus(24, ChronoUnit.HOURS);&#xd;
+&#xd;
+    return Jwts.builder()&#xd;
+      .issuer(jwtProperties.getIssuer())&#xd;
+      .subject("conflict-view")&#xd;
+      .claims(Map.of(&#xd;
+        "conflictId", conflictId,&#xd;
+        "admin", adminUsername&#xd;
+      ))&#xd;
+      .issuedAt(Date.from(now))&#xd;
+      .expiration(Date.from(exp))&#xd;
+      .signWith(key())&#xd;
+      .compact();&#xd;
+  }&#xd;
+&#xd;
+  public io.jsonwebtoken.Claims parse(String token) {&#xd;
+    return Jwts.parser()&#xd;
+      .verifyWith(key())&#xd;
+      .build()&#xd;
+      .parseSignedClaims(token)&#xd;
+      .getPayload();&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>1356</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\service\mail\MailProperties.java</path>
+      <content>package com.sss.sync.service.mail;&#xd;
+&#xd;
+import lombok.Data;&#xd;
+import org.springframework.boot.context.properties.ConfigurationProperties;&#xd;
+import org.springframework.context.annotation.Configuration;&#xd;
+&#xd;
+@Data&#xd;
+@Configuration&#xd;
+@ConfigurationProperties(prefix = "sss.mail")&#xd;
+public class MailProperties {&#xd;
+  private boolean enabled;&#xd;
+  private String from;&#xd;
+  private String adminTo;&#xd;
+  private String conflictViewBaseUrl;&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>420</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\service\mail\MailService.java</path>
+      <content>package com.sss.sync.service.mail;&#xd;
+&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.mail.SimpleMailMessage;&#xd;
+import org.springframework.mail.javamail.JavaMailSender;&#xd;
+import org.springframework.stereotype.Service;&#xd;
+&#xd;
+@Service&#xd;
+@RequiredArgsConstructor&#xd;
+public class MailService {&#xd;
+&#xd;
+  private final JavaMailSender mailSender;&#xd;
+  private final MailProperties props;&#xd;
+&#xd;
+  public void sendText(String to, String subject, String text) {&#xd;
+    if (!props.isEnabled()) return;&#xd;
+&#xd;
+    SimpleMailMessage msg = new SimpleMailMessage();&#xd;
+    msg.setFrom(props.getFrom());&#xd;
+    msg.setTo(to);&#xd;
+    msg.setSubject(subject);&#xd;
+    msg.setText(text);&#xd;
+    mailSender.send(msg);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>690</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\service\OrderService.java</path>
+      <content>package com.sss.sync.service;&#xd;
+&#xd;
+import com.sss.sync.common.exception.BizException;&#xd;
+import com.sss.sync.domain.entity.OrderInfo;&#xd;
+import com.sss.sync.domain.enums.WriteDb;&#xd;
+import com.sss.sync.infra.mapper.mysql.MysqlOrderMapper;&#xd;
+import com.sss.sync.infra.mapper.mysql.MysqlProductMapper;&#xd;
+import com.sss.sync.infra.mapper.postgres.PostgresOrderMapper;&#xd;
+import com.sss.sync.infra.mapper.postgres.PostgresProductMapper;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.stereotype.Service;&#xd;
+import org.springframework.transaction.annotation.Transactional;&#xd;
+&#xd;
+@Service&#xd;
+@RequiredArgsConstructor&#xd;
+public class OrderService {&#xd;
+&#xd;
+  private final MysqlOrderMapper mysqlOrderMapper;&#xd;
+  private final MysqlProductMapper mysqlProductMapper;&#xd;
+&#xd;
+  private final PostgresOrderMapper postgresOrderMapper;&#xd;
+  private final PostgresProductMapper postgresProductMapper;&#xd;
+&#xd;
+  @Transactional(transactionManager = "mysqlTxManager", rollbackFor = Exception.class)&#xd;
+  public Long placeOrderOnMysql(Long userId, Long productId, int qty, String address) {&#xd;
+    int affected = mysqlProductMapper.decreaseStockIfEnough(productId, qty);&#xd;
+    if (affected != 1) {&#xd;
+      throw BizException.of(400, "INSUFFICIENT_STOCK_OR_PRODUCT_NOT_FOUND");&#xd;
+    }&#xd;
+&#xd;
+    OrderInfo o = new OrderInfo();&#xd;
+    o.setUserId(userId);&#xd;
+    o.setProductId(productId);&#xd;
+    o.setQuantity(qty);&#xd;
+    o.setOrderStatus("CREATED");&#xd;
+    o.setShippingAddress(address);&#xd;
+    o.setVersion(1L);&#xd;
+    // orderedAt/updatedAt 由数据库默认值处理也可以，这里不手动填&#xd;
+&#xd;
+    mysqlOrderMapper.insert(o);&#xd;
+    return o.getOrderId();&#xd;
+  }&#xd;
+&#xd;
+  @Transactional(transactionManager = "postgresTxManager", rollbackFor = Exception.class)&#xd;
+  public Long placeOrderOnPostgres(Long userId, Long productId, int qty, String address) {&#xd;
+    int affected = postgresProductMapper.decreaseStockIfEnough(productId, qty);&#xd;
+    if (affected != 1) {&#xd;
+      throw BizException.of(400, "INSUFFICIENT_STOCK_OR_PRODUCT_NOT_FOUND");&#xd;
+    }&#xd;
+&#xd;
+    OrderInfo o = new OrderInfo();&#xd;
+    o.setUserId(userId);&#xd;
+    o.setProductId(productId);&#xd;
+    o.setQuantity(qty);&#xd;
+    o.setOrderStatus("CREATED");&#xd;
+    o.setShippingAddress(address);&#xd;
+    o.setVersion(1L);&#xd;
+&#xd;
+    postgresOrderMapper.insert(o);&#xd;
+    return o.getOrderId();&#xd;
+  }&#xd;
+&#xd;
+  public Long placeOrder(WriteDb writeDb, Long userId, Long productId, int qty, String address) {&#xd;
+    return switch (writeDb) {&#xd;
+      case MYSQL -> placeOrderOnMysql(userId, productId, qty, address);&#xd;
+      case POSTGRES -> placeOrderOnPostgres(userId, productId, qty, address);&#xd;
+    };&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>2571</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\service\ProductQueryService.java</path>
+      <content>package com.sss.sync.service;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;&#xd;
+import com.sss.sync.domain.entity.ProductInfo;&#xd;
+import com.sss.sync.infra.mapper.read.ReadProductMapper;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.stereotype.Service;&#xd;
+&#xd;
+import java.util.List;&#xd;
+&#xd;
+@Service&#xd;
+@RequiredArgsConstructor&#xd;
+public class ProductQueryService {&#xd;
+&#xd;
+  private final ReadProductMapper readProductMapper;&#xd;
+&#xd;
+  public List&lt;ProductInfo> listAll() {&#xd;
+    return readProductMapper.selectList(new LambdaQueryWrapper&lt;ProductInfo>()&#xd;
+      .eq(ProductInfo::getDeleted, false)&#xd;
+      .orderByDesc(ProductInfo::getProductId));&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>677</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\service\sync\SyncProperties.java</path>
+      <content>package com.sss.sync.service.sync;&#xd;
+&#xd;
+import lombok.Data;&#xd;
+import org.springframework.boot.context.properties.ConfigurationProperties;&#xd;
+import org.springframework.context.annotation.Configuration;&#xd;
+&#xd;
+@Data&#xd;
+@Configuration&#xd;
+@ConfigurationProperties(prefix = "sss.sync")&#xd;
+public class SyncProperties {&#xd;
+  private boolean enabled = true;&#xd;
+  private long pollIntervalMillis = 1000;&#xd;
+  private int batchSize = 200;&#xd;
+&#xd;
+  private Scheduled scheduled = new Scheduled();&#xd;
+&#xd;
+  @Data&#xd;
+  public static class Scheduled {&#xd;
+    private boolean enabled = true;&#xd;
+    private long fixedDelayMillis = 10000;&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>596</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\service\sync\SyncScheduler.java</path>
+      <content>package com.sss.sync.service.sync;&#xd;
+&#xd;
+import jakarta.annotation.PostConstruct;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.scheduling.annotation.EnableScheduling;&#xd;
+import org.springframework.scheduling.annotation.Scheduled;&#xd;
+import org.springframework.stereotype.Component;&#xd;
+&#xd;
+@Component&#xd;
+@EnableScheduling&#xd;
+@RequiredArgsConstructor&#xd;
+public class SyncScheduler {&#xd;
+&#xd;
+  private final SyncProperties props;&#xd;
+  private final SyncEngineService engine;&#xd;
+&#xd;
+  // 定时同步（演示：固定延迟）&#xd;
+  @Scheduled(fixedDelayString = "${sss.sync.scheduled.fixedDelayMillis:10000}")&#xd;
+  public void scheduledSync() {&#xd;
+    if (!props.getScheduled().isEnabled()) return;&#xd;
+    engine.syncOnce();&#xd;
+  }&#xd;
+&#xd;
+  // 近实时轮询（单独线程）&#xd;
+  @PostConstruct&#xd;
+  public void startRealtimeLoop() {&#xd;
+    if (!props.isEnabled()) return;&#xd;
+&#xd;
+    Thread t = new Thread(() -> {&#xd;
+      while (true) {&#xd;
+        try {&#xd;
+          engine.syncOnce();&#xd;
+          Thread.sleep(props.getPollIntervalMillis());&#xd;
+        } catch (InterruptedException ie) {&#xd;
+          Thread.currentThread().interrupt();&#xd;
+          return;&#xd;
+        } catch (Exception e) {&#xd;
+          // 不要让线程死掉，先简单打印&#xd;
+          e.printStackTrace();&#xd;
+          try { Thread.sleep(2000); } catch (InterruptedException ignored) {}&#xd;
+        }&#xd;
+      }&#xd;
+    }, "sync-realtime-loop");&#xd;
+&#xd;
+    t.setDaemon(true);&#xd;
+    t.start();&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>1417</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\SssSyncSystemApplication.java</path>
+      <content>package com.sss.sync;&#xd;
+&#xd;
+import org.springframework.boot.SpringApplication;&#xd;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xd;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;&#xd;
+&#xd;
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})&#xd;
+public class SssSyncSystemApplication {&#xd;
+  public static void main(String[] args) {&#xd;
+    SpringApplication.run(SssSyncSystemApplication.class, args);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>458</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\tools\MybatisStatementCheckRunner.java</path>
+      <content>package com.sss.sync.tools;&#xd;
+&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.apache.ibatis.session.SqlSessionFactory;&#xd;
+import org.springframework.boot.CommandLineRunner;&#xd;
+import org.springframework.stereotype.Component;&#xd;
+&#xd;
+@Component&#xd;
+@RequiredArgsConstructor&#xd;
+public class MybatisStatementCheckRunner implements CommandLineRunner {&#xd;
+&#xd;
+  private final SqlSessionFactory mysqlSqlSessionFactory;&#xd;
+&#xd;
+  @Override&#xd;
+  public void run(String... args) {&#xd;
+    var cfg = mysqlSqlSessionFactory.getConfiguration();&#xd;
+    String msId = "com.sss.sync.infra.mapper.mysql.MysqlProductMapper.selectById";&#xd;
+    System.out.println("[CHECK] hasMappedStatement(" + msId + ") = " + cfg.hasStatement(msId));&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>697</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\tools\PasswordHashTool.java</path>
+      <content>package com.sss.sync.tools;&#xd;
+&#xd;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;&#xd;
+&#xd;
+public class PasswordHashTool {&#xd;
+  public static void main(String[] args) {&#xd;
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();&#xd;
+&#xd;
+    String adminHash = encoder.encode("admin123");&#xd;
+    String userHash = encoder.encode("user123");&#xd;
+&#xd;
+    System.out.println("admin123 bcrypt = " + adminHash);&#xd;
+    System.out.println("user123  bcrypt = " + userHash);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>479</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\web\controller\AuthController.java</path>
+      <content>package com.sss.sync.web.controller;&#xd;
+&#xd;
+import com.sss.sync.common.api.ApiResponse;&#xd;
+import com.sss.sync.service.AuthService;&#xd;
+import com.sss.sync.web.dto.LoginRequest;&#xd;
+import com.sss.sync.web.dto.LoginResponse;&#xd;
+import jakarta.validation.Valid;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.web.bind.annotation.*;&#xd;
+&#xd;
+@RestController&#xd;
+@RequestMapping("/api/auth")&#xd;
+@RequiredArgsConstructor&#xd;
+public class AuthController {&#xd;
+&#xd;
+  private final AuthService authService;&#xd;
+&#xd;
+  @PostMapping("/login")&#xd;
+  public ApiResponse&lt;LoginResponse> login(@Valid @RequestBody LoginRequest req) {&#xd;
+    String token = authService.login(req.getUsername(), req.getPassword());&#xd;
+    var user = authService.findUser(req.getUsername());&#xd;
+    return ApiResponse.ok(new LoginResponse(token, user.getUserId(), user.getUsername(), user.getRole()));&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>848</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\web\controller\ConflictViewController.java</path>
+      <content>package com.sss.sync.web.controller;&#xd;
+&#xd;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;&#xd;
+import com.sss.sync.common.api.ApiResponse;&#xd;
+import com.sss.sync.common.exception.BizException;&#xd;
+import com.sss.sync.service.conflict.ConflictLinkTokenService;&#xd;
+import io.jsonwebtoken.Claims;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.web.bind.annotation.*;&#xd;
+&#xd;
+@RestController&#xd;
+@RequiredArgsConstructor&#xd;
+public class ConflictViewController {&#xd;
+&#xd;
+  private final ConflictLinkTokenService tokenService;&#xd;
+  private final MysqlConflictRecordMapper conflictRecordMapper;&#xd;
+&#xd;
+  @GetMapping("/api/conflicts/view")&#xd;
+  public ApiResponse&lt;ConflictRecord> view(@RequestParam("token") String token) {&#xd;
+    Claims c = tokenService.parse(token);&#xd;
+    Object conflictIdObj = c.get("conflictId");&#xd;
+    if (conflictIdObj == null) throw BizException.of(401, "INVALID_TOKEN");&#xd;
+&#xd;
+    long conflictId = Long.parseLong(String.valueOf(conflictIdObj));&#xd;
+&#xd;
+    ConflictRecord record = conflictRecordMapper.selectOne(new LambdaQueryWrapper&lt;ConflictRecord>()&#xd;
+      .eq(ConflictRecord::getConflictId, conflictId)&#xd;
+      .last("LIMIT 1"));&#xd;
+&#xd;
+    if (record == null) throw BizException.of(404, "CONFLICT_NOT_FOUND");&#xd;
+    return ApiResponse.ok(record);&#xd;
+  }&#xd;
+&#xd;
+  // 简单 HTML 页面（浏览器直接打开查看，后续第7包换成 Vue）&#xd;
+  @GetMapping(value = "/conflicts/view", produces = "text/html; charset=UTF-8")&#xd;
+  public String viewHtml(@RequestParam("token") String token) {&#xd;
+    // 复用 API 逻辑：只验证 token 是否有效&#xd;
+    Claims c = tokenService.parse(token);&#xd;
+    Object conflictIdObj = c.get("conflictId");&#xd;
+    if (conflictIdObj == null) throw BizException.of(401, "INVALID_TOKEN");&#xd;
+&#xd;
+    long conflictId = Long.parseLong(String.valueOf(conflictIdObj));&#xd;
+&#xd;
+    return """&#xd;
+      &lt;!doctype html>&#xd;
+      &lt;html lang="zh-CN">&#xd;
+      &lt;head>&#xd;
+        &lt;meta charset="utf-8"/>&#xd;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"/>&#xd;
+        &lt;title>同步冲突详情&lt;/title>&#xd;
+        &lt;style>&#xd;
+          body { font-family: Arial, sans-serif; padding: 12px; }&#xd;
+          pre { white-space: pre-wrap; word-break: break-all; background: #f5f5f5; padding: 12px; border-radius: 6px; }&#xd;
+          .box { max-width: 980px; margin: 0 auto; }&#xd;
+        &lt;/style>&#xd;
+      &lt;/head>&#xd;
+      &lt;body>&#xd;
+        &lt;div class="box">&#xd;
+          &lt;h2>同步冲突详情（conflictId=%d）&lt;/h2>&#xd;
+          &lt;p>本页面通过链接 token 鉴权，PC/手机浏览器均可打开。&lt;/p>&#xd;
+          &lt;p>接口：&lt;code>/api/conflicts/view?token=...&lt;/code>&lt;/p>&#xd;
+          &lt;hr/>&#xd;
+          &lt;div id="content">加载中...&lt;/div>&#xd;
+        &lt;/div>&#xd;
+        &lt;script>&#xd;
+          fetch('/api/conflicts/view?token=%s')&#xd;
+            .then(r => r.json())&#xd;
+            .then(res => {&#xd;
+              if(res.code !== 0){ document.getElementById('content').innerText = '加载失败：' + res.message; return; }&#xd;
+              const d = res.data;&#xd;
+              document.getElementById('content').innerHTML =&#xd;
+                '&lt;p>&lt;b>table&lt;/b>: ' + d.tableName + ' &lt;b>pk&lt;/b>: ' + d.pkValue + '&lt;/p>'&#xd;
+                + '&lt;p>&lt;b>source&lt;/b>: ' + d.sourceDb + ' &lt;b>target&lt;/b>: ' + d.targetDb + '&lt;/p>'&#xd;
+                + '&lt;p>&lt;b>status&lt;/b>: ' + d.status + '&lt;/p>'&#xd;
+                + '&lt;h3>source_payload_json&lt;/h3>&lt;pre>' + d.sourcePayloadJson + '&lt;/pre>'&#xd;
+                + '&lt;h3>target_payload_json&lt;/h3>&lt;pre>' + d.targetPayloadJson + '&lt;/pre>';&#xd;
+            })&#xd;
+            .catch(err => document.getElementById('content').innerText = '加载异常：' + err);&#xd;
+        &lt;/script>&#xd;
+      &lt;/body>&#xd;
+      &lt;/html>&#xd;
+      """.formatted(conflictId, token);&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>3653</size>
+        <modified></modified>
+        <mime_type>text/html</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\web\controller\OrderController.java</path>
+      <content>package com.sss.sync.web.controller;&#xd;
+&#xd;
+import com.sss.sync.common.api.ApiResponse;&#xd;
+import com.sss.sync.service.OrderService;&#xd;
+import com.sss.sync.web.dto.PlaceOrderRequest;&#xd;
+import com.sss.sync.web.dto.PlaceOrderResponse;&#xd;
+import jakarta.validation.Valid;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.security.access.prepost.PreAuthorize;&#xd;
+import org.springframework.web.bind.annotation.*;&#xd;
+&#xd;
+@RestController&#xd;
+@RequestMapping("/api/orders")&#xd;
+@RequiredArgsConstructor&#xd;
+public class OrderController {&#xd;
+&#xd;
+  private final OrderService orderService;&#xd;
+&#xd;
+  @PostMapping("/place")&#xd;
+  @PreAuthorize("hasAnyRole('USER','ADMIN')")&#xd;
+  public ApiResponse&lt;PlaceOrderResponse> place(@Valid @RequestBody PlaceOrderRequest req) {&#xd;
+    Long orderId = orderService.placeOrder(req.getWriteDb(), req.getUserId(), req.getProductId(), req.getQuantity(), req.getShippingAddress());&#xd;
+    return ApiResponse.ok(new PlaceOrderResponse(orderId, req.getWriteDb().name()));&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>976</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\web\controller\ProductController.java</path>
+      <content>package com.sss.sync.web.controller;&#xd;
+&#xd;
+import com.sss.sync.common.api.ApiResponse;&#xd;
+import com.sss.sync.domain.entity.ProductInfo;&#xd;
+import com.sss.sync.service.ProductQueryService;&#xd;
+import lombok.RequiredArgsConstructor;&#xd;
+import org.springframework.web.bind.annotation.*;&#xd;
+&#xd;
+import java.util.List;&#xd;
+&#xd;
+@RestController&#xd;
+@RequestMapping("/api/products")&#xd;
+@RequiredArgsConstructor&#xd;
+public class ProductController {&#xd;
+&#xd;
+  private final ProductQueryService productQueryService;&#xd;
+&#xd;
+  @GetMapping&#xd;
+  public ApiResponse&lt;List&lt;ProductInfo>> list() {&#xd;
+    return ApiResponse.ok(productQueryService.listAll());&#xd;
+  }&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>605</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\web\dto\LoginRequest.java</path>
+      <content>package com.sss.sync.web.dto;&#xd;
+&#xd;
+import jakarta.validation.constraints.NotBlank;&#xd;
+import lombok.Data;&#xd;
+&#xd;
+@Data&#xd;
+public class LoginRequest {&#xd;
+  @NotBlank&#xd;
+  private String username;&#xd;
+&#xd;
+  @NotBlank&#xd;
+  private String password;&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>226</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\web\dto\LoginResponse.java</path>
+      <content>package com.sss.sync.web.dto;&#xd;
+&#xd;
+import lombok.AllArgsConstructor;&#xd;
+import lombok.Data;&#xd;
+&#xd;
+@Data&#xd;
+@AllArgsConstructor&#xd;
+public class LoginResponse {&#xd;
+  private String accessToken;&#xd;
+  private Long userId;&#xd;
+  private String username;&#xd;
+  private String role;&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>257</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\web\dto\PlaceOrderRequest.java</path>
+      <content>package com.sss.sync.web.dto;&#xd;
+&#xd;
+import com.sss.sync.domain.enums.WriteDb;&#xd;
+import jakarta.validation.constraints.Min;&#xd;
+import jakarta.validation.constraints.NotBlank;&#xd;
+import jakarta.validation.constraints.NotNull;&#xd;
+import lombok.Data;&#xd;
+&#xd;
+@Data&#xd;
+public class PlaceOrderRequest {&#xd;
+  @NotNull&#xd;
+  private Long userId;&#xd;
+&#xd;
+  @NotNull&#xd;
+  private Long productId;&#xd;
+&#xd;
+  @NotNull&#xd;
+  @Min(1)&#xd;
+  private Integer quantity;&#xd;
+&#xd;
+  @NotBlank&#xd;
+  private String shippingAddress;&#xd;
+&#xd;
+  @NotNull&#xd;
+  private WriteDb writeDb; // MYSQL / POSTGRES&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>525</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+    <XmlFileContent>
+      <path>com\sss\sync\web\dto\PlaceOrderResponse.java</path>
+      <content>package com.sss.sync.web.dto;&#xd;
+&#xd;
+import lombok.AllArgsConstructor;&#xd;
+import lombok.Data;&#xd;
+&#xd;
+@Data&#xd;
+@AllArgsConstructor&#xd;
+public class PlaceOrderResponse {&#xd;
+  private Long orderId;&#xd;
+  private String writeDb;&#xd;
+}</content>
+      <XmlFileInfo>
+        <size>207</size>
+        <modified></modified>
+        <mime_type>text/x-java-source</mime_type>
+        <extension>.java</extension>
+      </XmlFileInfo>
+    </XmlFileContent>
+  </XmlFiles>
+</XmlStructure>

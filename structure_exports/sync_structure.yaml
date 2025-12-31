@@ -1,0 +1,1225 @@
+project_info:
+  name: "sync"
+  path: "D:\\迅雷下载\\sync_sys\\src\\main\\java\\com\\sss\\sync"
+  generatedAt: "2025-12-31T17:44:04.7711925"
+  totalFiles: 44
+  totalSize: 39959
+structure:
+  "common":
+    type: null
+    info: null
+    children:
+      "api":
+        type: null
+        info: null
+        children:
+          "ApiResponse.java":
+            type: "file"
+            info:
+              "size": "600"
+              "last_modified": "2025-12-31T17:44:04.6377834"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+      "exception":
+        type: null
+        info: null
+        children:
+          "BizException.java":
+            type: "file"
+            info:
+              "size": "390"
+              "last_modified": "2025-12-31T17:44:04.6421597"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "GlobalExceptionHandler.java":
+            type: "file"
+            info:
+              "size": "1589"
+              "last_modified": "2025-12-31T17:44:04.6461598"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+  "config":
+    type: null
+    info: null
+    children:
+      "datasource":
+        type: null
+        info: null
+        children:
+          "DataSourceMysqlConfig.java":
+            type: "file"
+            info:
+              "size": "2556"
+              "last_modified": "2025-12-31T17:44:04.6501594"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "DataSourceNames.java":
+            type: "file"
+            info:
+              "size": "269"
+              "last_modified": "2025-12-31T17:44:04.6521594"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "DataSourcePostgresConfig.java":
+            type: "file"
+            info:
+              "size": "2607"
+              "last_modified": "2025-12-31T17:44:04.6561595"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "DataSourceSqlServerConfig.java":
+            type: "file"
+            info:
+              "size": "2342"
+              "last_modified": "2025-12-31T17:44:04.6581597"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "MyBatisPlusBaseConfig.java":
+            type: "file"
+            info:
+              "size": "526"
+              "last_modified": "2025-12-31T17:44:04.6601592"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+      "mybatis":
+        type: null
+        info: null
+        children:
+          "MybatisPlusConfig.java":
+            type: "file"
+            info:
+              "size": "904"
+              "last_modified": "2025-12-31T17:44:04.6641592"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+      "security":
+        type: null
+        info: null
+        children:
+          "JwtAuthFilter.java":
+            type: "file"
+            info:
+              "size": "1941"
+              "last_modified": "2025-12-31T17:44:04.6661594"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "JwtProperties.java":
+            type: "file"
+            info:
+              "size": "397"
+              "last_modified": "2025-12-31T17:44:04.6701599"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "JwtUtil.java":
+            type: "file"
+            info:
+              "size": "1315"
+              "last_modified": "2025-12-31T17:44:04.6721312"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "SecurityConfig.java":
+            type: "file"
+            info:
+              "size": "1492"
+              "last_modified": "2025-12-31T17:44:04.6742675"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+  "domain":
+    type: null
+    info: null
+    children:
+      "entity":
+        type: null
+        info: null
+        children:
+          "OrderInfo.java":
+            type: "file"
+            info:
+              "size": "429"
+              "last_modified": "2025-12-31T17:44:04.6785494"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "ProductInfo.java":
+            type: "file"
+            info:
+              "size": "489"
+              "last_modified": "2025-12-31T17:44:04.6825514"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "UserInfo.java":
+            type: "file"
+            info:
+              "size": "354"
+              "last_modified": "2025-12-31T17:44:04.6845519"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+      "enums":
+        type: null
+        info: null
+        children:
+          "UserRole.java":
+            type: "file"
+            info:
+              "size": "81"
+              "last_modified": "2025-12-31T17:44:04.6865516"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "WriteDb.java":
+            type: "file"
+            info:
+              "size": "84"
+              "last_modified": "2025-12-31T17:44:04.6905515"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+  "infra":
+    type: null
+    info: null
+    children:
+      "mapper":
+        type: null
+        info: null
+        children:
+          "mysql":
+            type: null
+            info: null
+            children:
+              "MysqlOrderMapper.java":
+                type: "file"
+                info:
+                  "size": "272"
+                  "last_modified": "2025-12-31T17:44:04.6945515"
+                  "mime_type": "text/x-java-source"
+                  "extension": ".java"
+                children: null
+              "MysqlProductMapper.java":
+                type: "file"
+                info:
+                  "size": "743"
+                  "last_modified": "2025-12-31T17:44:04.6965514"
+                  "mime_type": "text/x-java-source"
+                  "extension": ".java"
+                children: null
+              "MysqlUserMapper.java":
+                type: "file"
+                info:
+                  "size": "269"
+                  "last_modified": "2025-12-31T17:44:04.700552"
+                  "mime_type": "text/x-java-source"
+                  "extension": ".java"
+                children: null
+          "postgres":
+            type: null
+            info: null
+            children:
+              "PostgresOrderMapper.java":
+                type: "file"
+                info:
+                  "size": "278"
+                  "last_modified": "2025-12-31T17:44:04.7025519"
+                  "mime_type": "text/x-java-source"
+                  "extension": ".java"
+                children: null
+              "PostgresProductMapper.java":
+                type: "file"
+                info:
+                  "size": "669"
+                  "last_modified": "2025-12-31T17:44:04.7065518"
+                  "mime_type": "text/x-java-source"
+                  "extension": ".java"
+                children: null
+              "PostgresUserMapper.java":
+                type: "file"
+                info:
+                  "size": "275"
+                  "last_modified": "2025-12-31T17:44:04.7085518"
+                  "mime_type": "text/x-java-source"
+                  "extension": ".java"
+                children: null
+          "read":
+            type: null
+            info: null
+            children:
+              "ReadProductMapper.java":
+                type: "file"
+                info:
+                  "size": "276"
+                  "last_modified": "2025-12-31T17:44:04.7105522"
+                  "mime_type": "text/x-java-source"
+                  "extension": ".java"
+                children: null
+          "sqlserver":
+            type: null
+            info: null
+            children: {}
+  "service":
+    type: null
+    info: null
+    children:
+      "AuthService.java":
+        type: "file"
+        info:
+          "size": "2154"
+          "last_modified": "2025-12-31T17:44:04.7185519"
+          "mime_type": "text/x-java-source"
+          "extension": ".java"
+        children: null
+      "conflict":
+        type: null
+        info: null
+        children:
+          "ConflictLinkTokenService.java":
+            type: "file"
+            info:
+              "size": "1356"
+              "last_modified": "2025-12-31T17:44:04.7205518"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+      "mail":
+        type: null
+        info: null
+        children:
+          "MailProperties.java":
+            type: "file"
+            info:
+              "size": "420"
+              "last_modified": "2025-12-31T17:44:04.7245518"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "MailService.java":
+            type: "file"
+            info:
+              "size": "690"
+              "last_modified": "2025-12-31T17:44:04.7265519"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+      "OrderService.java":
+        type: "file"
+        info:
+          "size": "2571"
+          "last_modified": "2025-12-31T17:44:04.7305519"
+          "mime_type": "text/x-java-source"
+          "extension": ".java"
+        children: null
+      "ProductQueryService.java":
+        type: "file"
+        info:
+          "size": "677"
+          "last_modified": "2025-12-31T17:44:04.7326006"
+          "mime_type": "text/x-java-source"
+          "extension": ".java"
+        children: null
+      "sync":
+        type: null
+        info: null
+        children:
+          "SyncProperties.java":
+            type: "file"
+            info:
+              "size": "596"
+              "last_modified": "2025-12-31T17:44:04.7346042"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "SyncScheduler.java":
+            type: "file"
+            info:
+              "size": "1417"
+              "last_modified": "2025-12-31T17:44:04.7366044"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+  "SssSyncSystemApplication.java":
+    type: "file"
+    info:
+      "size": "458"
+      "last_modified": "2025-12-31T17:44:04.7401122"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+    children: null
+  "tools":
+    type: null
+    info: null
+    children:
+      "MybatisStatementCheckRunner.java":
+        type: "file"
+        info:
+          "size": "697"
+          "last_modified": "2025-12-31T17:44:04.7444149"
+          "mime_type": "text/x-java-source"
+          "extension": ".java"
+        children: null
+      "PasswordHashTool.java":
+        type: "file"
+        info:
+          "size": "479"
+          "last_modified": "2025-12-31T17:44:04.7444149"
+          "mime_type": "text/x-java-source"
+          "extension": ".java"
+        children: null
+  "web":
+    type: null
+    info: null
+    children:
+      "controller":
+        type: null
+        info: null
+        children:
+          "AuthController.java":
+            type: "file"
+            info:
+              "size": "848"
+              "last_modified": "2025-12-31T17:44:04.748771"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "ConflictViewController.java":
+            type: "file"
+            info:
+              "size": "3653"
+              "last_modified": "2025-12-31T17:44:04.7507743"
+              "mime_type": "text/html"
+              "extension": ".java"
+            children: null
+          "OrderController.java":
+            type: "file"
+            info:
+              "size": "976"
+              "last_modified": "2025-12-31T17:44:04.7528212"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "ProductController.java":
+            type: "file"
+            info:
+              "size": "605"
+              "last_modified": "2025-12-31T17:44:04.7568209"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+      "dto":
+        type: null
+        info: null
+        children:
+          "LoginRequest.java":
+            type: "file"
+            info:
+              "size": "226"
+              "last_modified": "2025-12-31T17:44:04.7588208"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "LoginResponse.java":
+            type: "file"
+            info:
+              "size": "257"
+              "last_modified": "2025-12-31T17:44:04.7631924"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "PlaceOrderRequest.java":
+            type: "file"
+            info:
+              "size": "525"
+              "last_modified": "2025-12-31T17:44:04.7651929"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+          "PlaceOrderResponse.java":
+            type: "file"
+            info:
+              "size": "207"
+              "last_modified": "2025-12-31T17:44:04.7671926"
+              "mime_type": "text/x-java-source"
+              "extension": ".java"
+            children: null
+files:
+- path: "common\\api\\ApiResponse.java"
+  content: "package com.sss.sync.common.api;\r\n\r\nimport lombok.AllArgsConstructor;\r\
+    \nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\n@Data\r\n@NoArgsConstructor\r\
+    \n@AllArgsConstructor\r\npublic class ApiResponse<T> {\r\n  private int code;\r\
+    \n  private String message;\r\n  private T data;\r\n\r\n  public static <T> ApiResponse<T>\
+    \ ok(T data) {\r\n    return new ApiResponse<>(0, \"OK\", data);\r\n  }\r\n\r\n\
+    \  public static ApiResponse<Void> ok() {\r\n    return new ApiResponse<>(0, \"\
+    OK\", null);\r\n  }\r\n\r\n  public static ApiResponse<Void> error(int code, String\
+    \ message) {\r\n    return new ApiResponse<>(code, message, null);\r\n  }\r\n}"
+  info:
+    "size": "600"
+    "last_modified": "2025-12-31T17:44:04.6377834"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "common\\exception\\BizException.java"
+  content: "package com.sss.sync.common.exception;\r\n\r\npublic class BizException\
+    \ extends RuntimeException {\r\n  private final int code;\r\n\r\n  public BizException(int\
+    \ code, String message) {\r\n    super(message);\r\n    this.code = code;\r\n\
+    \  }\r\n\r\n  public int getCode() {\r\n    return code;\r\n  }\r\n\r\n  public\
+    \ static BizException of(int code, String message) {\r\n    return new BizException(code,\
+    \ message);\r\n  }\r\n}"
+  info:
+    "size": "390"
+    "last_modified": "2025-12-31T17:44:04.6421597"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "common\\exception\\GlobalExceptionHandler.java"
+  content: "package com.sss.sync.common.exception;\r\n\r\nimport com.sss.sync.common.api.ApiResponse;\r\
+    \nimport jakarta.validation.ConstraintViolationException;\r\nimport org.springframework.http.HttpStatus;\r\
+    \nimport org.springframework.web.bind.MethodArgumentNotValidException;\r\nimport\
+    \ org.springframework.web.bind.annotation.ExceptionHandler;\r\nimport org.springframework.web.bind.annotation.ResponseStatus;\r\
+    \nimport org.springframework.web.bind.annotation.RestControllerAdvice;\r\n\r\n\
+    @RestControllerAdvice\r\npublic class GlobalExceptionHandler {\r\n\r\n  @ExceptionHandler(BizException.class)\r\
+    \n  @ResponseStatus(HttpStatus.BAD_REQUEST)\r\n  public ApiResponse<Void> handleBiz(BizException\
+    \ e) {\r\n    return ApiResponse.error(e.getCode(), e.getMessage());\r\n  }\r\n\
+    \r\n  @ExceptionHandler(MethodArgumentNotValidException.class)\r\n  @ResponseStatus(HttpStatus.BAD_REQUEST)\r\
+    \n  public ApiResponse<Void> handleValid(MethodArgumentNotValidException e) {\r\
+    \n    String msg = e.getBindingResult().getFieldErrors().stream()\r\n      .findFirst()\r\
+    \n      .map(fe -> fe.getField() + \" \" + fe.getDefaultMessage())\r\n      .orElse(\"\
+    Validation error\");\r\n    return ApiResponse.error(400, msg);\r\n  }\r\n\r\n\
+    \  @ExceptionHandler(ConstraintViolationException.class)\r\n  @ResponseStatus(HttpStatus.BAD_REQUEST)\r\
+    \n  public ApiResponse<Void> handleConstraint(ConstraintViolationException e)\
+    \ {\r\n    return ApiResponse.error(400, e.getMessage());\r\n  }\r\n\r\n  @ExceptionHandler(Exception.class)\r\
+    \n  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)\r\n  public ApiResponse<Void>\
+    \ handleUnknown(Exception e) {\r\n    return ApiResponse.error(500, e.getMessage());\r\
+    \n  }\r\n}"
+  info:
+    "size": "1589"
+    "last_modified": "2025-12-31T17:44:04.6461598"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\datasource\\DataSourceMysqlConfig.java"
+  content: "package com.sss.sync.config.datasource;\r\n\r\nimport com.baomidou.mybatisplus.core.MybatisConfiguration;\r\
+    \nimport com.baomidou.mybatisplus.core.config.GlobalConfig;\r\nimport com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;\r\
+    \nimport com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;\r\
+    \nimport javax.sql.DataSource;\r\nimport lombok.RequiredArgsConstructor;\r\nimport\
+    \ org.apache.ibatis.session.SqlSessionFactory;\r\nimport org.mybatis.spring.SqlSessionTemplate;\r\
+    \nimport org.mybatis.spring.annotation.MapperScan;\r\nimport org.springframework.beans.factory.annotation.Qualifier;\r\
+    \nimport org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;\r\n\
+    import org.springframework.boot.context.properties.ConfigurationProperties;\r\n\
+    import org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\
+    \nimport org.springframework.jdbc.datasource.DataSourceTransactionManager;\r\n\
+    \r\n@Configuration\r\n@MapperScan(\r\n  basePackages = \"com.sss.sync.infra.mapper.mysql\"\
+    ,\r\n  sqlSessionFactoryRef = \"mysqlSqlSessionFactory\"\r\n)\r\n@RequiredArgsConstructor\r\
+    \npublic class DataSourceMysqlConfig {\r\n\r\n  private final MybatisPlusInterceptor\
+    \ mybatisPlusInterceptor;\r\n  private final GlobalConfig globalConfig;\r\n\r\n\
+    \  @Bean\r\n  @ConfigurationProperties(\"sss.datasource.mysql\")\r\n  public DataSourceProperties\
+    \ mysqlDataSourceProperties() {\r\n    return new DataSourceProperties();\r\n\
+    \  }\r\n\r\n  @Bean(name = \"mysqlDataSource\")\r\n  public DataSource mysqlDataSource(@Qualifier(\"\
+    mysqlDataSourceProperties\") DataSourceProperties props) {\r\n    return props.initializeDataSourceBuilder().build();\r\
+    \n  }\r\n\r\n  @Bean(name = \"mysqlSqlSessionFactory\")\r\n  public SqlSessionFactory\
+    \ mysqlSqlSessionFactory(@Qualifier(\"mysqlDataSource\") DataSource ds) throws\
+    \ Exception {\r\n    MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();\r\
+    \n    bean.setDataSource(ds);\r\n\r\n    MybatisConfiguration cfg = new MybatisConfiguration();\r\
+    \n    cfg.setMapUnderscoreToCamelCase(true);\r\n    bean.setConfiguration(cfg);\r\
+    \n\r\n    bean.setPlugins(mybatisPlusInterceptor);\r\n    bean.setGlobalConfig(globalConfig);\r\
+    \n\r\n    return bean.getObject();\r\n  }\r\n\r\n  @Bean(name = \"mysqlSqlSessionTemplate\"\
+    )\r\n  public SqlSessionTemplate mysqlSqlSessionTemplate(@Qualifier(\"mysqlSqlSessionFactory\"\
+    ) SqlSessionFactory sf) {\r\n    return new SqlSessionTemplate(sf);\r\n  }\r\n\
+    \r\n  @Bean(name = \"mysqlTxManager\")\r\n  public DataSourceTransactionManager\
+    \ mysqlTxManager(@Qualifier(\"mysqlDataSource\") DataSource ds) {\r\n    return\
+    \ new DataSourceTransactionManager(ds);\r\n  }\r\n}"
+  info:
+    "size": "2556"
+    "last_modified": "2025-12-31T17:44:04.6501594"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\datasource\\DataSourceNames.java"
+  content: "package com.sss.sync.config.datasource;\r\n\r\npublic final class DataSourceNames\
+    \ {\r\n  private DataSourceNames() {}\r\n  public static final String MYSQL =\
+    \ \"mysql\";\r\n  public static final String POSTGRES = \"postgres\";\r\n  public\
+    \ static final String SQLSERVER = \"sqlserver\";\r\n}"
+  info:
+    "size": "269"
+    "last_modified": "2025-12-31T17:44:04.6521594"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\datasource\\DataSourcePostgresConfig.java"
+  content: "package com.sss.sync.config.datasource;\r\n\r\nimport com.baomidou.mybatisplus.core.MybatisConfiguration;\r\
+    \nimport com.baomidou.mybatisplus.core.config.GlobalConfig;\r\nimport com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;\r\
+    \nimport com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;\r\
+    \nimport javax.sql.DataSource;\r\nimport lombok.RequiredArgsConstructor;\r\nimport\
+    \ org.apache.ibatis.session.SqlSessionFactory;\r\nimport org.mybatis.spring.SqlSessionTemplate;\r\
+    \nimport org.mybatis.spring.annotation.MapperScan;\r\nimport org.springframework.beans.factory.annotation.Qualifier;\r\
+    \nimport org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;\r\n\
+    import org.springframework.boot.context.properties.ConfigurationProperties;\r\n\
+    import org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\
+    \nimport org.springframework.jdbc.datasource.DataSourceTransactionManager;\r\n\
+    \r\n@Configuration\r\n@MapperScan(\r\n  basePackages = \"com.sss.sync.infra.mapper.postgres\"\
+    ,\r\n  sqlSessionFactoryRef = \"postgresSqlSessionFactory\"\r\n)\r\n@RequiredArgsConstructor\r\
+    \npublic class DataSourcePostgresConfig {\r\n\r\n  private final MybatisPlusInterceptor\
+    \ mybatisPlusInterceptor;\r\n  private final GlobalConfig globalConfig;\r\n\r\n\
+    \  @Bean\r\n  @ConfigurationProperties(\"sss.datasource.postgres\")\r\n  public\
+    \ DataSourceProperties postgresDataSourceProperties() {\r\n    return new DataSourceProperties();\r\
+    \n  }\r\n\r\n  @Bean(name = \"postgresDataSource\")\r\n  public DataSource postgresDataSource(@Qualifier(\"\
+    postgresDataSourceProperties\") DataSourceProperties props) {\r\n    return props.initializeDataSourceBuilder().build();\r\
+    \n  }\r\n\r\n  @Bean(name = \"postgresSqlSessionFactory\")\r\n  public SqlSessionFactory\
+    \ postgresSqlSessionFactory(@Qualifier(\"postgresDataSource\") DataSource ds)\
+    \ throws Exception {\r\n    MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();\r\
+    \n    bean.setDataSource(ds);\r\n\r\n    MybatisConfiguration cfg = new MybatisConfiguration();\r\
+    \n    cfg.setMapUnderscoreToCamelCase(true);\r\n    bean.setConfiguration(cfg);\r\
+    \n\r\n    bean.setPlugins(mybatisPlusInterceptor);\r\n    bean.setGlobalConfig(globalConfig);\r\
+    \n\r\n    return bean.getObject();\r\n  }\r\n\r\n  @Bean(name = \"postgresSqlSessionTemplate\"\
+    )\r\n  public SqlSessionTemplate postgresSqlSessionTemplate(@Qualifier(\"postgresSqlSessionFactory\"\
+    ) SqlSessionFactory sf) {\r\n    return new SqlSessionTemplate(sf);\r\n  }\r\n\
+    \r\n  @Bean(name = \"postgresTxManager\")\r\n  public DataSourceTransactionManager\
+    \ postgresTxManager(@Qualifier(\"postgresDataSource\") DataSource ds) {\r\n  \
+    \  return new DataSourceTransactionManager(ds);\r\n  }\r\n}"
+  info:
+    "size": "2607"
+    "last_modified": "2025-12-31T17:44:04.6561595"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\datasource\\DataSourceSqlServerConfig.java"
+  content: "package com.sss.sync.config.datasource;\r\n\r\nimport com.baomidou.mybatisplus.core.MybatisConfiguration;\r\
+    \nimport com.baomidou.mybatisplus.core.config.GlobalConfig;\r\nimport com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;\r\
+    \nimport com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;\r\
+    \nimport javax.sql.DataSource;\r\nimport lombok.RequiredArgsConstructor;\r\nimport\
+    \ org.apache.ibatis.session.SqlSessionFactory;\r\nimport org.mybatis.spring.SqlSessionTemplate;\r\
+    \nimport org.mybatis.spring.annotation.MapperScan;\r\nimport org.springframework.beans.factory.annotation.Qualifier;\r\
+    \nimport org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;\r\n\
+    import org.springframework.boot.context.properties.ConfigurationProperties;\r\n\
+    import org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\
+    \n\r\n@Configuration\r\n@MapperScan(\r\n  basePackages = {\r\n    \"com.sss.sync.infra.mapper.read\"\
+    ,\r\n    \"com.sss.sync.infra.mapper.sqlserver\"\r\n  },\r\n  sqlSessionFactoryRef\
+    \ = \"readSqlSessionFactory\"\r\n)\r\n@RequiredArgsConstructor\r\npublic class\
+    \ DataSourceSqlServerConfig {\r\n\r\n  private final MybatisPlusInterceptor mybatisPlusInterceptor;\r\
+    \n  private final GlobalConfig globalConfig;\r\n\r\n  @Bean\r\n  @ConfigurationProperties(\"\
+    sss.datasource.sqlserver\")\r\n  public DataSourceProperties readDataSourceProperties()\
+    \ {\r\n    return new DataSourceProperties();\r\n  }\r\n\r\n  @Bean(name = \"\
+    readDataSource\")\r\n  public DataSource readDataSource(@Qualifier(\"readDataSourceProperties\"\
+    ) DataSourceProperties props) {\r\n    return props.initializeDataSourceBuilder().build();\r\
+    \n  }\r\n\r\n  @Bean(name = \"readSqlSessionFactory\")\r\n  public SqlSessionFactory\
+    \ readSqlSessionFactory(@Qualifier(\"readDataSource\") DataSource ds) throws Exception\
+    \ {\r\n    MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();\r\
+    \n    bean.setDataSource(ds);\r\n\r\n    MybatisConfiguration cfg = new MybatisConfiguration();\r\
+    \n    cfg.setMapUnderscoreToCamelCase(true);\r\n    bean.setConfiguration(cfg);\r\
+    \n\r\n    bean.setPlugins(mybatisPlusInterceptor);\r\n    bean.setGlobalConfig(globalConfig);\r\
+    \n\r\n    return bean.getObject();\r\n  }\r\n\r\n  @Bean(name = \"readSqlSessionTemplate\"\
+    )\r\n  public SqlSessionTemplate readSqlSessionTemplate(@Qualifier(\"readSqlSessionFactory\"\
+    ) SqlSessionFactory sf) {\r\n    return new SqlSessionTemplate(sf);\r\n  }\r\n\
+    }"
+  info:
+    "size": "2342"
+    "last_modified": "2025-12-31T17:44:04.6581597"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\datasource\\MyBatisPlusBaseConfig.java"
+  content: "package com.sss.sync.config.datasource;\r\n\r\nimport com.baomidou.mybatisplus.autoconfigure.MybatisPlusPropertiesCustomizer;\r\
+    \nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\
+    \n\r\n@Configuration\r\npublic class MyBatisPlusBaseConfig {\r\n  @Bean\r\n  public\
+    \ MybatisPlusPropertiesCustomizer mybatisPlusPropertiesCustomizer() {\r\n    return\
+    \ properties -> {\r\n      // 这里可统一设置 globalConfig 等（当前先不加逻辑删除，避免三库差异）\r\n   \
+    \ };\r\n  }\r\n}"
+  info:
+    "size": "526"
+    "last_modified": "2025-12-31T17:44:04.6601592"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\mybatis\\MybatisPlusConfig.java"
+  content: "package com.sss.sync.config.mybatis;\r\n\r\nimport com.baomidou.mybatisplus.core.config.GlobalConfig;\r\
+    \nimport com.baomidou.mybatisplus.core.injector.DefaultSqlInjector;\r\nimport\
+    \ com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;\r\nimport\
+    \ com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;\r\
+    \nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\
+    \n\r\n@Configuration\r\npublic class MybatisPlusConfig {\r\n\r\n  @Bean\r\n  public\
+    \ MybatisPlusInterceptor mybatisPlusInterceptor() {\r\n    MybatisPlusInterceptor\
+    \ interceptor = new MybatisPlusInterceptor();\r\n    interceptor.addInnerInterceptor(new\
+    \ PaginationInnerInterceptor());\r\n    return interceptor;\r\n  }\r\n\r\n  @Bean\r\
+    \n  public GlobalConfig globalConfig() {\r\n    GlobalConfig gc = new GlobalConfig();\r\
+    \n    gc.setSqlInjector(new DefaultSqlInjector());\r\n    return gc;\r\n  }\r\n\
+    }"
+  info:
+    "size": "904"
+    "last_modified": "2025-12-31T17:44:04.6641592"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\security\\JwtAuthFilter.java"
+  content: "package com.sss.sync.config.security;\r\n\r\nimport io.jsonwebtoken.Claims;\r\
+    \nimport jakarta.servlet.FilterChain;\r\nimport jakarta.servlet.ServletException;\r\
+    \nimport jakarta.servlet.http.HttpServletRequest;\r\nimport jakarta.servlet.http.HttpServletResponse;\r\
+    \nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.http.HttpHeaders;\r\
+    \nimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;\r\
+    \nimport org.springframework.security.core.authority.SimpleGrantedAuthority;\r\
+    \nimport org.springframework.security.core.context.SecurityContextHolder;\r\n\
+    import org.springframework.util.StringUtils;\r\nimport org.springframework.web.filter.OncePerRequestFilter;\r\
+    \n\r\nimport java.io.IOException;\r\nimport java.util.List;\r\n\r\n@RequiredArgsConstructor\r\
+    \npublic class JwtAuthFilter extends OncePerRequestFilter {\r\n\r\n  private final\
+    \ JwtUtil jwtUtil;\r\n\r\n  @Override\r\n  protected void doFilterInternal(HttpServletRequest\
+    \ request, HttpServletResponse response, FilterChain filterChain)\r\n    throws\
+    \ ServletException, IOException {\r\n\r\n    String auth = request.getHeader(HttpHeaders.AUTHORIZATION);\r\
+    \n    if (!StringUtils.hasText(auth) || !auth.startsWith(\"Bearer \")) {\r\n \
+    \     filterChain.doFilter(request, response);\r\n      return;\r\n    }\r\n\r\
+    \n    String token = auth.substring(7);\r\n    try {\r\n      Claims claims =\
+    \ jwtUtil.parseClaims(token);\r\n      String userId = claims.getSubject();\r\n\
+    \      String username = (String) claims.get(\"username\");\r\n      String role\
+    \ = (String) claims.get(\"role\");\r\n\r\n      var authorities = List.of(new\
+    \ SimpleGrantedAuthority(\"ROLE_\" + role));\r\n      var principal = username\
+    \ + \"|\" + userId;\r\n\r\n      var authentication = new UsernamePasswordAuthenticationToken(principal,\
+    \ null, authorities);\r\n      SecurityContextHolder.getContext().setAuthentication(authentication);\r\
+    \n    } catch (Exception ex) {\r\n      SecurityContextHolder.clearContext();\r\
+    \n    }\r\n\r\n    filterChain.doFilter(request, response);\r\n  }\r\n}"
+  info:
+    "size": "1941"
+    "last_modified": "2025-12-31T17:44:04.6661594"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\security\\JwtProperties.java"
+  content: "package com.sss.sync.config.security;\r\n\r\nimport lombok.Data;\r\nimport\
+    \ org.springframework.boot.context.properties.ConfigurationProperties;\r\nimport\
+    \ org.springframework.context.annotation.Configuration;\r\n\r\n@Data\r\n@Configuration\r\
+    \n@ConfigurationProperties(prefix = \"sss.jwt\")\r\npublic class JwtProperties\
+    \ {\r\n  private String issuer;\r\n  private String secret;\r\n  private long\
+    \ accessTokenExpireMinutes;\r\n}"
+  info:
+    "size": "397"
+    "last_modified": "2025-12-31T17:44:04.6701599"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\security\\JwtUtil.java"
+  content: "package com.sss.sync.config.security;\r\n\r\nimport io.jsonwebtoken.Jwts;\r\
+    \nimport io.jsonwebtoken.security.Keys;\r\nimport lombok.RequiredArgsConstructor;\r\
+    \nimport org.springframework.stereotype.Component;\r\n\r\nimport javax.crypto.SecretKey;\r\
+    \nimport java.nio.charset.StandardCharsets;\r\nimport java.time.Instant;\r\nimport\
+    \ java.time.temporal.ChronoUnit;\r\nimport java.util.Date;\r\nimport java.util.Map;\r\
+    \n\r\n@Component\r\n@RequiredArgsConstructor\r\npublic class JwtUtil {\r\n\r\n\
+    \  private final JwtProperties props;\r\n\r\n  private SecretKey key() {\r\n \
+    \   return Keys.hmacShaKeyFor(props.getSecret().getBytes(StandardCharsets.UTF_8));\r\
+    \n  }\r\n\r\n  public String generateAccessToken(Long userId, String username,\
+    \ String role) {\r\n    Instant now = Instant.now();\r\n    Instant exp = now.plus(props.getAccessTokenExpireMinutes(),\
+    \ ChronoUnit.MINUTES);\r\n\r\n    return Jwts.builder()\r\n      .issuer(props.getIssuer())\r\
+    \n      .subject(String.valueOf(userId))\r\n      .claims(Map.of(\r\n        \"\
+    username\", username,\r\n        \"role\", role\r\n      ))\r\n      .issuedAt(Date.from(now))\r\
+    \n      .expiration(Date.from(exp))\r\n      .signWith(key())\r\n      .compact();\r\
+    \n  }\r\n\r\n  public io.jsonwebtoken.Claims parseClaims(String token) {\r\n \
+    \   return Jwts.parser()\r\n      .verifyWith(key())\r\n      .build()\r\n   \
+    \   .parseSignedClaims(token)\r\n      .getPayload();\r\n  }\r\n}"
+  info:
+    "size": "1315"
+    "last_modified": "2025-12-31T17:44:04.6721312"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "config\\security\\SecurityConfig.java"
+  content: "package com.sss.sync.config.security;\r\n\r\nimport lombok.RequiredArgsConstructor;\r\
+    \nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\
+    \nimport org.springframework.http.HttpMethod;\r\nimport org.springframework.security.config.Customizer;\r\
+    \nimport org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;\r\
+    \nimport org.springframework.security.config.annotation.web.builders.HttpSecurity;\r\
+    \nimport org.springframework.security.config.http.SessionCreationPolicy;\r\nimport\
+    \ org.springframework.security.web.SecurityFilterChain;\r\n\r\n@Configuration\r\
+    \n@EnableMethodSecurity\r\n@RequiredArgsConstructor\r\npublic class SecurityConfig\
+    \ {\r\n\r\n  private final JwtUtil jwtUtil;\r\n\r\n  @Bean\r\n  public SecurityFilterChain\
+    \ filterChain(HttpSecurity http) throws Exception {\r\n    http\r\n      .csrf(csrf\
+    \ -> csrf.disable())\r\n      .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))\r\
+    \n      .authorizeHttpRequests(auth -> auth\r\n        .requestMatchers(\"/api/auth/**\"\
+    ).permitAll()\r\n        .requestMatchers(\"/swagger-ui/**\", \"/v3/api-docs/**\"\
+    ).permitAll()\r\n        .requestMatchers(HttpMethod.GET, \"/api/products/**\"\
+    ).permitAll()\r\n        .anyRequest().authenticated()\r\n      )\r\n      .addFilterBefore(new\
+    \ JwtAuthFilter(jwtUtil), org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class)\r\
+    \n      .httpBasic(Customizer.withDefaults());\r\n\r\n    return http.build();\r\
+    \n  }\r\n}"
+  info:
+    "size": "1492"
+    "last_modified": "2025-12-31T17:44:04.6742675"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "domain\\entity\\OrderInfo.java"
+  content: "package com.sss.sync.domain.entity;\r\n\r\nimport lombok.Data;\r\n\r\n\
+    import java.time.LocalDateTime;\r\n\r\n@Data\r\npublic class OrderInfo {\r\n \
+    \ private Long orderId;\r\n  private Long userId;\r\n  private Long productId;\r\
+    \n  private Integer quantity;\r\n  private String orderStatus;\r\n  private LocalDateTime\
+    \ orderedAt;\r\n  private String shippingAddress;\r\n\r\n  private Long version;\r\
+    \n  private LocalDateTime updatedAt;\r\n  private Boolean deleted;\r\n}"
+  info:
+    "size": "429"
+    "last_modified": "2025-12-31T17:44:04.6785494"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "domain\\entity\\ProductInfo.java"
+  content: "package com.sss.sync.domain.entity;\r\n\r\nimport lombok.Data;\r\n\r\n\
+    import java.math.BigDecimal;\r\nimport java.time.LocalDateTime;\r\n\r\n@Data\r\
+    \npublic class ProductInfo {\r\n  private Long productId;\r\n  private String\
+    \ productName;\r\n  private Long categoryId;\r\n  private Long supplierId;\r\n\
+    \  private BigDecimal price;\r\n  private Integer stock;\r\n  private String description;\r\
+    \n  private LocalDateTime listedAt;\r\n\r\n  private Long version;\r\n  private\
+    \ LocalDateTime updatedAt;\r\n  private Boolean deleted;\r\n}"
+  info:
+    "size": "489"
+    "last_modified": "2025-12-31T17:44:04.6825514"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "domain\\entity\\UserInfo.java"
+  content: "package com.sss.sync.domain.entity;\r\n\r\nimport lombok.Data;\r\n\r\n\
+    import java.time.LocalDateTime;\r\n\r\n@Data\r\npublic class UserInfo {\r\n  private\
+    \ Long userId;\r\n  private String username;\r\n  private String passwordHash;\r\
+    \n  private String email;\r\n  private String role;\r\n\r\n  private Long version;\r\
+    \n  private LocalDateTime updatedAt;\r\n  private Boolean deleted;\r\n}"
+  info:
+    "size": "354"
+    "last_modified": "2025-12-31T17:44:04.6845519"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "domain\\enums\\UserRole.java"
+  content: "package com.sss.sync.domain.enums;\r\n\r\npublic enum UserRole {\r\n \
+    \ USER,\r\n  ADMIN\r\n}"
+  info:
+    "size": "81"
+    "last_modified": "2025-12-31T17:44:04.6865516"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "domain\\enums\\WriteDb.java"
+  content: "package com.sss.sync.domain.enums;\r\n\r\npublic enum WriteDb {\r\n  MYSQL,\r\
+    \n  POSTGRES\r\n}"
+  info:
+    "size": "84"
+    "last_modified": "2025-12-31T17:44:04.6905515"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "infra\\mapper\\mysql\\MysqlOrderMapper.java"
+  content: "package com.sss.sync.infra.mapper.mysql;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\
+    \nimport com.sss.sync.domain.entity.OrderInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\
+    \n\r\n@Mapper\r\npublic interface MysqlOrderMapper extends BaseMapper<OrderInfo>\
+    \ {\r\n}"
+  info:
+    "size": "272"
+    "last_modified": "2025-12-31T17:44:04.6945515"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "infra\\mapper\\mysql\\MysqlProductMapper.java"
+  content: "package com.sss.sync.infra.mapper.mysql;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\
+    \nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\
+    \nimport org.apache.ibatis.annotations.Param;\r\nimport org.apache.ibatis.annotations.Update;\r\
+    \n\r\n@Mapper\r\npublic interface MysqlProductMapper extends BaseMapper<ProductInfo>\
+    \ {\r\n\r\n  // 用 SQL 保证库存不会减成负数（并发安全的一种简单写法）\r\n  @Update(\"\"\"\r\n    UPDATE\
+    \ product_info\r\n    SET stock = stock - #{qty},\r\n        version = version\
+    \ + 1\r\n    WHERE product_id = #{productId}\r\n      AND deleted = 0\r\n    \
+    \  AND stock >= #{qty}\r\n  \"\"\")\r\n  int decreaseStockIfEnough(@Param(\"productId\"\
+    ) Long productId, @Param(\"qty\") int qty);\r\n}"
+  info:
+    "size": "743"
+    "last_modified": "2025-12-31T17:44:04.6965514"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "infra\\mapper\\mysql\\MysqlUserMapper.java"
+  content: "package com.sss.sync.infra.mapper.mysql;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\
+    \nimport com.sss.sync.domain.entity.UserInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\
+    \n\r\n@Mapper\r\npublic interface MysqlUserMapper extends BaseMapper<UserInfo>\
+    \ {\r\n}"
+  info:
+    "size": "269"
+    "last_modified": "2025-12-31T17:44:04.700552"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "infra\\mapper\\postgres\\PostgresOrderMapper.java"
+  content: "package com.sss.sync.infra.mapper.postgres;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\
+    \nimport com.sss.sync.domain.entity.OrderInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\
+    \n\r\n@Mapper\r\npublic interface PostgresOrderMapper extends BaseMapper<OrderInfo>\
+    \ {\r\n}"
+  info:
+    "size": "278"
+    "last_modified": "2025-12-31T17:44:04.7025519"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "infra\\mapper\\postgres\\PostgresProductMapper.java"
+  content: "package com.sss.sync.infra.mapper.postgres;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\
+    \nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\
+    \nimport org.apache.ibatis.annotations.Param;\r\nimport org.apache.ibatis.annotations.Update;\r\
+    \n\r\n@Mapper\r\npublic interface PostgresProductMapper extends BaseMapper<ProductInfo>\
+    \ {\r\n\r\n  @Update(\"\"\"\r\n    UPDATE product_info\r\n    SET stock = stock\
+    \ - #{qty},\r\n        version = version + 1\r\n    WHERE product_id = #{productId}\r\
+    \n      AND deleted = false\r\n      AND stock >= #{qty}\r\n  \"\"\")\r\n  int\
+    \ decreaseStockIfEnough(@Param(\"productId\") Long productId, @Param(\"qty\")\
+    \ int qty);\r\n}"
+  info:
+    "size": "669"
+    "last_modified": "2025-12-31T17:44:04.7065518"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "infra\\mapper\\postgres\\PostgresUserMapper.java"
+  content: "package com.sss.sync.infra.mapper.postgres;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\
+    \nimport com.sss.sync.domain.entity.UserInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\
+    \n\r\n@Mapper\r\npublic interface PostgresUserMapper extends BaseMapper<UserInfo>\
+    \ {\r\n}"
+  info:
+    "size": "275"
+    "last_modified": "2025-12-31T17:44:04.7085518"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "infra\\mapper\\read\\ReadProductMapper.java"
+  content: "package com.sss.sync.infra.mapper.read;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\
+    \nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport org.apache.ibatis.annotations.Mapper;\r\
+    \n\r\n@Mapper\r\npublic interface ReadProductMapper extends BaseMapper<ProductInfo>\
+    \ {\r\n}"
+  info:
+    "size": "276"
+    "last_modified": "2025-12-31T17:44:04.7105522"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "service\\AuthService.java"
+  content: "package com.sss.sync.service;\r\n\r\nimport com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;\r\
+    \nimport com.sss.sync.common.exception.BizException;\r\nimport com.sss.sync.config.security.JwtUtil;\r\
+    \nimport com.sss.sync.domain.entity.UserInfo;\r\nimport com.sss.sync.infra.mapper.mysql.MysqlUserMapper;\r\
+    \nimport com.sss.sync.infra.mapper.postgres.PostgresUserMapper;\r\nimport lombok.RequiredArgsConstructor;\r\
+    \nimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;\r\n\
+    import org.springframework.stereotype.Service;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\
+    \npublic class AuthService {\r\n\r\n  private final MysqlUserMapper mysqlUserMapper;\r\
+    \n  private final PostgresUserMapper postgresUserMapper;\r\n  private final JwtUtil\
+    \ jwtUtil;\r\n\r\n  private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();\r\
+    \n\r\n  public String login(String username, String password) {\r\n    UserInfo\
+    \ u = mysqlUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()\r\n      .eq(UserInfo::getUsername,\
+    \ username)\r\n      .eq(UserInfo::getDeleted, false)\r\n      .last(\"LIMIT 1\"\
+    ));\r\n\r\n    if (u == null) {\r\n      // postgres 没有 LIMIT 语法差异：MyBatis-Plus\
+    \ last 直接拼接，PG也支持 LIMIT\r\n      u = postgresUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()\r\
+    \n        .eq(UserInfo::getUsername, username)\r\n        .eq(UserInfo::getDeleted,\
+    \ false)\r\n        .last(\"LIMIT 1\"));\r\n    }\r\n\r\n    if (u == null) {\r\
+    \n      throw BizException.of(401, \"USER_NOT_FOUND\");\r\n    }\r\n\r\n    if\
+    \ (!encoder.matches(password, u.getPasswordHash())) {\r\n      throw BizException.of(401,\
+    \ \"INVALID_PASSWORD\");\r\n    }\r\n\r\n    return jwtUtil.generateAccessToken(u.getUserId(),\
+    \ u.getUsername(), u.getRole());\r\n  }\r\n\r\n  public UserInfo findUser(String\
+    \ username) {\r\n    UserInfo u = mysqlUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()\r\
+    \n      .eq(UserInfo::getUsername, username)\r\n      .eq(UserInfo::getDeleted,\
+    \ false)\r\n      .last(\"LIMIT 1\"));\r\n    if (u != null) return u;\r\n\r\n\
+    \    return postgresUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()\r\n\
+    \      .eq(UserInfo::getUsername, username)\r\n      .eq(UserInfo::getDeleted,\
+    \ false)\r\n      .last(\"LIMIT 1\"));\r\n  }\r\n}"
+  info:
+    "size": "2154"
+    "last_modified": "2025-12-31T17:44:04.7185519"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "service\\conflict\\ConflictLinkTokenService.java"
+  content: "package com.sss.sync.service.conflict;\r\n\r\nimport com.sss.sync.config.security.JwtProperties;\r\
+    \nimport io.jsonwebtoken.Jwts;\r\nimport io.jsonwebtoken.security.Keys;\r\nimport\
+    \ lombok.RequiredArgsConstructor;\r\nimport org.springframework.stereotype.Service;\r\
+    \n\r\nimport javax.crypto.SecretKey;\r\nimport java.nio.charset.StandardCharsets;\r\
+    \nimport java.time.Instant;\r\nimport java.time.temporal.ChronoUnit;\r\nimport\
+    \ java.util.Date;\r\nimport java.util.Map;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\
+    \npublic class ConflictLinkTokenService {\r\n\r\n  private final JwtProperties\
+    \ jwtProperties;\r\n\r\n  private SecretKey key() {\r\n    return Keys.hmacShaKeyFor(jwtProperties.getSecret().getBytes(StandardCharsets.UTF_8));\r\
+    \n  }\r\n\r\n  public String generate(long conflictId, String adminUsername) {\r\
+    \n    Instant now = Instant.now();\r\n    Instant exp = now.plus(24, ChronoUnit.HOURS);\r\
+    \n\r\n    return Jwts.builder()\r\n      .issuer(jwtProperties.getIssuer())\r\n\
+    \      .subject(\"conflict-view\")\r\n      .claims(Map.of(\r\n        \"conflictId\"\
+    , conflictId,\r\n        \"admin\", adminUsername\r\n      ))\r\n      .issuedAt(Date.from(now))\r\
+    \n      .expiration(Date.from(exp))\r\n      .signWith(key())\r\n      .compact();\r\
+    \n  }\r\n\r\n  public io.jsonwebtoken.Claims parse(String token) {\r\n    return\
+    \ Jwts.parser()\r\n      .verifyWith(key())\r\n      .build()\r\n      .parseSignedClaims(token)\r\
+    \n      .getPayload();\r\n  }\r\n}"
+  info:
+    "size": "1356"
+    "last_modified": "2025-12-31T17:44:04.7205518"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "service\\mail\\MailProperties.java"
+  content: "package com.sss.sync.service.mail;\r\n\r\nimport lombok.Data;\r\nimport\
+    \ org.springframework.boot.context.properties.ConfigurationProperties;\r\nimport\
+    \ org.springframework.context.annotation.Configuration;\r\n\r\n@Data\r\n@Configuration\r\
+    \n@ConfigurationProperties(prefix = \"sss.mail\")\r\npublic class MailProperties\
+    \ {\r\n  private boolean enabled;\r\n  private String from;\r\n  private String\
+    \ adminTo;\r\n  private String conflictViewBaseUrl;\r\n}"
+  info:
+    "size": "420"
+    "last_modified": "2025-12-31T17:44:04.7245518"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "service\\mail\\MailService.java"
+  content: "package com.sss.sync.service.mail;\r\n\r\nimport lombok.RequiredArgsConstructor;\r\
+    \nimport org.springframework.mail.SimpleMailMessage;\r\nimport org.springframework.mail.javamail.JavaMailSender;\r\
+    \nimport org.springframework.stereotype.Service;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\
+    \npublic class MailService {\r\n\r\n  private final JavaMailSender mailSender;\r\
+    \n  private final MailProperties props;\r\n\r\n  public void sendText(String to,\
+    \ String subject, String text) {\r\n    if (!props.isEnabled()) return;\r\n\r\n\
+    \    SimpleMailMessage msg = new SimpleMailMessage();\r\n    msg.setFrom(props.getFrom());\r\
+    \n    msg.setTo(to);\r\n    msg.setSubject(subject);\r\n    msg.setText(text);\r\
+    \n    mailSender.send(msg);\r\n  }\r\n}"
+  info:
+    "size": "690"
+    "last_modified": "2025-12-31T17:44:04.7265519"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "service\\OrderService.java"
+  content: "package com.sss.sync.service;\r\n\r\nimport com.sss.sync.common.exception.BizException;\r\
+    \nimport com.sss.sync.domain.entity.OrderInfo;\r\nimport com.sss.sync.domain.enums.WriteDb;\r\
+    \nimport com.sss.sync.infra.mapper.mysql.MysqlOrderMapper;\r\nimport com.sss.sync.infra.mapper.mysql.MysqlProductMapper;\r\
+    \nimport com.sss.sync.infra.mapper.postgres.PostgresOrderMapper;\r\nimport com.sss.sync.infra.mapper.postgres.PostgresProductMapper;\r\
+    \nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.stereotype.Service;\r\
+    \nimport org.springframework.transaction.annotation.Transactional;\r\n\r\n@Service\r\
+    \n@RequiredArgsConstructor\r\npublic class OrderService {\r\n\r\n  private final\
+    \ MysqlOrderMapper mysqlOrderMapper;\r\n  private final MysqlProductMapper mysqlProductMapper;\r\
+    \n\r\n  private final PostgresOrderMapper postgresOrderMapper;\r\n  private final\
+    \ PostgresProductMapper postgresProductMapper;\r\n\r\n  @Transactional(transactionManager\
+    \ = \"mysqlTxManager\", rollbackFor = Exception.class)\r\n  public Long placeOrderOnMysql(Long\
+    \ userId, Long productId, int qty, String address) {\r\n    int affected = mysqlProductMapper.decreaseStockIfEnough(productId,\
+    \ qty);\r\n    if (affected != 1) {\r\n      throw BizException.of(400, \"INSUFFICIENT_STOCK_OR_PRODUCT_NOT_FOUND\"\
+    );\r\n    }\r\n\r\n    OrderInfo o = new OrderInfo();\r\n    o.setUserId(userId);\r\
+    \n    o.setProductId(productId);\r\n    o.setQuantity(qty);\r\n    o.setOrderStatus(\"\
+    CREATED\");\r\n    o.setShippingAddress(address);\r\n    o.setVersion(1L);\r\n\
+    \    // orderedAt/updatedAt 由数据库默认值处理也可以，这里不手动填\r\n\r\n    mysqlOrderMapper.insert(o);\r\
+    \n    return o.getOrderId();\r\n  }\r\n\r\n  @Transactional(transactionManager\
+    \ = \"postgresTxManager\", rollbackFor = Exception.class)\r\n  public Long placeOrderOnPostgres(Long\
+    \ userId, Long productId, int qty, String address) {\r\n    int affected = postgresProductMapper.decreaseStockIfEnough(productId,\
+    \ qty);\r\n    if (affected != 1) {\r\n      throw BizException.of(400, \"INSUFFICIENT_STOCK_OR_PRODUCT_NOT_FOUND\"\
+    );\r\n    }\r\n\r\n    OrderInfo o = new OrderInfo();\r\n    o.setUserId(userId);\r\
+    \n    o.setProductId(productId);\r\n    o.setQuantity(qty);\r\n    o.setOrderStatus(\"\
+    CREATED\");\r\n    o.setShippingAddress(address);\r\n    o.setVersion(1L);\r\n\
+    \r\n    postgresOrderMapper.insert(o);\r\n    return o.getOrderId();\r\n  }\r\n\
+    \r\n  public Long placeOrder(WriteDb writeDb, Long userId, Long productId, int\
+    \ qty, String address) {\r\n    return switch (writeDb) {\r\n      case MYSQL\
+    \ -> placeOrderOnMysql(userId, productId, qty, address);\r\n      case POSTGRES\
+    \ -> placeOrderOnPostgres(userId, productId, qty, address);\r\n    };\r\n  }\r\
+    \n}"
+  info:
+    "size": "2571"
+    "last_modified": "2025-12-31T17:44:04.7305519"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "service\\ProductQueryService.java"
+  content: "package com.sss.sync.service;\r\n\r\nimport com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;\r\
+    \nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport com.sss.sync.infra.mapper.read.ReadProductMapper;\r\
+    \nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.stereotype.Service;\r\
+    \n\r\nimport java.util.List;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\npublic\
+    \ class ProductQueryService {\r\n\r\n  private final ReadProductMapper readProductMapper;\r\
+    \n\r\n  public List<ProductInfo> listAll() {\r\n    return readProductMapper.selectList(new\
+    \ LambdaQueryWrapper<ProductInfo>()\r\n      .eq(ProductInfo::getDeleted, false)\r\
+    \n      .orderByDesc(ProductInfo::getProductId));\r\n  }\r\n}"
+  info:
+    "size": "677"
+    "last_modified": "2025-12-31T17:44:04.7326006"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "service\\sync\\SyncProperties.java"
+  content: "package com.sss.sync.service.sync;\r\n\r\nimport lombok.Data;\r\nimport\
+    \ org.springframework.boot.context.properties.ConfigurationProperties;\r\nimport\
+    \ org.springframework.context.annotation.Configuration;\r\n\r\n@Data\r\n@Configuration\r\
+    \n@ConfigurationProperties(prefix = \"sss.sync\")\r\npublic class SyncProperties\
+    \ {\r\n  private boolean enabled = true;\r\n  private long pollIntervalMillis\
+    \ = 1000;\r\n  private int batchSize = 200;\r\n\r\n  private Scheduled scheduled\
+    \ = new Scheduled();\r\n\r\n  @Data\r\n  public static class Scheduled {\r\n \
+    \   private boolean enabled = true;\r\n    private long fixedDelayMillis = 10000;\r\
+    \n  }\r\n}"
+  info:
+    "size": "596"
+    "last_modified": "2025-12-31T17:44:04.7346042"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "service\\sync\\SyncScheduler.java"
+  content: "package com.sss.sync.service.sync;\r\n\r\nimport jakarta.annotation.PostConstruct;\r\
+    \nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.scheduling.annotation.EnableScheduling;\r\
+    \nimport org.springframework.scheduling.annotation.Scheduled;\r\nimport org.springframework.stereotype.Component;\r\
+    \n\r\n@Component\r\n@EnableScheduling\r\n@RequiredArgsConstructor\r\npublic class\
+    \ SyncScheduler {\r\n\r\n  private final SyncProperties props;\r\n  private final\
+    \ SyncEngineService engine;\r\n\r\n  // 定时同步（演示：固定延迟）\r\n  @Scheduled(fixedDelayString\
+    \ = \"${sss.sync.scheduled.fixedDelayMillis:10000}\")\r\n  public void scheduledSync()\
+    \ {\r\n    if (!props.getScheduled().isEnabled()) return;\r\n    engine.syncOnce();\r\
+    \n  }\r\n\r\n  // 近实时轮询（单独线程）\r\n  @PostConstruct\r\n  public void startRealtimeLoop()\
+    \ {\r\n    if (!props.isEnabled()) return;\r\n\r\n    Thread t = new Thread(()\
+    \ -> {\r\n      while (true) {\r\n        try {\r\n          engine.syncOnce();\r\
+    \n          Thread.sleep(props.getPollIntervalMillis());\r\n        } catch (InterruptedException\
+    \ ie) {\r\n          Thread.currentThread().interrupt();\r\n          return;\r\
+    \n        } catch (Exception e) {\r\n          // 不要让线程死掉，先简单打印\r\n          e.printStackTrace();\r\
+    \n          try { Thread.sleep(2000); } catch (InterruptedException ignored) {}\r\
+    \n        }\r\n      }\r\n    }, \"sync-realtime-loop\");\r\n\r\n    t.setDaemon(true);\r\
+    \n    t.start();\r\n  }\r\n}"
+  info:
+    "size": "1417"
+    "last_modified": "2025-12-31T17:44:04.7366044"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "SssSyncSystemApplication.java"
+  content: "package com.sss.sync;\r\n\r\nimport org.springframework.boot.SpringApplication;\r\
+    \nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\nimport\
+    \ org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;\r\n\
+    \r\n@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})\r\n\
+    public class SssSyncSystemApplication {\r\n  public static void main(String[]\
+    \ args) {\r\n    SpringApplication.run(SssSyncSystemApplication.class, args);\r\
+    \n  }\r\n}"
+  info:
+    "size": "458"
+    "last_modified": "2025-12-31T17:44:04.7401122"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "tools\\MybatisStatementCheckRunner.java"
+  content: "package com.sss.sync.tools;\r\n\r\nimport lombok.RequiredArgsConstructor;\r\
+    \nimport org.apache.ibatis.session.SqlSessionFactory;\r\nimport org.springframework.boot.CommandLineRunner;\r\
+    \nimport org.springframework.stereotype.Component;\r\n\r\n@Component\r\n@RequiredArgsConstructor\r\
+    \npublic class MybatisStatementCheckRunner implements CommandLineRunner {\r\n\r\
+    \n  private final SqlSessionFactory mysqlSqlSessionFactory;\r\n\r\n  @Override\r\
+    \n  public void run(String... args) {\r\n    var cfg = mysqlSqlSessionFactory.getConfiguration();\r\
+    \n    String msId = \"com.sss.sync.infra.mapper.mysql.MysqlProductMapper.selectById\"\
+    ;\r\n    System.out.println(\"[CHECK] hasMappedStatement(\" + msId + \") = \"\
+    \ + cfg.hasStatement(msId));\r\n  }\r\n}"
+  info:
+    "size": "697"
+    "last_modified": "2025-12-31T17:44:04.7444149"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "tools\\PasswordHashTool.java"
+  content: "package com.sss.sync.tools;\r\n\r\nimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;\r\
+    \n\r\npublic class PasswordHashTool {\r\n  public static void main(String[] args)\
+    \ {\r\n    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();\r\n\r\n\
+    \    String adminHash = encoder.encode(\"admin123\");\r\n    String userHash =\
+    \ encoder.encode(\"user123\");\r\n\r\n    System.out.println(\"admin123 bcrypt\
+    \ = \" + adminHash);\r\n    System.out.println(\"user123  bcrypt = \" + userHash);\r\
+    \n  }\r\n}"
+  info:
+    "size": "479"
+    "last_modified": "2025-12-31T17:44:04.7444149"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "web\\controller\\AuthController.java"
+  content: "package com.sss.sync.web.controller;\r\n\r\nimport com.sss.sync.common.api.ApiResponse;\r\
+    \nimport com.sss.sync.service.AuthService;\r\nimport com.sss.sync.web.dto.LoginRequest;\r\
+    \nimport com.sss.sync.web.dto.LoginResponse;\r\nimport jakarta.validation.Valid;\r\
+    \nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.web.bind.annotation.*;\r\
+    \n\r\n@RestController\r\n@RequestMapping(\"/api/auth\")\r\n@RequiredArgsConstructor\r\
+    \npublic class AuthController {\r\n\r\n  private final AuthService authService;\r\
+    \n\r\n  @PostMapping(\"/login\")\r\n  public ApiResponse<LoginResponse> login(@Valid\
+    \ @RequestBody LoginRequest req) {\r\n    String token = authService.login(req.getUsername(),\
+    \ req.getPassword());\r\n    var user = authService.findUser(req.getUsername());\r\
+    \n    return ApiResponse.ok(new LoginResponse(token, user.getUserId(), user.getUsername(),\
+    \ user.getRole()));\r\n  }\r\n}"
+  info:
+    "size": "848"
+    "last_modified": "2025-12-31T17:44:04.748771"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "web\\controller\\ConflictViewController.java"
+  content: "package com.sss.sync.web.controller;\r\n\r\nimport com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;\r\
+    \nimport com.sss.sync.common.api.ApiResponse;\r\nimport com.sss.sync.common.exception.BizException;\r\
+    \nimport com.sss.sync.service.conflict.ConflictLinkTokenService;\r\nimport io.jsonwebtoken.Claims;\r\
+    \nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.web.bind.annotation.*;\r\
+    \n\r\n@RestController\r\n@RequiredArgsConstructor\r\npublic class ConflictViewController\
+    \ {\r\n\r\n  private final ConflictLinkTokenService tokenService;\r\n  private\
+    \ final MysqlConflictRecordMapper conflictRecordMapper;\r\n\r\n  @GetMapping(\"\
+    /api/conflicts/view\")\r\n  public ApiResponse<ConflictRecord> view(@RequestParam(\"\
+    token\") String token) {\r\n    Claims c = tokenService.parse(token);\r\n    Object\
+    \ conflictIdObj = c.get(\"conflictId\");\r\n    if (conflictIdObj == null) throw\
+    \ BizException.of(401, \"INVALID_TOKEN\");\r\n\r\n    long conflictId = Long.parseLong(String.valueOf(conflictIdObj));\r\
+    \n\r\n    ConflictRecord record = conflictRecordMapper.selectOne(new LambdaQueryWrapper<ConflictRecord>()\r\
+    \n      .eq(ConflictRecord::getConflictId, conflictId)\r\n      .last(\"LIMIT\
+    \ 1\"));\r\n\r\n    if (record == null) throw BizException.of(404, \"CONFLICT_NOT_FOUND\"\
+    );\r\n    return ApiResponse.ok(record);\r\n  }\r\n\r\n  // 简单 HTML 页面（浏览器直接打开\
+    查看，后续第7包换成 Vue）\r\n  @GetMapping(value = \"/conflicts/view\", produces = \"text/html;\
+    \ charset=UTF-8\")\r\n  public String viewHtml(@RequestParam(\"token\") String\
+    \ token) {\r\n    // 复用 API 逻辑：只验证 token 是否有效\r\n    Claims c = tokenService.parse(token);\r\
+    \n    Object conflictIdObj = c.get(\"conflictId\");\r\n    if (conflictIdObj ==\
+    \ null) throw BizException.of(401, \"INVALID_TOKEN\");\r\n\r\n    long conflictId\
+    \ = Long.parseLong(String.valueOf(conflictIdObj));\r\n\r\n    return \"\"\"\r\n\
+    \      <!doctype html>\r\n      <html lang=\"zh-CN\">\r\n      <head>\r\n    \
+    \    <meta charset=\"utf-8\"/>\r\n        <meta name=\"viewport\" content=\"width=device-width,\
+    \ initial-scale=1\"/>\r\n        <title>同步冲突详情</title>\r\n        <style>\r\n\
+    \          body { font-family: Arial, sans-serif; padding: 12px; }\r\n       \
+    \   pre { white-space: pre-wrap; word-break: break-all; background: #f5f5f5; padding:\
+    \ 12px; border-radius: 6px; }\r\n          .box { max-width: 980px; margin: 0\
+    \ auto; }\r\n        </style>\r\n      </head>\r\n      <body>\r\n        <div\
+    \ class=\"box\">\r\n          <h2>同步冲突详情（conflictId=%d）</h2>\r\n          <p>本\
+    页面通过链接 token 鉴权，PC/手机浏览器均可打开。</p>\r\n          <p>接口：<code>/api/conflicts/view?token=...</code></p>\r\
+    \n          <hr/>\r\n          <div id=\"content\">加载中...</div>\r\n        </div>\r\
+    \n        <script>\r\n          fetch('/api/conflicts/view?token=%s')\r\n    \
+    \        .then(r => r.json())\r\n            .then(res => {\r\n              if(res.code\
+    \ !== 0){ document.getElementById('content').innerText = '加载失败：' + res.message;\
+    \ return; }\r\n              const d = res.data;\r\n              document.getElementById('content').innerHTML\
+    \ =\r\n                '<p><b>table</b>: ' + d.tableName + ' <b>pk</b>: ' + d.pkValue\
+    \ + '</p>'\r\n                + '<p><b>source</b>: ' + d.sourceDb + ' <b>target</b>:\
+    \ ' + d.targetDb + '</p>'\r\n                + '<p><b>status</b>: ' + d.status\
+    \ + '</p>'\r\n                + '<h3>source_payload_json</h3><pre>' + d.sourcePayloadJson\
+    \ + '</pre>'\r\n                + '<h3>target_payload_json</h3><pre>' + d.targetPayloadJson\
+    \ + '</pre>';\r\n            })\r\n            .catch(err => document.getElementById('content').innerText\
+    \ = '加载异常：' + err);\r\n        </script>\r\n      </body>\r\n      </html>\r\n\
+    \      \"\"\".formatted(conflictId, token);\r\n  }\r\n}"
+  info:
+    "size": "3653"
+    "last_modified": "2025-12-31T17:44:04.7507743"
+    "mime_type": "text/html"
+    "extension": ".java"
+- path: "web\\controller\\OrderController.java"
+  content: "package com.sss.sync.web.controller;\r\n\r\nimport com.sss.sync.common.api.ApiResponse;\r\
+    \nimport com.sss.sync.service.OrderService;\r\nimport com.sss.sync.web.dto.PlaceOrderRequest;\r\
+    \nimport com.sss.sync.web.dto.PlaceOrderResponse;\r\nimport jakarta.validation.Valid;\r\
+    \nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.security.access.prepost.PreAuthorize;\r\
+    \nimport org.springframework.web.bind.annotation.*;\r\n\r\n@RestController\r\n\
+    @RequestMapping(\"/api/orders\")\r\n@RequiredArgsConstructor\r\npublic class OrderController\
+    \ {\r\n\r\n  private final OrderService orderService;\r\n\r\n  @PostMapping(\"\
+    /place\")\r\n  @PreAuthorize(\"hasAnyRole('USER','ADMIN')\")\r\n  public ApiResponse<PlaceOrderResponse>\
+    \ place(@Valid @RequestBody PlaceOrderRequest req) {\r\n    Long orderId = orderService.placeOrder(req.getWriteDb(),\
+    \ req.getUserId(), req.getProductId(), req.getQuantity(), req.getShippingAddress());\r\
+    \n    return ApiResponse.ok(new PlaceOrderResponse(orderId, req.getWriteDb().name()));\r\
+    \n  }\r\n}"
+  info:
+    "size": "976"
+    "last_modified": "2025-12-31T17:44:04.7528212"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "web\\controller\\ProductController.java"
+  content: "package com.sss.sync.web.controller;\r\n\r\nimport com.sss.sync.common.api.ApiResponse;\r\
+    \nimport com.sss.sync.domain.entity.ProductInfo;\r\nimport com.sss.sync.service.ProductQueryService;\r\
+    \nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.web.bind.annotation.*;\r\
+    \n\r\nimport java.util.List;\r\n\r\n@RestController\r\n@RequestMapping(\"/api/products\"\
+    )\r\n@RequiredArgsConstructor\r\npublic class ProductController {\r\n\r\n  private\
+    \ final ProductQueryService productQueryService;\r\n\r\n  @GetMapping\r\n  public\
+    \ ApiResponse<List<ProductInfo>> list() {\r\n    return ApiResponse.ok(productQueryService.listAll());\r\
+    \n  }\r\n}"
+  info:
+    "size": "605"
+    "last_modified": "2025-12-31T17:44:04.7568209"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "web\\dto\\LoginRequest.java"
+  content: "package com.sss.sync.web.dto;\r\n\r\nimport jakarta.validation.constraints.NotBlank;\r\
+    \nimport lombok.Data;\r\n\r\n@Data\r\npublic class LoginRequest {\r\n  @NotBlank\r\
+    \n  private String username;\r\n\r\n  @NotBlank\r\n  private String password;\r\
+    \n}"
+  info:
+    "size": "226"
+    "last_modified": "2025-12-31T17:44:04.7588208"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "web\\dto\\LoginResponse.java"
+  content: "package com.sss.sync.web.dto;\r\n\r\nimport lombok.AllArgsConstructor;\r\
+    \nimport lombok.Data;\r\n\r\n@Data\r\n@AllArgsConstructor\r\npublic class LoginResponse\
+    \ {\r\n  private String accessToken;\r\n  private Long userId;\r\n  private String\
+    \ username;\r\n  private String role;\r\n}"
+  info:
+    "size": "257"
+    "last_modified": "2025-12-31T17:44:04.7631924"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "web\\dto\\PlaceOrderRequest.java"
+  content: "package com.sss.sync.web.dto;\r\n\r\nimport com.sss.sync.domain.enums.WriteDb;\r\
+    \nimport jakarta.validation.constraints.Min;\r\nimport jakarta.validation.constraints.NotBlank;\r\
+    \nimport jakarta.validation.constraints.NotNull;\r\nimport lombok.Data;\r\n\r\n\
+    @Data\r\npublic class PlaceOrderRequest {\r\n  @NotNull\r\n  private Long userId;\r\
+    \n\r\n  @NotNull\r\n  private Long productId;\r\n\r\n  @NotNull\r\n  @Min(1)\r\
+    \n  private Integer quantity;\r\n\r\n  @NotBlank\r\n  private String shippingAddress;\r\
+    \n\r\n  @NotNull\r\n  private WriteDb writeDb; // MYSQL / POSTGRES\r\n}"
+  info:
+    "size": "525"
+    "last_modified": "2025-12-31T17:44:04.7651929"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
+- path: "web\\dto\\PlaceOrderResponse.java"
+  content: "package com.sss.sync.web.dto;\r\n\r\nimport lombok.AllArgsConstructor;\r\
+    \nimport lombok.Data;\r\n\r\n@Data\r\n@AllArgsConstructor\r\npublic class PlaceOrderResponse\
+    \ {\r\n  private Long orderId;\r\n  private String writeDb;\r\n}"
+  info:
+    "size": "207"
+    "last_modified": "2025-12-31T17:44:04.7671926"
+    "mime_type": "text/x-java-source"
+    "extension": ".java"
