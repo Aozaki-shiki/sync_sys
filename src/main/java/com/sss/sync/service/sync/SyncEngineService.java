@@ -45,7 +45,9 @@ public class SyncEngineService {
 
   private final ObjectMapper om = new ObjectMapper();
   
-  // Static formatter for space-separated timestamp format with optional microsecond precision
+  // Static formatter for space-separated timestamp format with optional fractional seconds
+  // Configured for PostgreSQL's microsecond precision (up to 6 digits after decimal point)
+  // The 0-6 range allows: no fractions, .1, .12, .123, .1234, .12345, or .123456
   private static final DateTimeFormatter SPACE_SEPARATED_FORMATTER = new DateTimeFormatterBuilder()
       .appendPattern("yyyy-MM-dd HH:mm:ss")
       .optionalStart()
@@ -345,6 +347,19 @@ public class SyncEngineService {
     return Long.parseLong(String.valueOf(o));
   }
 
+  /**
+   * Checks if a timestamp string contains a timezone offset indicator.
+   * 
+   * @param s The timestamp string to check
+   * @return true if the string has a timezone offset (+ or - after the date portion)
+   */
+  private boolean hasTimezoneOffset(String s) {
+    if (!s.contains("T")) return false;
+    if (s.contains("+")) return true;
+    // Only treat '-' as timezone offset if it appears after the date portion
+    return s.contains("-") && s.lastIndexOf('-') > ISO_DATE_PORTION_LENGTH;
+  }
+
   private LocalDateTime asLdt(Object o) {
     if (o == null) return null;
     if (o instanceof LocalDateTime ldt) return ldt;
@@ -357,8 +372,7 @@ public class SyncEngineService {
       if (s.endsWith("Z")) {
         return java.time.ZonedDateTime.parse(s).toLocalDateTime();
       }
-      // Check for timezone offset: '-' after the date portion indicates timezone, not date separator
-      if (s.contains("T") && (s.contains("+") || (s.contains("-") && s.lastIndexOf('-') > ISO_DATE_PORTION_LENGTH))) {
+      if (hasTimezoneOffset(s)) {
         return java.time.OffsetDateTime.parse(s).toLocalDateTime();
       }
       
@@ -374,8 +388,9 @@ public class SyncEngineService {
       
       // Fallback: try parsing directly
       return LocalDateTime.parse(s);
-    } catch (Exception e) {
+    } catch (java.time.format.DateTimeParseException e) {
       // If all parsing fails, return null to avoid breaking the sync
+      log.debug("Failed to parse timestamp string '{}': {}", s, e.getMessage());
       return null;
     }
   }
