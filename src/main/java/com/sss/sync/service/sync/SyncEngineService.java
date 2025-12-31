@@ -264,9 +264,9 @@ public class SyncEngineService {
         put(m, "price", n, "price");
         put(m, "stock", n, "stock");
         put(m, "description", n, "description");
-        put(m, "listedAt", n, "listed_at", "listedAt");
+        putTimestamp(m, "listedAt", n, "listed_at", "listedAt");
         put(m, "version", n, "version");
-        put(m, "updatedAt", n, "updated_at", "updatedAt");
+        putTimestamp(m, "updatedAt", n, "updated_at", "updatedAt");
         put(m, "deleted", n, "deleted");
       } else {
         put(m, "orderId", n, "order_id", "orderId");
@@ -274,10 +274,10 @@ public class SyncEngineService {
         put(m, "productId", n, "product_id", "productId");
         put(m, "quantity", n, "quantity");
         put(m, "orderStatus", n, "order_status", "orderStatus");
-        put(m, "orderedAt", n, "ordered_at", "orderedAt");
+        putTimestamp(m, "orderedAt", n, "ordered_at", "orderedAt");
         put(m, "shippingAddress", n, "shipping_address", "shippingAddress");
         put(m, "version", n, "version");
-        put(m, "updatedAt", n, "updated_at", "updatedAt");
+        putTimestamp(m, "updatedAt", n, "updated_at", "updatedAt");
         put(m, "deleted", n, "deleted");
       }
       return m;
@@ -297,6 +297,20 @@ public class SyncEngineService {
     }
   }
 
+  private void putTimestamp(Map<String, Object> m, String key, JsonNode n, String... candidates) {
+    for (String c : candidates) {
+      JsonNode v = n.get(c);
+      if (v == null || v.isNull()) continue;
+      
+      // Convert the value to LocalDateTime
+      LocalDateTime ldt = asLdt(v.asText());
+      if (ldt != null) {
+        m.put(key, ldt);
+      }
+      return;
+    }
+  }
+
   private long asLong(Object o) {
     if (o == null) return 0;
     if (o instanceof Number num) return num.longValue();
@@ -312,8 +326,38 @@ public class SyncEngineService {
   private LocalDateTime asLdt(Object o) {
     if (o == null) return null;
     if (o instanceof LocalDateTime ldt) return ldt;
-    String s = String.valueOf(o).replace(' ', 'T');
-    return LocalDateTime.parse(s);
+    
+    String s = String.valueOf(o).trim();
+    if (s.isEmpty()) return null;
+    
+    try {
+      // Try parsing ISO format with offset first (e.g., "2025-01-15T10:30:00+08:00" or "2025-01-15T10:30:00.123Z")
+      if (s.contains("T") && (s.contains("+") || s.contains("-") || s.endsWith("Z"))) {
+        // For formats with timezone/offset, parse as ZonedDateTime/OffsetDateTime and convert
+        if (s.endsWith("Z")) {
+          return java.time.ZonedDateTime.parse(s).toLocalDateTime();
+        } else {
+          return java.time.OffsetDateTime.parse(s).toLocalDateTime();
+        }
+      }
+      
+      // Try parsing as ISO LocalDateTime (e.g., "2025-01-15T10:30:00" or "2025-01-15T10:30:00.123")
+      if (s.contains("T")) {
+        return LocalDateTime.parse(s);
+      }
+      
+      // Try parsing space-separated format (e.g., "2025-01-15 10:30:00" or "2025-01-15 10:30:00.123")
+      if (s.contains(" ")) {
+        String iso = s.replace(' ', 'T');
+        return LocalDateTime.parse(iso);
+      }
+      
+      // Fallback: try parsing directly
+      return LocalDateTime.parse(s);
+    } catch (Exception e) {
+      // If all parsing fails, return null to avoid breaking the sync
+      return null;
+    }
   }
 
   private String jsonOf(Object obj) {
