@@ -14,11 +14,15 @@ import com.sss.sync.service.conflict.ConflictLinkTokenService;
 import com.sss.sync.service.mail.MailProperties;
 import com.sss.sync.service.mail.MailService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.*;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class SyncEngineService {
@@ -40,6 +44,19 @@ public class SyncEngineService {
   private final ConflictLinkTokenService linkTokenService;
 
   private final ObjectMapper om = new ObjectMapper();
+  
+  // Static formatter for space-separated timestamp format with optional fractional seconds
+  // Configured for PostgreSQL's microsecond precision (up to 6 digits after decimal point)
+  // The 0-6 range allows: no fractions, .1, .12, .123, .1234, .12345, or .123456
+  private static final DateTimeFormatter SPACE_SEPARATED_FORMATTER = new DateTimeFormatterBuilder()
+      .appendPattern("yyyy-MM-dd HH:mm:ss")
+      .optionalStart()
+      .appendFraction(java.time.temporal.ChronoField.NANO_OF_SECOND, 0, 6, true)
+      .optionalEnd()
+      .toFormatter();
+  
+  // Length of ISO date portion "yyyy-MM-dd" - used to distinguish date hyphens from timezone offset hyphens
+  private static final int ISO_DATE_PORTION_LENGTH = 10;
 
   public void syncOnce() {
     if (!props.isEnabled()) return;
@@ -264,9 +281,9 @@ public class SyncEngineService {
         put(m, "price", n, "price");
         put(m, "stock", n, "stock");
         put(m, "description", n, "description");
-        put(m, "listedAt", n, "listed_at", "listedAt");
+        putTimestamp(m, "listedAt", n, "listed_at", "listedAt");
         put(m, "version", n, "version");
-        put(m, "updatedAt", n, "updated_at", "updatedAt");
+        putTimestamp(m, "updatedAt", n, "updated_at", "updatedAt");
         put(m, "deleted", n, "deleted");
       } else {
         put(m, "orderId", n, "order_id", "orderId");
@@ -274,10 +291,10 @@ public class SyncEngineService {
         put(m, "productId", n, "product_id", "productId");
         put(m, "quantity", n, "quantity");
         put(m, "orderStatus", n, "order_status", "orderStatus");
-        put(m, "orderedAt", n, "ordered_at", "orderedAt");
+        putTimestamp(m, "orderedAt", n, "ordered_at", "orderedAt");
         put(m, "shippingAddress", n, "shipping_address", "shippingAddress");
         put(m, "version", n, "version");
-        put(m, "updatedAt", n, "updated_at", "updatedAt");
+        putTimestamp(m, "updatedAt", n, "updated_at", "updatedAt");
         put(m, "deleted", n, "deleted");
       }
       return m;
@@ -297,6 +314,27 @@ public class SyncEngineService {
     }
   }
 
+  private void putTimestamp(Map<String, Object> m, String key, JsonNode n, String... candidates) {
+    for (String c : candidates) {
+      JsonNode v = n.get(c);
+      if (v == null || v.isNull()) continue;
+      
+      // Convert the value to LocalDateTime
+      String textValue = v.asText();
+      LocalDateTime ldt = asLdt(textValue);
+      if (ldt != null) {
+        m.put(key, ldt);
+        return;
+      }
+      // If conversion failed, try next candidate
+      log.debug("Failed to convert timestamp field '{}' with value '{}' to LocalDateTime, trying next candidate", c, textValue);
+    }
+    // Log if all candidates failed
+    if (log.isDebugEnabled()) {
+      log.debug("All candidates {} failed to convert for timestamp field '{}'", Arrays.toString(candidates), key);
+    }
+  }
+
   private long asLong(Object o) {
     if (o == null) return 0;
     if (o instanceof Number num) return num.longValue();
@@ -309,11 +347,52 @@ public class SyncEngineService {
     return Long.parseLong(String.valueOf(o));
   }
 
+  /**
+   * Checks if a timestamp string contains a timezone offset indicator.
+   * 
+   * @param s The timestamp string to check
+   * @return true if the string has a timezone offset (+ or - after the date portion)
+   */
+  private boolean hasTimezoneOffset(String s) {
+    if (!s.contains("T")) return false;
+    if (s.contains("+")) return true;
+    // Only treat '-' as timezone offset if it appears after the date portion
+    return s.contains("-") && s.lastIndexOf('-') > ISO_DATE_PORTION_LENGTH;
+  }
+
   private LocalDateTime asLdt(Object o) {
     if (o == null) return null;
     if (o instanceof LocalDateTime ldt) return ldt;
-    String s = String.valueOf(o).replace(' ', 'T');
-    return LocalDateTime.parse(s);
+    
+    String s = String.valueOf(o).trim();
+    if (s.isEmpty()) return null;
+    
+    try {
+      // Try parsing ISO format with offset/timezone first (e.g., "2025-01-15T10:30:00+08:00" or "2025-01-15T10:30:00.123Z")
+      if (s.endsWith("Z")) {
+        return java.time.ZonedDateTime.parse(s).toLocalDateTime();
+      }
+      if (hasTimezoneOffset(s)) {
+        return java.time.OffsetDateTime.parse(s).toLocalDateTime();
+      }
+      
+      // Try parsing as ISO LocalDateTime (e.g., "2025-01-15T10:30:00" or "2025-01-15T10:30:00.123")
+      if (s.contains("T")) {
+        return LocalDateTime.parse(s);
+      }
+      
+      // Try parsing space-separated format (e.g., "2025-01-15 10:30:00" or "2025-01-15 10:30:00.123")
+      if (s.contains(" ")) {
+        return LocalDateTime.parse(s, SPACE_SEPARATED_FORMATTER);
+      }
+      
+      // Fallback: try parsing directly
+      return LocalDateTime.parse(s);
+    } catch (java.time.format.DateTimeParseException e) {
+      // If all parsing fails, return null to avoid breaking the sync
+      log.debug("Failed to parse timestamp string '{}': {}", s, e.getMessage());
+      return null;
+    }
   }
 
   private String jsonOf(Object obj) {
