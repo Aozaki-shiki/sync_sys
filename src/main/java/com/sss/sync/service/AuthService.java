@@ -1,6 +1,5 @@
 package com.sss.sync.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.sss.sync.common.exception.BizException;
 import com.sss.sync.config.security.JwtUtil;
 import com.sss.sync.domain.entity.UserInfo;
@@ -21,17 +20,10 @@ public class AuthService {
   private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
   public String login(String username, String password) {
-    UserInfo u = mysqlUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()
-      .eq(UserInfo::getUsername, username)
-      .eq(UserInfo::getDeleted, false)
-      .last("LIMIT 1"));
+    UserInfo u = mysqlUserMapper.findByUsername(username);
 
     if (u == null) {
-      // postgres 没有 LIMIT 语法差异：MyBatis-Plus last 直接拼接，PG也支持 LIMIT
-      u = postgresUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()
-        .eq(UserInfo::getUsername, username)
-        .eq(UserInfo::getDeleted, false)
-        .last("LIMIT 1"));
+      u = postgresUserMapper.findByUsername(username);
     }
 
     if (u == null) {
@@ -46,15 +38,9 @@ public class AuthService {
   }
 
   public UserInfo findUser(String username) {
-    UserInfo u = mysqlUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()
-      .eq(UserInfo::getUsername, username)
-      .eq(UserInfo::getDeleted, false)
-      .last("LIMIT 1"));
+    UserInfo u = mysqlUserMapper.findByUsername(username);
     if (u != null) return u;
 
-    return postgresUserMapper.selectOne(new LambdaQueryWrapper<UserInfo>()
-      .eq(UserInfo::getUsername, username)
-      .eq(UserInfo::getDeleted, false)
-      .last("LIMIT 1"));
+    return postgresUserMapper.findByUsername(username);
   }
 }

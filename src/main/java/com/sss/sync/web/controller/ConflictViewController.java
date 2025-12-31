@@ -1,21 +1,26 @@
 package com.sss.sync.web.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.sss.sync.common.api.ApiResponse;
 import com.sss.sync.common.exception.BizException;
+import com.sss.sync.domain.entity.ConflictRecord;
+import com.sss.sync.infra.mapper.mysql.MysqlConflictRecordMapper;
 import com.sss.sync.service.conflict.ConflictLinkTokenService;
 import io.jsonwebtoken.Claims;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "Conflicts", description = "冲突记录查看接口")
 public class ConflictViewController {
 
   private final ConflictLinkTokenService tokenService;
   private final MysqlConflictRecordMapper conflictRecordMapper;
 
   @GetMapping("/api/conflicts/view")
+  @Operation(summary = "查看冲突详情", description = "通过邮件中的 token 查看同步冲突详情")
   public ApiResponse<ConflictRecord> view(@RequestParam("token") String token) {
     Claims c = tokenService.parse(token);
     Object conflictIdObj = c.get("conflictId");
@@ -23,9 +28,7 @@ public class ConflictViewController {
 
     long conflictId = Long.parseLong(String.valueOf(conflictIdObj));
 
-    ConflictRecord record = conflictRecordMapper.selectOne(new LambdaQueryWrapper<ConflictRecord>()
-      .eq(ConflictRecord::getConflictId, conflictId)
-      .last("LIMIT 1"));
+    ConflictRecord record = conflictRecordMapper.selectById(conflictId);
 
     if (record == null) throw BizException.of(404, "CONFLICT_NOT_FOUND");
     return ApiResponse.ok(record);

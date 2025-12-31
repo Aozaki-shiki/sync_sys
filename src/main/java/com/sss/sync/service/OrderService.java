@@ -37,7 +37,7 @@ public class OrderService {
     o.setVersion(1L);
     // orderedAt/updatedAt 由数据库默认值处理也可以，这里不手动填
 
-    mysqlOrderMapper.insert(o);
+    mysqlOrderMapper.insertOrder(o);
     return o.getOrderId();
   }
 
@@ -56,7 +56,7 @@ public class OrderService {
     o.setShippingAddress(address);
     o.setVersion(1L);
 
-    postgresOrderMapper.insert(o);
+    postgresOrderMapper.insertOrder(o);
     return o.getOrderId();
   }
 
