@@ -38,7 +38,7 @@ public class SnowflakeIdGenerator {
   }
 
   public synchronized long nextId() {
-    long timestamp = currentTimeMillis();
+    long timestamp = System.currentTimeMillis();
 
     if (timestamp < lastTimestamp) {
       throw new IllegalStateException(
@@ -64,14 +64,10 @@ public class SnowflakeIdGenerator {
   }
 
   private long waitNextMillis(long lastTimestamp) {
-    long timestamp = currentTimeMillis();
+    long timestamp = System.currentTimeMillis();
     while (timestamp <= lastTimestamp) {
-      timestamp = currentTimeMillis();
+      timestamp = System.currentTimeMillis();
     }
     return timestamp;
-  }
-
-  private long currentTimeMillis() {
-    return System.currentTimeMillis();
   }
 }
