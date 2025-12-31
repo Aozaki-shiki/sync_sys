@@ -14,6 +14,7 @@ import com.sss.sync.service.conflict.ConflictLinkTokenService;
 import com.sss.sync.service.mail.MailProperties;
 import com.sss.sync.service.mail.MailService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -21,6 +22,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.*;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class SyncEngineService {
@@ -50,6 +52,9 @@ public class SyncEngineService {
       .appendFraction(java.time.temporal.ChronoField.NANO_OF_SECOND, 0, 6, true)
       .optionalEnd()
       .toFormatter();
+  
+  // Length of ISO date portion "yyyy-MM-dd" - used to distinguish date hyphens from timezone offset hyphens
+  private static final int ISO_DATE_PORTION_LENGTH = 10;
 
   public void syncOnce() {
     if (!props.isEnabled()) return;
@@ -313,12 +318,18 @@ public class SyncEngineService {
       if (v == null || v.isNull()) continue;
       
       // Convert the value to LocalDateTime
-      LocalDateTime ldt = asLdt(v.asText());
+      String textValue = v.asText();
+      LocalDateTime ldt = asLdt(textValue);
       if (ldt != null) {
         m.put(key, ldt);
         return;
       }
       // If conversion failed, try next candidate
+      log.debug("Failed to convert timestamp field '{}' with value '{}' to LocalDateTime, trying next candidate", c, textValue);
+    }
+    // Log if all candidates failed
+    if (log.isDebugEnabled()) {
+      log.debug("All candidates {} failed to convert for timestamp field '{}'", Arrays.toString(candidates), key);
     }
   }
 
@@ -346,8 +357,8 @@ public class SyncEngineService {
       if (s.endsWith("Z")) {
         return java.time.ZonedDateTime.parse(s).toLocalDateTime();
       }
-      // Check for timezone offset: '-' after position 10 (length of "yyyy-MM-dd") indicates timezone, not date separator
-      if (s.contains("T") && (s.contains("+") || (s.contains("-") && s.lastIndexOf('-') > 10))) {
+      // Check for timezone offset: '-' after the date portion indicates timezone, not date separator
+      if (s.contains("T") && (s.contains("+") || (s.contains("-") && s.lastIndexOf('-') > ISO_DATE_PORTION_LENGTH))) {
         return java.time.OffsetDateTime.parse(s).toLocalDateTime();
       }
       
