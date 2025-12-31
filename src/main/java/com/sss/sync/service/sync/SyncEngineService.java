@@ -98,6 +98,7 @@ public class SyncEngineService {
     if ("DELETE".equalsIgnoreCase(log.getOpType())) return; // 本包先不处理 delete
 
     Map<String, Object> srcRow = parsePayloadToRow(log.getPayloadJson(), table);
+    normalizeBooleans(srcRow);
     if (srcRow.isEmpty()) return;
 
     if ("product_info".equals(table)) {
@@ -398,5 +399,22 @@ public class SyncEngineService {
   private String jsonOf(Object obj) {
     try { return om.writeValueAsString(obj); }
     catch (Exception e) { return String.valueOf(obj); }
+  }
+  private void normalizeBooleans(Map<String, Object> row) {
+    row.put("deleted", toBoolean(row.get("deleted")));
+  }
+
+  private Boolean toBoolean(Object v) {
+    if (v == null) return null;
+    if (v instanceof Boolean b) return b;
+    if (v instanceof Number n) return n.intValue() != 0;
+
+    String s = String.valueOf(v).trim().toLowerCase(Locale.ROOT);
+    if (s.isEmpty()) return null;
+    return switch (s) {
+      case "1", "true", "t", "yes", "y", "on" -> true;
+      case "0", "false", "f", "no", "n", "off" -> false;
+      default -> null; // 保守：解析不了就交给数据库报错暴露
+    };
   }
 }
