@@ -26,6 +26,7 @@ public class SecurityConfig {
         .requestMatchers("/api/auth/**").permitAll()
         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
         .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
+        .requestMatchers("/conflicts/view").permitAll()
         .anyRequest().authenticated()
       )
       .addFilterBefore(new JwtAuthFilter(jwtUtil), org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class)
