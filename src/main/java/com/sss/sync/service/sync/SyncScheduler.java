@@ -38,7 +38,9 @@ public class SyncScheduler {
           Thread.currentThread().interrupt();
         } catch (Exception e) {
           log.error("Error in realtime sync loop, will retry after 2s", e);
-          try { Thread.sleep(2000); } catch (InterruptedException ignored) {
+          try { 
+            Thread.sleep(2000); 
+          } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
           }
         }

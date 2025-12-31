@@ -79,8 +79,8 @@ public class ConflictViewController {
       ? conflict.getResolvedAt().format(FORMATTER) 
       : "N/A";
     
-    String sourceJson = escapeHtml(conflict.getSourcePayloadJson() != null ? conflict.getSourcePayloadJson() : "{}");
-    String targetJson = escapeHtml(conflict.getTargetPayloadJson() != null ? conflict.getTargetPayloadJson() : "{}");
+    String sourceJson = conflict.getSourcePayloadJson() != null ? conflict.getSourcePayloadJson() : "{}";
+    String targetJson = conflict.getTargetPayloadJson() != null ? conflict.getTargetPayloadJson() : "{}";
     
     return """
 <!DOCTYPE html>
@@ -295,14 +295,14 @@ public class ConflictViewController {
       escapeHtml(conflict.getPkValue()),
       escapeHtml(conflict.getSourceDb()),
       escapeHtml(conflict.getTargetDb()),
-      conflict.getSourceVersion(),
-      conflict.getTargetVersion(),
+      String.valueOf(conflict.getSourceVersion()),
+      String.valueOf(conflict.getTargetVersion()),
       sourceUpdatedAtStr,
       targetUpdatedAtStr,
       escapeHtml(conflict.getSourceDb()),
-      formatJson(sourceJson),
+      escapeHtml(formatJson(sourceJson)),
       escapeHtml(conflict.getTargetDb()),
-      formatJson(targetJson),
+      escapeHtml(formatJson(targetJson)),
       generateResolutionSection(conflict, resolvedAtStr)
     );
   }
@@ -341,14 +341,14 @@ public class ConflictViewController {
     if (json == null || json.trim().isEmpty() || "{}".equals(json.trim())) {
       return "{}";
     }
-    // Simple JSON formatting - add newlines after commas and braces
+    // Use Jackson ObjectMapper for proper JSON formatting
     try {
-      return json
-        .replace(",", ",\n  ")
-        .replace("{", "{\n  ")
-        .replace("}", "\n}")
-        .replace("  \n}", "\n}");
+      com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+      Object jsonObj = mapper.readValue(json, Object.class);
+      return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonObj);
     } catch (Exception e) {
+      // If JSON parsing fails, return original (will be escaped by caller)
+      log.debug("Failed to format JSON, using original: {}", e.getMessage());
       return json;
     }
   }
