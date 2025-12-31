@@ -88,7 +88,7 @@ public class SyncEngineService {
     Long productId = Long.parseLong(String.valueOf(payload.get("product_id")));
 
     // Check for conflicts
-    ProductInfo existing = postgresProductMapper.selectById(productId);
+    ProductInfo existing = postgresProductMapper.findById(productId);
     if (existing != null) {
       Long sourceVersion = Long.parseLong(String.valueOf(payload.get("version")));
       if (existing.getVersion() > sourceVersion) {
@@ -102,9 +102,9 @@ public class SyncEngineService {
     if ("UPDATE".equals(changeLog.getOperation()) || "INSERT".equals(changeLog.getOperation())) {
       ProductInfo product = objectMapper.convertValue(payload, ProductInfo.class);
       if (existing != null) {
-        postgresProductMapper.updateById(product);
+        postgresProductMapper.updateProduct(product);
       } else {
-        postgresProductMapper.insert(product);
+        postgresProductMapper.insertProduct(product);
       }
     } else if ("DELETE".equals(changeLog.getOperation())) {
       postgresProductMapper.deleteById(productId);
@@ -122,7 +122,7 @@ public class SyncEngineService {
     Long productId = Long.parseLong(String.valueOf(payload.get("product_id")));
 
     // Check for conflicts
-    ProductInfo existing = mysqlProductMapper.selectById(productId);
+    ProductInfo existing = mysqlProductMapper.findById(productId);
     if (existing != null) {
       Long sourceVersion = Long.parseLong(String.valueOf(payload.get("version")));
       if (existing.getVersion() > sourceVersion) {
@@ -136,9 +136,9 @@ public class SyncEngineService {
     if ("UPDATE".equals(changeLog.getOperation()) || "INSERT".equals(changeLog.getOperation())) {
       ProductInfo product = objectMapper.convertValue(payload, ProductInfo.class);
       if (existing != null) {
-        mysqlProductMapper.updateById(product);
+        mysqlProductMapper.updateProduct(product);
       } else {
-        mysqlProductMapper.insert(product);
+        mysqlProductMapper.insertProduct(product);
       }
     } else if ("DELETE".equals(changeLog.getOperation())) {
       mysqlProductMapper.deleteById(productId);
