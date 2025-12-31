@@ -43,7 +43,7 @@ public class SyncEngineService {
   private final MailProperties mailProps;
   private final ConflictLinkTokenService linkTokenService;
 
-  private final ObjectMapper om = new ObjectMapper();
+  private final ObjectMapper om;
   
   // Static formatter for space-separated timestamp format with optional fractional seconds
   // Configured for PostgreSQL's microsecond precision (up to 6 digits after decimal point)
@@ -171,6 +171,8 @@ public class SyncEngineService {
 
     // 1) 先查是否已经有 OPEN 冲突（幂等：避免重复发邮件、避免重复插入）
     Long existingId = mysqlSupport.findOpenConflictId(table, pk);
+    System.out.println("[DEBUG] srcJson=" + srcJson);
+    System.out.println("[DEBUG] tgtJson=" + tgtJson);
     if (existingId != null) {
       // 已有 open 冲突：不再重复发邮件（你想重复发也可以改成发）
       return;
@@ -397,8 +399,24 @@ public class SyncEngineService {
   }
 
   private String jsonOf(Object obj) {
-    try { return om.writeValueAsString(obj); }
-    catch (Exception e) { return String.valueOf(obj); }
+    try {
+      return om.writeValueAsString(obj);
+    } catch (Exception e) {
+      // 兜底：把所有值转成字符串，保证可落库且可读
+      if (obj instanceof Map<?, ?> m) {
+        Map<String, Object> safe = new LinkedHashMap<>();
+        for (var entry : m.entrySet()) {
+          safe.put(String.valueOf(entry.getKey()), entry.getValue() == null ? null : String.valueOf(entry.getValue()));
+        }
+        try {
+          return om.writeValueAsString(safe);
+        } catch (Exception ignored) {
+          // 最终兜底：至少返回合法 JSON 字符串
+          return "{\"_error\":\"json serialization failed\"}";
+        }
+      }
+      return "{\"_error\":\"json serialization failed\"}";
+    }
   }
   private void normalizeBooleans(Map<String, Object> row) {
     row.put("deleted", toBoolean(row.get("deleted")));

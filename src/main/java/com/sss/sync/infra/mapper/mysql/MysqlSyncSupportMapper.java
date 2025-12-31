@@ -25,35 +25,6 @@ public interface MysqlSyncSupportMapper {
   """)
   int updateCheckpoint(@Param("sourceDb") String sourceDb, @Param("lastChangeId") long lastChangeId);
 
-  @Insert("""
-    INSERT INTO conflict_record(
-      table_name, pk_value,
-      source_db, target_db,
-      source_version, target_version,
-      source_updated_at, target_updated_at,
-      source_payload_json, target_payload_json,
-      status, created_at
-    ) VALUES (
-      #{tableName}, #{pkValue},
-      #{sourceDb}, #{targetDb},
-      #{sourceVersion}, #{targetVersion},
-      #{sourceUpdatedAt}, #{targetUpdatedAt},
-      #{sourcePayloadJson}, #{targetPayloadJson},
-      #{status}, NOW(3)
-    )
-    ON DUPLICATE KEY UPDATE
-      source_db = VALUES(source_db),
-      target_db = VALUES(target_db),
-      source_version = VALUES(source_version),
-      target_version = VALUES(target_version),
-      source_updated_at = VALUES(source_updated_at),
-      target_updated_at = VALUES(target_updated_at),
-      source_payload_json = VALUES(source_payload_json),
-      target_payload_json = VALUES(target_payload_json)
-  """)
-  @Options(useGeneratedKeys = true, keyProperty = "conflictId", keyColumn = "conflict_id")
-  int insertConflict(ConflictRecordRow row);
-
   @Select("""
     SELECT change_id, db_code, table_name, op_type, pk_value,
            row_version, row_updated_at,
@@ -96,4 +67,17 @@ public interface MysqlSyncSupportMapper {
   """)
   @Options(useGeneratedKeys = true, keyProperty = "conflictId", keyColumn = "conflict_id")
   int insertConflictPure(ConflictRecordRow row);
+
+  @Select("""
+    SELECT conflict_id, table_name, pk_value,
+           source_db, target_db,
+           source_version, target_version,
+           source_updated_at, target_updated_at,
+           source_payload_json, target_payload_json,
+           status, resolved_by, resolved_at, resolution,
+           created_at
+    FROM conflict_record
+    WHERE conflict_id = #{conflictId}
+  """)
+  ConflictRecordRow getConflictById(@Param("conflictId") long conflictId);
 }

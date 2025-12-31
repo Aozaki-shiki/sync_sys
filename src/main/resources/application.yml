@@ -54,7 +54,7 @@ sss:
   mail:
     enabled: true
     from: "mo1lly@163.com"
-    adminTo: "mo1lly@163.com"
+    adminTo: "2107480012@qq.com"
     conflictViewBaseUrl: "http://localhost:8080"
 
 mybatis-plus:
