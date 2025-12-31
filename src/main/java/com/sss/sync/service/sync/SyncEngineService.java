@@ -42,6 +42,14 @@ public class SyncEngineService {
   private final ConflictLinkTokenService linkTokenService;
 
   private final ObjectMapper om = new ObjectMapper();
+  
+  // Static formatter for space-separated timestamp format with optional microsecond precision
+  private static final DateTimeFormatter SPACE_SEPARATED_FORMATTER = new DateTimeFormatterBuilder()
+      .appendPattern("yyyy-MM-dd HH:mm:ss")
+      .optionalStart()
+      .appendFraction(java.time.temporal.ChronoField.NANO_OF_SECOND, 0, 6, true)
+      .optionalEnd()
+      .toFormatter();
 
   public void syncOnce() {
     if (!props.isEnabled()) return;
@@ -349,13 +357,7 @@ public class SyncEngineService {
       
       // Try parsing space-separated format (e.g., "2025-01-15 10:30:00" or "2025-01-15 10:30:00.123")
       if (s.contains(" ")) {
-        DateTimeFormatter formatter = new DateTimeFormatterBuilder()
-            .appendPattern("yyyy-MM-dd HH:mm:ss")
-            .optionalStart()
-            .appendFraction(java.time.temporal.ChronoField.NANO_OF_SECOND, 0, 9, true)
-            .optionalEnd()
-            .toFormatter();
-        return LocalDateTime.parse(s, formatter);
+        return LocalDateTime.parse(s, SPACE_SEPARATED_FORMATTER);
       }
       
       // Fallback: try parsing directly
