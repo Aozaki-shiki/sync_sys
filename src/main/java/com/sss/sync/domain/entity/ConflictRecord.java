@@ -1,5 +1,6 @@
 package com.sss.sync.domain.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -8,6 +9,7 @@ import java.time.LocalDateTime;
 @Data
 @TableName("conflict_record")
 public class ConflictRecord {
+  @TableId
   private Long conflictId;
   private String tableName;
   private String pkValue;
