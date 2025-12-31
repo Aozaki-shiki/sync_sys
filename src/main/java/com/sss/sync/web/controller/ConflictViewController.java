@@ -61,7 +61,7 @@ public class ConflictViewController {
       return errorPage("Invalid or malformed token");
     } catch (Exception e) {
       log.error("Error viewing conflict", e);
-      return errorPage("Internal error: " + e.getMessage());
+      return errorPage("An internal error occurred. Please contact the administrator.");
     }
   }
   
