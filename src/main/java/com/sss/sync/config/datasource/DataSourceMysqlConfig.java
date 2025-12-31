@@ -49,6 +49,7 @@ public class DataSourceMysqlConfig {
 
     bean.setPlugins(mybatisPlusInterceptor);
     bean.setGlobalConfig(globalConfig);
+    bean.setTypeAliasesPackage("com.sss.sync.domain.entity");
 
     return bean.getObject();
   }

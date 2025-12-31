@@ -1,10 +1,12 @@
 package com.sss.sync.domain.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
+@TableName("order_info")
 public class OrderInfo {
   private Long orderId;
   private Long userId;

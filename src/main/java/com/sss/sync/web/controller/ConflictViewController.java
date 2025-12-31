@@ -1,8 +1,9 @@
 package com.sss.sync.web.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.sss.sync.common.api.ApiResponse;
 import com.sss.sync.common.exception.BizException;
+import com.sss.sync.domain.entity.ConflictRecord;
+import com.sss.sync.infra.mapper.mysql.MysqlConflictRecordMapper;
 import com.sss.sync.service.conflict.ConflictLinkTokenService;
 import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
@@ -23,9 +24,7 @@ public class ConflictViewController {
 
     long conflictId = Long.parseLong(String.valueOf(conflictIdObj));
 
-    ConflictRecord record = conflictRecordMapper.selectOne(new LambdaQueryWrapper<ConflictRecord>()
-      .eq(ConflictRecord::getConflictId, conflictId)
-      .last("LIMIT 1"));
+    ConflictRecord record = conflictRecordMapper.selectById(conflictId);
 
     if (record == null) throw BizException.of(404, "CONFLICT_NOT_FOUND");
     return ApiResponse.ok(record);
