@@ -3,6 +3,7 @@ package com.sss.sync.service;
 import com.sss.sync.common.exception.BizException;
 import com.sss.sync.domain.entity.OrderInfo;
 import com.sss.sync.domain.enums.WriteDb;
+import com.sss.sync.infra.id.SnowflakeIdGenerator;
 import com.sss.sync.infra.mapper.mysql.MysqlOrderMapper;
 import com.sss.sync.infra.mapper.mysql.MysqlProductMapper;
 import com.sss.sync.infra.mapper.postgres.PostgresOrderMapper;
@@ -21,6 +22,8 @@ public class OrderService {
   private final PostgresOrderMapper postgresOrderMapper;
   private final PostgresProductMapper postgresProductMapper;
 
+  private final SnowflakeIdGenerator snowflakeIdGenerator;
+
   @Transactional(transactionManager = "mysqlTxManager", rollbackFor = Exception.class)
   public Long placeOrderOnMysql(Long userId, Long productId, int qty, String address) {
     int affected = mysqlProductMapper.decreaseStockIfEnough(productId, qty);
@@ -29,6 +32,7 @@ public class OrderService {
     }
 
     OrderInfo o = new OrderInfo();
+    o.setOrderId(snowflakeIdGenerator.nextId());
     o.setUserId(userId);
     o.setProductId(productId);
     o.setQuantity(qty);
@@ -49,6 +53,7 @@ public class OrderService {
     }
 
     OrderInfo o = new OrderInfo();
+    o.setOrderId(snowflakeIdGenerator.nextId());
     o.setUserId(userId);
     o.setProductId(productId);
     o.setQuantity(qty);

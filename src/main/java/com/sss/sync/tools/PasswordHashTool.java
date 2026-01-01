@@ -6,10 +6,10 @@ public class PasswordHashTool {
   public static void main(String[] args) {
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-    String adminHash = encoder.encode("admin123");
+    String adminHash = encoder.encode("password");
     String userHash = encoder.encode("user123");
 
-    System.out.println("admin123 bcrypt = " + adminHash);
+    System.out.println("password bcrypt = " + adminHash);
     System.out.println("user123  bcrypt = " + userHash);
   }
 }

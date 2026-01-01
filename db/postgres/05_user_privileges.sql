@@ -2,11 +2,11 @@
 DO $$
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname='sss_app') THEN
-    CREATE ROLE sss_app LOGIN PASSWORD 'AppPassWord++';
-  END IF;
+CREATE ROLE sss_app LOGIN PASSWORD 'AppPassWord++';
+END IF;
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname='sss_ro') THEN
-    CREATE ROLE sss_ro LOGIN PASSWORD 'ReadOnlyPassWord++';
-  END IF;
+CREATE ROLE sss_ro LOGIN PASSWORD 'ReadOnlyPassWord++';
+END IF;
 END $$;
 
 GRANT USAGE ON SCHEMA public TO sss_app, sss_ro;

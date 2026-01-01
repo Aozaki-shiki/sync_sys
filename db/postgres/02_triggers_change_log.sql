@@ -6,7 +6,7 @@ CREATE OR REPLACE FUNCTION fn_touch_updated_at()
 RETURNS TRIGGER AS $$
 BEGIN
   NEW.updated_at = CURRENT_TIMESTAMP;
-  RETURN NEW;
+RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -14,7 +14,7 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION fn_log_user_info()
 RETURNS TRIGGER AS $$
 DECLARE
-  v_op TEXT;
+v_op TEXT;
   v_pk TEXT;
   v_ver BIGINT;
   v_up TIMESTAMP(3);
@@ -32,37 +32,37 @@ BEGIN
     v_ver := NEW.version;
     v_up := NEW.updated_at;
     v_payload := to_jsonb(NEW);
-  ELSE
+ELSE
     v_op := 'DELETE';
     v_pk := OLD.user_id::TEXT;
     v_ver := OLD.version;
     v_up := OLD.updated_at;
     v_payload := to_jsonb(OLD);
-  END IF;
+END IF;
 
-  INSERT INTO change_log(db_code, table_name, op_type, pk_value, row_version, row_updated_at, payload_json)
-  VALUES ('POSTGRES', 'user_info', v_op, v_pk, v_ver, v_up, v_payload);
+INSERT INTO change_log(db_code, table_name, op_type, pk_value, row_version, row_updated_at, payload_json)
+VALUES ('POSTGRES', 'user_info', v_op, v_pk, v_ver, v_up, v_payload);
 
-  RETURN COALESCE(NEW, OLD);
+RETURN COALESCE(NEW, OLD);
 END;
 $$ LANGUAGE plpgsql;
 
 -- user_info: before update touch time + after change log
 DROP TRIGGER IF EXISTS trg_user_info_touch ON user_info;
 CREATE TRIGGER trg_user_info_touch
-BEFORE UPDATE ON user_info
-FOR EACH ROW EXECUTE FUNCTION fn_touch_updated_at();
+    BEFORE UPDATE ON user_info
+    FOR EACH ROW EXECUTE FUNCTION fn_touch_updated_at();
 
 DROP TRIGGER IF EXISTS trg_user_info_log ON user_info;
 CREATE TRIGGER trg_user_info_log
-AFTER INSERT OR UPDATE OR DELETE ON user_info
-FOR EACH ROW EXECUTE FUNCTION fn_log_user_info();
+    AFTER INSERT OR UPDATE OR DELETE ON user_info
+    FOR EACH ROW EXECUTE FUNCTION fn_log_user_info();
 
 -- 为控制篇幅：其余表同样模式（我给你“完整”，但用一套通用函数：减少重复）
 CREATE OR REPLACE FUNCTION fn_log_generic()
 RETURNS TRIGGER AS $$
 DECLARE
-  v_op TEXT;
+v_op TEXT;
   v_pk TEXT;
   v_ver BIGINT;
   v_up TIMESTAMP(3);
@@ -79,12 +79,12 @@ BEGIN
     v_payload := to_jsonb(NEW);
     v_ver := (NEW).version;
     v_up := (NEW).updated_at;
-  ELSE
+ELSE
     v_op := 'DELETE';
     v_payload := to_jsonb(OLD);
     v_ver := (OLD).version;
     v_up := (OLD).updated_at;
-  END IF;
+END IF;
 
   -- 约定主键列名：xxx_id
   IF v_table = 'category_info' THEN
@@ -95,14 +95,14 @@ BEGIN
     v_pk := COALESCE((to_jsonb(COALESCE(NEW, OLD)) ->> 'product_id'), '');
   ELSIF v_table = 'order_info' THEN
     v_pk := COALESCE((to_jsonb(COALESCE(NEW, OLD)) ->> 'order_id'), '');
-  ELSE
+ELSE
     v_pk := COALESCE((to_jsonb(COALESCE(NEW, OLD)) ->> 'id'), '');
-  END IF;
+END IF;
 
-  INSERT INTO change_log(db_code, table_name, op_type, pk_value, row_version, row_updated_at, payload_json)
-  VALUES ('POSTGRES', v_table, v_op, v_pk, v_ver, v_up, v_payload);
+INSERT INTO change_log(db_code, table_name, op_type, pk_value, row_version, row_updated_at, payload_json)
+VALUES ('POSTGRES', v_table, v_op, v_pk, v_ver, v_up, v_payload);
 
-  RETURN COALESCE(NEW, OLD);
+RETURN COALESCE(NEW, OLD);
 END;
 $$ LANGUAGE plpgsql;
 
