@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sss.sync.infra.mapper.read.ReadSyncAnalyticsMapper">
+
+    <!--
+    Daily sync statistics query that aggregates data from:
+    - sync_run_daily: for daily counters
+    - change_log: for actual synced changes
+    - conflict_record: for conflict tracking
+    -->
+    <select id="getDailySyncStats" resultType="com.sss.sync.web.dto.SyncStatsDTO">
+        WITH DateRange AS (
+            -- Generate date series for the requested range
+            SELECT CAST(#{startDate} AS DATE) AS stat_date
+            UNION ALL
+            SELECT DATEADD(DAY, 1, stat_date)
+            FROM DateRange
+            WHERE stat_date &lt; #{endDate}
+        ),
+        ChangeStats AS (
+            SELECT 
+                CAST(created_at AS DATE) as log_date,
+                COUNT(*) as change_count
+            FROM dbo.change_log
+            WHERE created_at &gt;= #{startDate} 
+              AND created_at &lt; DATEADD(DAY, 1, #{endDate})
+            GROUP BY CAST(created_at AS DATE)
+        ),
+        ConflictCreatedStats AS (
+            SELECT 
+                CAST(created_at AS DATE) as conflict_date,
+                COUNT(*) as conflict_created_count
+            FROM dbo.conflict_record
+            WHERE created_at &gt;= #{startDate} 
+              AND created_at &lt; DATEADD(DAY, 1, #{endDate})
+            GROUP BY CAST(created_at AS DATE)
+        ),
+        ConflictResolvedStats AS (
+            SELECT 
+                CAST(resolved_at AS DATE) as resolved_date,
+                COUNT(*) as conflict_resolved_count
+            FROM dbo.conflict_record
+            WHERE resolved_at &gt;= #{startDate} 
+              AND resolved_at &lt; DATEADD(DAY, 1, #{endDate})
+              AND status = 'RESOLVED'
+            GROUP BY CAST(resolved_at AS DATE)
+        )
+        SELECT 
+            dr.stat_date AS statDate,
+            COALESCE(cs.change_count, 0) AS syncedChanges,
+            COALESCE(cc.conflict_created_count, 0) AS conflictsCreated,
+            COALESCE(cr.conflict_resolved_count, 0) AS conflictsResolved,
+            COALESCE(srd.failure_count, 0) AS failures
+        FROM DateRange dr
+        LEFT JOIN ChangeStats cs ON dr.stat_date = cs.log_date
+        LEFT JOIN ConflictCreatedStats cc ON dr.stat_date = cc.conflict_date
+        LEFT JOIN ConflictResolvedStats cr ON dr.stat_date = cr.resolved_date
+        LEFT JOIN dbo.sync_run_daily srd ON dr.stat_date = srd.stat_date
+        ORDER BY dr.stat_date
+        OPTION (MAXRECURSION 366)
+    </select>
+
+    <select id="getTotalSyncedChanges" resultType="long">
+        SELECT COUNT(*)
+        FROM dbo.change_log
+        WHERE created_at &gt;= #{startDate} 
+          AND created_at &lt; DATEADD(DAY, 1, #{endDate})
+    </select>
+
+    <select id="getTotalConflictsCreated" resultType="long">
+        SELECT COUNT(*)
+        FROM dbo.conflict_record
+        WHERE created_at &gt;= #{startDate} 
+          AND created_at &lt; DATEADD(DAY, 1, #{endDate})
+    </select>
+
+    <select id="getTotalConflictsResolved" resultType="long">
+        SELECT COUNT(*)
+        FROM dbo.conflict_record
+        WHERE resolved_at &gt;= #{startDate} 
+          AND resolved_at &lt; DATEADD(DAY, 1, #{endDate})
+          AND status = 'RESOLVED'
+    </select>
+
+</mapper>
