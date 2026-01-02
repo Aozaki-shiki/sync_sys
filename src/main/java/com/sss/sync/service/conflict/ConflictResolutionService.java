@@ -117,28 +117,27 @@ public class ConflictResolutionService {
    * @param tableName the table name ("product_info" or "order_info")
    * @param id the primary key value (product_id or order_id)
    * @return the maximum version across MySQL, Postgres, and SQL Server
+   * @throws IllegalArgumentException if tableName is null or not supported
    */
   private long computeMaxVersion(String tableName, long id) {
-    long mysqlVersion = 0;
-    long postgresVersion = 0;
-    long sqlserverVersion = 0;
+    if (tableName == null) {
+      throw new IllegalArgumentException("tableName cannot be null");
+    }
+    
+    long mysqlVersion;
+    long postgresVersion;
+    long sqlserverVersion;
 
     if ("product_info".equals(tableName)) {
-      Integer mysqlVer = mysqlBiz.getProductVersion(id);
-      Integer postgresVer = pgBiz.getProductVersion(id);
-      Integer sqlserverVer = ssBiz.getProductVersion(id);
-      
-      mysqlVersion = (mysqlVer != null) ? mysqlVer : 0;
-      postgresVersion = (postgresVer != null) ? postgresVer : 0;
-      sqlserverVersion = (sqlserverVer != null) ? sqlserverVer : 0;
+      mysqlVersion = getVersionOrZero(mysqlBiz.getProductVersion(id));
+      postgresVersion = getVersionOrZero(pgBiz.getProductVersion(id));
+      sqlserverVersion = getVersionOrZero(ssBiz.getProductVersion(id));
     } else if ("order_info".equals(tableName)) {
-      Integer mysqlVer = mysqlBiz.getOrderVersion(id);
-      Integer postgresVer = pgBiz.getOrderVersion(id);
-      Integer sqlserverVer = ssBiz.getOrderVersion(id);
-      
-      mysqlVersion = (mysqlVer != null) ? mysqlVer : 0;
-      postgresVersion = (postgresVer != null) ? postgresVer : 0;
-      sqlserverVersion = (sqlserverVer != null) ? sqlserverVer : 0;
+      mysqlVersion = getVersionOrZero(mysqlBiz.getOrderVersion(id));
+      postgresVersion = getVersionOrZero(pgBiz.getOrderVersion(id));
+      sqlserverVersion = getVersionOrZero(ssBiz.getOrderVersion(id));
+    } else {
+      throw new IllegalArgumentException("Unsupported table: " + tableName);
     }
 
     long maxVersion = Math.max(mysqlVersion, Math.max(postgresVersion, sqlserverVersion));
@@ -146,6 +145,16 @@ public class ConflictResolutionService {
               tableName, id, mysqlVersion, postgresVersion, sqlserverVersion, maxVersion);
     
     return maxVersion;
+  }
+
+  /**
+   * Converts a version Integer to long, treating null as 0.
+   * 
+   * @param version the version Integer (may be null if row doesn't exist)
+   * @return the version as long, or 0 if version is null
+   */
+  private long getVersionOrZero(Integer version) {
+    return (version != null) ? version : 0;
   }
 
   private String getProductJson(String db, long id) {
