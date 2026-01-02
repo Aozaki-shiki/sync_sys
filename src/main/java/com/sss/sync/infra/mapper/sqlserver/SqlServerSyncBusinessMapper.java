@@ -70,4 +70,60 @@ public interface SqlServerSyncBusinessMapper {
     WHERE order_id = #{orderId}
   """)
   int updateOrder(Map<String, Object> row);
+
+  // ✅ Upsert: UPDATE first, then INSERT if no row was updated
+  @Update("""
+    UPDATE dbo.product_info
+    SET product_name = #{productName},
+        category_id = #{categoryId},
+        supplier_id = #{supplierId},
+        price = #{price},
+        stock = #{stock},
+        description = #{description},
+        listed_at = #{listedAt},
+        version = #{version},
+        updated_at = #{updatedAt},
+        deleted = #{deleted}
+    WHERE product_id = #{productId};
+    
+    IF @@ROWCOUNT = 0
+    BEGIN
+      INSERT INTO dbo.product_info(
+        product_id, product_name, category_id, supplier_id, price, stock, description, listed_at,
+        version, updated_at, deleted
+      )
+      VALUES(
+        #{productId}, #{productName}, #{categoryId}, #{supplierId}, #{price}, #{stock}, #{description}, #{listedAt},
+        #{version}, #{updatedAt}, #{deleted}
+      )
+    END
+  """)
+  int upsertProduct(Map<String, Object> row);
+
+  @Update("""
+    UPDATE dbo.order_info
+    SET user_id = #{userId},
+        product_id = #{productId},
+        quantity = #{quantity},
+        order_status = #{orderStatus},
+        ordered_at = #{orderedAt},
+        shipping_address = #{shippingAddress},
+        version = #{version},
+        updated_at = #{updatedAt},
+        deleted = #{deleted}
+    WHERE order_id = #{orderId};
+    
+    IF @@ROWCOUNT = 0
+    BEGIN
+      INSERT INTO dbo.order_info(
+        order_id, user_id, product_id, quantity, order_status, ordered_at, shipping_address,
+        version, updated_at, deleted
+      )
+      VALUES(
+        #{orderId}, #{userId}, #{productId}, #{quantity}, #{orderStatus}, #{orderedAt}, #{shippingAddress},
+        #{version}, #{updatedAt}, #{deleted}
+      )
+    END
+  """)
+  int upsertOrder(Map<String, Object> row);
 }
