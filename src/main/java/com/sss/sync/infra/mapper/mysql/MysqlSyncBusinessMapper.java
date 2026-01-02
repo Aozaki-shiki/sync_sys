@@ -24,6 +24,22 @@ public interface MysqlSyncBusinessMapper {
   Map<String, Object> getOrderMeta(@Param("id") long id);
 
   @Select("""
+    SELECT version
+    FROM product_info
+    WHERE product_id = #{id}
+    LIMIT 1
+  """)
+  Integer getProductVersion(@Param("id") long id);
+
+  @Select("""
+    SELECT version
+    FROM order_info
+    WHERE order_id = #{id}
+    LIMIT 1
+  """)
+  Integer getOrderVersion(@Param("id") long id);
+
+  @Select("""
     SELECT JSON_OBJECT(
       'product_id', product_id,
       'product_name', product_name,
