@@ -129,13 +129,13 @@ public class ConflictResolutionService {
     long sqlserverVersion;
 
     if ("product_info".equals(tableName)) {
-      mysqlVersion = getVersionOrZero(mysqlBiz.getProductVersion(id));
-      postgresVersion = getVersionOrZero(pgBiz.getProductVersion(id));
-      sqlserverVersion = getVersionOrZero(ssBiz.getProductVersion(id));
+      mysqlVersion = convertVersionToLong(mysqlBiz.getProductVersion(id));
+      postgresVersion = convertVersionToLong(pgBiz.getProductVersion(id));
+      sqlserverVersion = convertVersionToLong(ssBiz.getProductVersion(id));
     } else if ("order_info".equals(tableName)) {
-      mysqlVersion = getVersionOrZero(mysqlBiz.getOrderVersion(id));
-      postgresVersion = getVersionOrZero(pgBiz.getOrderVersion(id));
-      sqlserverVersion = getVersionOrZero(ssBiz.getOrderVersion(id));
+      mysqlVersion = convertVersionToLong(mysqlBiz.getOrderVersion(id));
+      postgresVersion = convertVersionToLong(pgBiz.getOrderVersion(id));
+      sqlserverVersion = convertVersionToLong(ssBiz.getOrderVersion(id));
     } else {
       throw new IllegalArgumentException("Unsupported table: " + tableName);
     }
@@ -153,7 +153,7 @@ public class ConflictResolutionService {
    * @param version the version Integer (may be null if row doesn't exist)
    * @return the version as long, or 0 if version is null
    */
-  private long getVersionOrZero(Integer version) {
+  private long convertVersionToLong(Integer version) {
     return (version != null) ? version : 0;
   }
 
