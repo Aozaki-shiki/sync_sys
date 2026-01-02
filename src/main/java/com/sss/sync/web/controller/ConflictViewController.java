@@ -359,7 +359,7 @@ public class ConflictViewController {
               </label>
             </div>
           </div>
-          <button type="submit" style="background: #1976d2; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%%;">
+          <button type="submit" style="background: #1976d2; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%;">
             解决冲突 (Resolve Conflict)
           </button>
           <div id="message" style="margin-top: 15px; padding: 10px; border-radius: 4px; display: none;"></div>
@@ -529,8 +529,8 @@ public class ConflictViewController {
       }
       
       String adminUsername = (String) claims.get("admin");
-      if (adminUsername == null) {
-        adminUsername = "admin"; // Default fallback
+      if (adminUsername == null || adminUsername.trim().isEmpty()) {
+        return Map.of("success", false, "message", "Invalid token: missing admin username");
       }
       
       String authoritativeDb = request.get("authoritativeDb");

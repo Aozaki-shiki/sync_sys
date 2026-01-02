@@ -27,7 +27,10 @@ public class ConflictResolutionService {
   private final SqlServerSyncBusinessMapper ssBiz;
   private final ObjectMapper om;
 
+  // ISO date portion length "yyyy-MM-dd" (10 chars) - used in hasTimezoneOffset() to distinguish 
+  // date hyphens from timezone offset hyphens
   private static final int ISO_DATE_PORTION_LENGTH = 10;
+  
   private static final java.time.format.DateTimeFormatter SPACE_SEPARATED_FORMATTER =
     new DateTimeFormatterBuilder()
       .appendPattern("yyyy-MM-dd HH:mm:ss")
