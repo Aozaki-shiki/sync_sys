@@ -1,0 +1,73 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: sss-sync-system-test
+
+  jackson:
+    time-zone: Asia/Shanghai
+
+  # Use H2 for testing instead of real databases
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+
+  mail:
+    host: smtp.example.com
+    port: 465
+    username: test@example.com
+    password: "testpassword"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+
+sss:
+  id:
+    workerId: 1
+
+  jwt:
+    issuer: "sss-sync-test"
+    secret: "sss-sync-secret-key-please-change-32bytes"
+    accessTokenExpireMinutes: 240
+
+  # Use embedded H2 databases for testing
+  datasource:
+    mysql:
+      url: jdbc:h2:mem:mysql_test;MODE=MySQL;DB_CLOSE_DELAY=-1
+      username: sa
+      password: 
+      driver-class-name: org.h2.Driver
+    postgres:
+      url: jdbc:h2:mem:postgres_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+      username: sa
+      password: 
+      driver-class-name: org.h2.Driver
+    sqlserver:
+      url: jdbc:h2:mem:sqlserver_test;DB_CLOSE_DELAY=-1
+      username: sa
+      password: 
+      driver-class-name: org.h2.Driver
+
+  sync:
+    enabled: false
+    pollIntervalMillis: 10000
+    batchSize: 200
+    scheduled:
+      enabled: false
+      fixedDelayMillis: 10000
+
+  mail:
+    enabled: false
+    from: "test@example.com"
+    adminTo: "admin@example.com"
+    conflictViewBaseUrl: "http://localhost:8080"
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
