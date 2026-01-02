@@ -106,4 +106,10 @@ public interface MysqlSyncBusinessMapper {
       deleted = VALUES(deleted)
   """)
   int upsertOrder(Map<String, Object> row);
+
+  @Update("SET @sss_skip_changelog = 1")
+  void setSkipChangeLog();
+
+  @Update("SET @sss_skip_changelog = 0")
+  void clearSkipChangeLog();
 }
