@@ -36,11 +36,16 @@ public class DailySyncReportService {
     Double avgDailyChanges = dailyStats.isEmpty() ? 0.0 : 
         (double) totalSyncedChanges / dailyStats.size();
     
+    // Calculate total failures from daily stats
+    Long totalFailures = dailyStats.stream()
+        .mapToLong(s -> s.getFailures() != null ? s.getFailures() : 0L)
+        .sum();
+    
     SyncStatsSummary summary = new SyncStatsSummary(
         totalSyncedChanges,
         totalConflictsCreated,
         totalConflictsResolved,
-        0L, // failures - not tracked in current schema
+        totalFailures,
         avgDailyChanges
     );
     

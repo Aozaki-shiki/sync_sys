@@ -51,8 +51,7 @@
             COALESCE(cs.change_count, 0) AS syncedChanges,
             COALESCE(cc.conflict_created_count, 0) AS conflictsCreated,
             COALESCE(cr.conflict_resolved_count, 0) AS conflictsResolved,
-            COALESCE(srd.failure_count, 0) AS failures,
-            NULL AS avgProcessingTime
+            COALESCE(srd.failure_count, 0) AS failures
         FROM DateRange dr
         LEFT JOIN ChangeStats cs ON dr.stat_date = cs.log_date
         LEFT JOIN ConflictCreatedStats cc ON dr.stat_date = cc.conflict_date

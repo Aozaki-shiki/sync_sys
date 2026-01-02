@@ -15,5 +15,4 @@ public class SyncStatsDTO {
   private Long conflictsCreated;
   private Long conflictsResolved;
   private Long failures;
-  private Double avgProcessingTime; // in milliseconds
 }

@@ -65,25 +65,28 @@
     </select>
 
     <select id="countOrderAnalytics" resultType="long">
-        SELECT COUNT(DISTINCT CONCAT(c.category_id, '_', s.supplier_id))
-        FROM dbo.order_info o
-        INNER JOIN dbo.product_info p ON o.product_id = p.product_id
-        INNER JOIN dbo.category_info c ON p.category_id = c.category_id
-        INNER JOIN dbo.supplier_info s ON p.supplier_id = s.supplier_id
-        INNER JOIN dbo.user_info u ON o.user_id = u.user_id
-        WHERE o.deleted = 0 
-          AND p.deleted = 0 
-          AND c.deleted = 0 
-          AND s.deleted = 0 
-          AND u.deleted = 0
-          AND o.ordered_at &gt;= #{startDate}
-          AND o.ordered_at &lt; DATEADD(DAY, 1, #{endDate})
-          <if test="categoryName != null and categoryName != ''">
-              AND c.category_name LIKE CONCAT('%', #{categoryName}, '%')
-          </if>
-          <if test="supplierName != null and supplierName != ''">
-              AND s.supplier_name LIKE CONCAT('%', #{supplierName}, '%')
-          </if>
+        SELECT COUNT(*)
+        FROM (
+            SELECT DISTINCT c.category_id, s.supplier_id
+            FROM dbo.order_info o
+            INNER JOIN dbo.product_info p ON o.product_id = p.product_id
+            INNER JOIN dbo.category_info c ON p.category_id = c.category_id
+            INNER JOIN dbo.supplier_info s ON p.supplier_id = s.supplier_id
+            INNER JOIN dbo.user_info u ON o.user_id = u.user_id
+            WHERE o.deleted = 0 
+              AND p.deleted = 0 
+              AND c.deleted = 0 
+              AND s.deleted = 0 
+              AND u.deleted = 0
+              AND o.ordered_at &gt;= #{startDate}
+              AND o.ordered_at &lt; DATEADD(DAY, 1, #{endDate})
+              <if test="categoryName != null and categoryName != ''">
+                  AND c.category_name LIKE CONCAT('%', #{categoryName}, '%')
+              </if>
+              <if test="supplierName != null and supplierName != ''">
+                  AND s.supplier_name LIKE CONCAT('%', #{supplierName}, '%')
+              </if>
+        ) AS UniqueGroups
     </select>
 
 </mapper>

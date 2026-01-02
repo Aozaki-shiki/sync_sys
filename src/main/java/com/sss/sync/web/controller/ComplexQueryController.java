@@ -52,8 +52,8 @@ public class ComplexQueryController {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Complex Order Analytics Query</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.4.21/dist/vue.global.min.js" integrity="sha256-gvHfumO9DEJIxWfhfzf9JRCnXsRn8MRh5DjRiXNPH2Y=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js" integrity="sha256-aS4IHLo61MhvGR4NW4TEyOXWj6Y4VQYkHZ2MQJRS0cU=" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
