@@ -20,6 +20,11 @@ v_op TEXT;
   v_up TIMESTAMP(3);
   v_payload JSONB;
 BEGIN
+  -- Check skip flag
+  IF current_setting('sss.skip_changelog', true) = '1' THEN
+    RETURN COALESCE(NEW, OLD);
+  END IF;
+
   IF TG_OP = 'INSERT' THEN
     v_op := 'INSERT';
     v_pk := NEW.user_id::TEXT;
@@ -69,6 +74,11 @@ v_op TEXT;
   v_payload JSONB;
   v_table TEXT := TG_TABLE_NAME;
 BEGIN
+  -- Check skip flag
+  IF current_setting('sss.skip_changelog', true) = '1' THEN
+    RETURN COALESCE(NEW, OLD);
+  END IF;
+
   IF TG_OP = 'INSERT' THEN
     v_op := 'INSERT';
     v_payload := to_jsonb(NEW);

@@ -256,17 +256,77 @@ public class SyncEngineService {
 
   private void doUpsertProduct(String targetDb, Map<String, Object> row) {
     switch (targetDb) {
-      case "MYSQL" -> mysqlBiz.upsertProduct(row);
-      case "POSTGRES" -> pgBiz.upsertProduct(row);
-      case "SQLSERVER" -> ssBiz.upsertProduct(row); //  由 updateProduct 改为 upsertProduct
+      case "MYSQL" -> upsertProductMysql(row);
+      case "POSTGRES" -> upsertProductPostgres(row);
+      case "SQLSERVER" -> upsertProductSqlServer(row);
     }
   }
 
   private void doUpsertOrder(String targetDb, Map<String, Object> row) {
     switch (targetDb) {
-      case "MYSQL" -> mysqlBiz.upsertOrder(row);
-      case "POSTGRES" -> pgBiz.upsertOrder(row);
-      case "SQLSERVER" -> ssBiz.upsertOrder(row); //  由 updateOrder 改为 upsertOrder
+      case "MYSQL" -> upsertOrderMysql(row);
+      case "POSTGRES" -> upsertOrderPostgres(row);
+      case "SQLSERVER" -> upsertOrderSqlServer(row);
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "mysqlTxManager")
+  public void upsertProductMysql(Map<String, Object> row) {
+    mysqlBiz.setSkipChangeLog();
+    try {
+      mysqlBiz.upsertProduct(row);
+    } finally {
+      mysqlBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "mysqlTxManager")
+  public void upsertOrderMysql(Map<String, Object> row) {
+    mysqlBiz.setSkipChangeLog();
+    try {
+      mysqlBiz.upsertOrder(row);
+    } finally {
+      mysqlBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "postgresTxManager")
+  public void upsertProductPostgres(Map<String, Object> row) {
+    pgBiz.setSkipChangeLog();
+    try {
+      pgBiz.upsertProduct(row);
+    } finally {
+      pgBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "postgresTxManager")
+  public void upsertOrderPostgres(Map<String, Object> row) {
+    pgBiz.setSkipChangeLog();
+    try {
+      pgBiz.upsertOrder(row);
+    } finally {
+      pgBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "readTxManager")
+  public void upsertProductSqlServer(Map<String, Object> row) {
+    ssBiz.setSkipChangeLog();
+    try {
+      ssBiz.upsertProduct(row);
+    } finally {
+      ssBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "readTxManager")
+  public void upsertOrderSqlServer(Map<String, Object> row) {
+    ssBiz.setSkipChangeLog();
+    try {
+      ssBiz.upsertOrder(row);
+    } finally {
+      ssBiz.clearSkipChangeLog();
     }
   }
 
