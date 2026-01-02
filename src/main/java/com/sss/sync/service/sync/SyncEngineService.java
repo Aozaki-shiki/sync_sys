@@ -258,7 +258,7 @@ public class SyncEngineService {
     switch (targetDb) {
       case "MYSQL" -> mysqlBiz.upsertProduct(row);
       case "POSTGRES" -> pgBiz.upsertProduct(row);
-      case "SQLSERVER" -> ssBiz.updateProduct(row);
+      case "SQLSERVER" -> ssBiz.upsertProduct(row); //  由 updateProduct 改为 upsertProduct
     }
   }
 
@@ -266,7 +266,7 @@ public class SyncEngineService {
     switch (targetDb) {
       case "MYSQL" -> mysqlBiz.upsertOrder(row);
       case "POSTGRES" -> pgBiz.upsertOrder(row);
-      case "SQLSERVER" -> ssBiz.updateOrder(row);
+      case "SQLSERVER" -> ssBiz.upsertOrder(row); //  由 updateOrder 改为 upsertOrder
     }
   }
 
