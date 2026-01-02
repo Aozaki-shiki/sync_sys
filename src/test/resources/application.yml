@@ -8,13 +8,6 @@ spring:
   jackson:
     time-zone: Asia/Shanghai
 
-  # Use H2 for testing instead of real databases
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: 
-
   mail:
     host: smtp.example.com
     port: 465
@@ -41,17 +34,17 @@ sss:
     mysql:
       url: jdbc:h2:mem:mysql_test;MODE=MySQL;DB_CLOSE_DELAY=-1
       username: sa
-      password: 
+      password: ""
       driver-class-name: org.h2.Driver
     postgres:
       url: jdbc:h2:mem:postgres_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
       username: sa
-      password: 
+      password: ""
       driver-class-name: org.h2.Driver
     sqlserver:
       url: jdbc:h2:mem:sqlserver_test;DB_CLOSE_DELAY=-1
       username: sa
-      password: 
+      password: ""
       driver-class-name: org.h2.Driver
 
   sync:
