@@ -5,22 +5,18 @@ IF OBJECT_ID('dbo.sync_checkpoint','U') IS NOT NULL DROP TABLE dbo.sync_checkpoi
 GO
 
 CREATE TABLE dbo.sync_checkpoint (
-    checkpoint_id BIGINT  PRIMARY KEY,
-    source_db NVARCHAR(20) NOT NULL UNIQUE,
-    last_change_id BIGINT NOT NULL DEFAULT(0),
-    updated_at DATETIME2(3) NOT NULL DEFAULT SYSDATETIME()
+                                     checkpoint_id  BIGINT IDENTITY(1,1) PRIMARY KEY,
+                                     source_db      NVARCHAR(20) NOT NULL UNIQUE, -- MYSQL / POSTGRES
+                                     last_change_id BIGINT NOT NULL DEFAULT(0),
+                                     updated_at     DATETIME2(3) NOT NULL DEFAULT SYSDATETIME()
 );
 GO
 
-MERGE dbo.sync_checkpoint AS t
-USING (
-    SELECT 'MYSQL' AS source_db, CAST(0 AS BIGINT) AS last_change_id
-    UNION ALL
-    SELECT 'POSTGRES' AS source_db, CAST(0 AS BIGINT) AS last_change_id -- 修正列别名
-) AS s
-ON t.source_db = s.source_db
-WHEN NOT MATCHED THEN
-    INSERT (source_db, last_change_id) VALUES(s.source_db, s.last_change_id)
-WHEN MATCHED THEN
-    UPDATE SET last_change_id = s.last_change_id;
+-- Initialize required rows (avoid MERGE to prevent parser/version issues)
+IF NOT EXISTS (SELECT 1 FROM dbo.sync_checkpoint WHERE source_db = N'MYSQL')
+  INSERT INTO dbo.sync_checkpoint(source_db, last_change_id) VALUES (N'MYSQL', 0);
+
+IF NOT EXISTS (SELECT 1 FROM dbo.sync_checkpoint WHERE source_db = N'POSTGRES')
+  INSERT INTO dbo.sync_checkpoint(source_db, last_change_id) VALUES (N'POSTGRES', 0);
+GO
 GO
