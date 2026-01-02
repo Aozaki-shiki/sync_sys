@@ -10,7 +10,6 @@ import com.sss.sync.infra.mapper.sqlserver.SqlServerSyncBusinessMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatterBuilder;
@@ -25,6 +24,9 @@ public class ConflictResolutionService {
   private final MysqlSyncBusinessMapper mysqlBiz;
   private final PostgresSyncBusinessMapper pgBiz;
   private final SqlServerSyncBusinessMapper ssBiz;
+  private final MysqlWriteService mysqlWriteService;
+  private final PostgresWriteService postgresWriteService;
+  private final SqlServerWriteService sqlServerWriteService;
   private final ObjectMapper om;
 
   // ISO date portion length "yyyy-MM-dd" (10 chars) - used in hasTimezoneOffset() to distinguish
@@ -32,14 +34,13 @@ public class ConflictResolutionService {
   private static final int ISO_DATE_PORTION_LENGTH = 10;
 
   private static final java.time.format.DateTimeFormatter SPACE_SEPARATED_FORMATTER =
-    new DateTimeFormatterBuilder()
-      .appendPattern("yyyy-MM-dd HH:mm:ss")
-      .optionalStart()
-      .appendFraction(java.time.temporal.ChronoField.NANO_OF_SECOND, 0, 6, true)
-      .optionalEnd()
-      .toFormatter();
+          new DateTimeFormatterBuilder()
+                  .appendPattern("yyyy-MM-dd HH:mm:ss")
+                  .optionalStart()
+                  .appendFraction(java.time.temporal.ChronoField.NANO_OF_SECOND, 0, 6, true)
+                  .optionalEnd()
+                  .toFormatter();
 
-  @Transactional
   public void resolveConflict(long conflictId, String authoritativeDb, String adminUsername) {
     log.info("Resolving conflict {} with authoritative DB: {}", conflictId, authoritativeDb);
 
@@ -121,17 +122,17 @@ public class ConflictResolutionService {
 
   private void upsertProduct(String targetDb, Map<String, Object> row) {
     switch (targetDb) {
-      case "MYSQL" -> mysqlBiz.upsertProduct(row);
-      case "POSTGRES" -> pgBiz.upsertProduct(row);
-      case "SQLSERVER" -> ssBiz.upsertProduct(row);
+      case "MYSQL" -> mysqlWriteService.upsertProduct(row);
+      case "POSTGRES" -> postgresWriteService.upsertProduct(row);
+      case "SQLSERVER" -> sqlServerWriteService.upsertProduct(row);
     }
   }
 
   private void upsertOrder(String targetDb, Map<String, Object> row) {
     switch (targetDb) {
-      case "MYSQL" -> mysqlBiz.upsertOrder(row);
-      case "POSTGRES" -> pgBiz.upsertOrder(row);
-      case "SQLSERVER" -> ssBiz.upsertOrder(row);
+      case "MYSQL" -> mysqlWriteService.upsertOrder(row);
+      case "POSTGRES" -> postgresWriteService.upsertOrder(row);
+      case "SQLSERVER" -> sqlServerWriteService.upsertOrder(row);
     }
   }
 
