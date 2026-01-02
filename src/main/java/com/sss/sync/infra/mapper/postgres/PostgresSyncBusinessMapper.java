@@ -83,4 +83,10 @@ public interface PostgresSyncBusinessMapper {
       deleted = EXCLUDED.deleted
   """)
   int upsertOrder(Map<String, Object> row);
+
+  @Update("SET LOCAL sss.skip_changelog = '1'")
+  void setSkipChangeLog();
+
+  @Update("SET LOCAL sss.skip_changelog = '0'")
+  void clearSkipChangeLog();
 }

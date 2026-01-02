@@ -44,17 +44,17 @@ public class SyncEngineService {
   private final ConflictLinkTokenService linkTokenService;
 
   private final ObjectMapper om;
-  
+
   // Static formatter for space-separated timestamp format with optional fractional seconds
   // Configured for PostgreSQL's microsecond precision (up to 6 digits after decimal point)
   // The 0-6 range allows: no fractions, .1, .12, .123, .1234, .12345, or .123456
   private static final DateTimeFormatter SPACE_SEPARATED_FORMATTER = new DateTimeFormatterBuilder()
-      .appendPattern("yyyy-MM-dd HH:mm:ss")
-      .optionalStart()
-      .appendFraction(java.time.temporal.ChronoField.NANO_OF_SECOND, 0, 6, true)
-      .optionalEnd()
-      .toFormatter();
-  
+          .appendPattern("yyyy-MM-dd HH:mm:ss")
+          .optionalStart()
+          .appendFraction(java.time.temporal.ChronoField.NANO_OF_SECOND, 0, 6, true)
+          .optionalEnd()
+          .toFormatter();
+
   // Length of ISO date portion "yyyy-MM-dd" - used to distinguish date hyphens from timezone offset hyphens
   private static final int ISO_DATE_PORTION_LENGTH = 10;
 
@@ -131,8 +131,8 @@ public class SyncEngineService {
       LocalDateTime tgtUpd = asLdt(meta.get("updatedAt"));
       if (isConflict(tgtVer, tgtUpd, srcVer, srcUpd)) {
         recordAndNotify("product_info", String.valueOf(id), sourceDb, targetDb,
-          srcVer, tgtVer, srcUpd, tgtUpd,
-          jsonOf(srcRow), getTargetJson_Product(targetDb, id));
+                srcVer, tgtVer, srcUpd, tgtUpd,
+                jsonOf(srcRow), getTargetJson_Product(targetDb, id));
         return;
       }
     }
@@ -150,8 +150,8 @@ public class SyncEngineService {
       LocalDateTime tgtUpd = asLdt(meta.get("updatedAt"));
       if (isConflict(tgtVer, tgtUpd, srcVer, srcUpd)) {
         recordAndNotify("order_info", String.valueOf(id), sourceDb, targetDb,
-          srcVer, tgtVer, srcUpd, tgtUpd,
-          jsonOf(srcRow), getTargetJson_Order(targetDb, id));
+                srcVer, tgtVer, srcUpd, tgtUpd,
+                jsonOf(srcRow), getTargetJson_Order(targetDb, id));
         return;
       }
     }
@@ -256,17 +256,77 @@ public class SyncEngineService {
 
   private void doUpsertProduct(String targetDb, Map<String, Object> row) {
     switch (targetDb) {
-      case "MYSQL" -> mysqlBiz.upsertProduct(row);
-      case "POSTGRES" -> pgBiz.upsertProduct(row);
-      case "SQLSERVER" -> ssBiz.upsertProduct(row); //  由 updateProduct 改为 upsertProduct
+      case "MYSQL" -> upsertProductMysql(row);
+      case "POSTGRES" -> upsertProductPostgres(row);
+      case "SQLSERVER" -> upsertProductSqlServer(row);
     }
   }
 
   private void doUpsertOrder(String targetDb, Map<String, Object> row) {
     switch (targetDb) {
-      case "MYSQL" -> mysqlBiz.upsertOrder(row);
-      case "POSTGRES" -> pgBiz.upsertOrder(row);
-      case "SQLSERVER" -> ssBiz.upsertOrder(row); //  由 updateOrder 改为 upsertOrder
+      case "MYSQL" -> upsertOrderMysql(row);
+      case "POSTGRES" -> upsertOrderPostgres(row);
+      case "SQLSERVER" -> upsertOrderSqlServer(row);
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "mysqlTxManager")
+  public void upsertProductMysql(Map<String, Object> row) {
+    mysqlBiz.setSkipChangeLog();
+    try {
+      mysqlBiz.upsertProduct(row);
+    } finally {
+      mysqlBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "mysqlTxManager")
+  public void upsertOrderMysql(Map<String, Object> row) {
+    mysqlBiz.setSkipChangeLog();
+    try {
+      mysqlBiz.upsertOrder(row);
+    } finally {
+      mysqlBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "postgresTxManager")
+  public void upsertProductPostgres(Map<String, Object> row) {
+    pgBiz.setSkipChangeLog();
+    try {
+      pgBiz.upsertProduct(row);
+    } finally {
+      pgBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "postgresTxManager")
+  public void upsertOrderPostgres(Map<String, Object> row) {
+    pgBiz.setSkipChangeLog();
+    try {
+      pgBiz.upsertOrder(row);
+    } finally {
+      pgBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "readTxManager")
+  public void upsertProductSqlServer(Map<String, Object> row) {
+    ssBiz.setSkipChangeLog();
+    try {
+      ssBiz.upsertProduct(row);
+    } finally {
+      ssBiz.clearSkipChangeLog();
+    }
+  }
+
+  @org.springframework.transaction.annotation.Transactional(transactionManager = "readTxManager")
+  public void upsertOrderSqlServer(Map<String, Object> row) {
+    ssBiz.setSkipChangeLog();
+    try {
+      ssBiz.upsertOrder(row);
+    } finally {
+      ssBiz.clearSkipChangeLog();
     }
   }
 
@@ -321,7 +381,7 @@ public class SyncEngineService {
     for (String c : candidates) {
       JsonNode v = n.get(c);
       if (v == null || v.isNull()) continue;
-      
+
       // Convert the value to LocalDateTime
       String textValue = v.asText();
       LocalDateTime ldt = asLdt(textValue);
@@ -352,7 +412,7 @@ public class SyncEngineService {
 
   /**
    * Checks if a timestamp string contains a timezone offset indicator.
-   * 
+   *
    * @param s The timestamp string to check
    * @return true if the string has a timezone offset (+ or - after the date portion)
    */
@@ -366,10 +426,10 @@ public class SyncEngineService {
   private LocalDateTime asLdt(Object o) {
     if (o == null) return null;
     if (o instanceof LocalDateTime ldt) return ldt;
-    
+
     String s = String.valueOf(o).trim();
     if (s.isEmpty()) return null;
-    
+
     try {
       // Try parsing ISO format with offset/timezone first (e.g., "2025-01-15T10:30:00+08:00" or "2025-01-15T10:30:00.123Z")
       if (s.endsWith("Z")) {
@@ -378,17 +438,17 @@ public class SyncEngineService {
       if (hasTimezoneOffset(s)) {
         return java.time.OffsetDateTime.parse(s).toLocalDateTime();
       }
-      
+
       // Try parsing as ISO LocalDateTime (e.g., "2025-01-15T10:30:00" or "2025-01-15T10:30:00.123")
       if (s.contains("T")) {
         return LocalDateTime.parse(s);
       }
-      
+
       // Try parsing space-separated format (e.g., "2025-01-15 10:30:00" or "2025-01-15 10:30:00.123")
       if (s.contains(" ")) {
         return LocalDateTime.parse(s, SPACE_SEPARATED_FORMATTER);
       }
-      
+
       // Fallback: try parsing directly
       return LocalDateTime.parse(s);
     } catch (java.time.format.DateTimeParseException e) {

@@ -26,6 +26,7 @@ public class SecurityConfig {
         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
         .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
         .requestMatchers("/conflicts/view").permitAll()
+        .requestMatchers("/conflicts/resolve").permitAll()
         .anyRequest().authenticated()
       )
       .addFilterBefore(new JwtAuthFilter(jwtUtil),

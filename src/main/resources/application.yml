@@ -48,7 +48,7 @@ sss:
 
   sync:
     enabled: true
-    pollIntervalMillis: 1000
+    pollIntervalMillis: 10000
     batchSize: 200
     scheduled:
       enabled: false

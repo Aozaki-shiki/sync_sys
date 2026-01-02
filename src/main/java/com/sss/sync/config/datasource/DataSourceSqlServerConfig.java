@@ -17,11 +17,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @MapperScan(
-  basePackages = {
-    "com.sss.sync.infra.mapper.read",
-    "com.sss.sync.infra.mapper.sqlserver"
-  },
-  sqlSessionFactoryRef = "readSqlSessionFactory"
+        basePackages = {
+                "com.sss.sync.infra.mapper.read",
+                "com.sss.sync.infra.mapper.sqlserver"
+        },
+        sqlSessionFactoryRef = "readSqlSessionFactory"
 )
 @RequiredArgsConstructor
 public class DataSourceSqlServerConfig {
@@ -58,5 +58,10 @@ public class DataSourceSqlServerConfig {
   @Bean(name = "readSqlSessionTemplate")
   public SqlSessionTemplate readSqlSessionTemplate(@Qualifier("readSqlSessionFactory") SqlSessionFactory sf) {
     return new SqlSessionTemplate(sf);
+  }
+
+  @Bean(name = "readTxManager")
+  public org.springframework.jdbc.datasource.DataSourceTransactionManager readTxManager(@Qualifier("readDataSource") DataSource ds) {
+    return new org.springframework.jdbc.datasource.DataSourceTransactionManager(ds);
   }
 }

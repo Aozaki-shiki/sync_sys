@@ -3,16 +3,16 @@ package com.sss.sync.web.controller;
 import com.sss.sync.domain.sync.ConflictRecordRow;
 import com.sss.sync.infra.mapper.mysql.MysqlSyncSupportMapper;
 import com.sss.sync.service.conflict.ConflictLinkTokenService;
+import com.sss.sync.service.conflict.ConflictResolutionService;
 import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -21,7 +21,8 @@ public class ConflictViewController {
 
   private final ConflictLinkTokenService tokenService;
   private final MysqlSyncSupportMapper syncSupportMapper;
-  
+  private final ConflictResolutionService resolutionService;
+
   private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
   @GetMapping(value = "/conflicts/view", produces = MediaType.TEXT_HTML_VALUE)
@@ -31,28 +32,28 @@ public class ConflictViewController {
       // Parse and validate token
       Claims claims = tokenService.parse(token);
       Object conflictIdObj = claims.get("conflictId");
-      
+
       if (conflictIdObj == null) {
         return errorPage("Invalid token: missing conflict ID");
       }
-      
+
       long conflictId;
       if (conflictIdObj instanceof Number) {
         conflictId = ((Number) conflictIdObj).longValue();
       } else {
         conflictId = Long.parseLong(String.valueOf(conflictIdObj));
       }
-      
+
       // Fetch conflict record
       ConflictRecordRow conflict = syncSupportMapper.getConflictById(conflictId);
-      
+
       if (conflict == null) {
         return errorPage("Conflict record not found: ID " + conflictId);
       }
-      
+
       // Generate HTML page
       return generateConflictPage(conflict);
-      
+
     } catch (io.jsonwebtoken.ExpiredJwtException e) {
       log.warn("Expired token accessed: {}", e.getMessage());
       return errorPage("Token has expired. Please request a new link from the administrator.");
@@ -64,24 +65,24 @@ public class ConflictViewController {
       return errorPage("An internal error occurred. Please contact the administrator.");
     }
   }
-  
+
   private String generateConflictPage(ConflictRecordRow conflict) {
-    String createdAtStr = conflict.getCreatedAt() != null 
-      ? conflict.getCreatedAt().format(FORMATTER) 
-      : "N/A";
-    String sourceUpdatedAtStr = conflict.getSourceUpdatedAt() != null 
-      ? conflict.getSourceUpdatedAt().format(FORMATTER) 
-      : "N/A";
-    String targetUpdatedAtStr = conflict.getTargetUpdatedAt() != null 
-      ? conflict.getTargetUpdatedAt().format(FORMATTER) 
-      : "N/A";
-    String resolvedAtStr = conflict.getResolvedAt() != null 
-      ? conflict.getResolvedAt().format(FORMATTER) 
-      : "N/A";
-    
+    String createdAtStr = conflict.getCreatedAt() != null
+            ? conflict.getCreatedAt().format(FORMATTER)
+            : "N/A";
+    String sourceUpdatedAtStr = conflict.getSourceUpdatedAt() != null
+            ? conflict.getSourceUpdatedAt().format(FORMATTER)
+            : "N/A";
+    String targetUpdatedAtStr = conflict.getTargetUpdatedAt() != null
+            ? conflict.getTargetUpdatedAt().format(FORMATTER)
+            : "N/A";
+    String resolvedAtStr = conflict.getResolvedAt() != null
+            ? conflict.getResolvedAt().format(FORMATTER)
+            : "N/A";
+
     String sourceJson = conflict.getSourcePayloadJson() != null ? conflict.getSourcePayloadJson() : "{}";
     String targetJson = conflict.getTargetPayloadJson() != null ? conflict.getTargetPayloadJson() : "{}";
-    
+
     return """
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -287,56 +288,139 @@ public class ConflictViewController {
 </body>
 </html>
 """.formatted(
-      conflict.getConflictId(),
-      createdAtStr,
-      "OPEN".equals(conflict.getStatus()) ? "status-open" : "status-resolved",
-      conflict.getStatus(),
-      escapeHtml(conflict.getTableName()),
-      escapeHtml(conflict.getPkValue()),
-      escapeHtml(conflict.getSourceDb()),
-      escapeHtml(conflict.getTargetDb()),
-      String.valueOf(conflict.getSourceVersion()),
-      String.valueOf(conflict.getTargetVersion()),
-      sourceUpdatedAtStr,
-      targetUpdatedAtStr,
-      escapeHtml(conflict.getSourceDb()),
-      escapeHtml(formatJson(sourceJson)),
-      escapeHtml(conflict.getTargetDb()),
-      escapeHtml(formatJson(targetJson)),
-      generateResolutionSection(conflict, resolvedAtStr)
+            conflict.getConflictId(),
+            createdAtStr,
+            "OPEN".equals(conflict.getStatus()) ? "status-open" : "status-resolved",
+            conflict.getStatus(),
+            escapeHtml(conflict.getTableName()),
+            escapeHtml(conflict.getPkValue()),
+            escapeHtml(conflict.getSourceDb()),
+            escapeHtml(conflict.getTargetDb()),
+            String.valueOf(conflict.getSourceVersion()),
+            String.valueOf(conflict.getTargetVersion()),
+            sourceUpdatedAtStr,
+            targetUpdatedAtStr,
+            escapeHtml(conflict.getSourceDb()),
+            escapeHtml(formatJson(sourceJson)),
+            escapeHtml(conflict.getTargetDb()),
+            escapeHtml(formatJson(targetJson)),
+            generateResolutionSection(conflict, resolvedAtStr)
     );
   }
-  
+
   private String generateResolutionSection(ConflictRecordRow conflict, String resolvedAtStr) {
-    if (!"RESOLVED".equals(conflict.getStatus())) {
-      return "";
-    }
-    
-    return """
-    <div class="section">
-      <div class="section-title">解决信息</div>
-      <div class="info-grid">
-        <div class="info-item">
-          <div class="info-label">Resolved By</div>
-          <div class="info-value">%s</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">Resolved At</div>
-          <div class="info-value">%s</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">Resolution</div>
-          <div class="info-value">%s</div>
+    if ("RESOLVED".equals(conflict.getStatus())) {
+      return """
+      <div class="section">
+        <div class="section-title">解决信息</div>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">Resolved By</div>
+            <div class="info-value">%s</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Resolved At</div>
+            <div class="info-value">%s</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Resolution</div>
+            <div class="info-value">%s</div>
+          </div>
         </div>
       </div>
-    </div>
-    """.formatted(
-      escapeHtml(conflict.getResolvedBy()),
-      resolvedAtStr,
-      escapeHtml(conflict.getResolution())
-    );
+      """.formatted(
+              escapeHtml(conflict.getResolvedBy()),
+              resolvedAtStr,
+              escapeHtml(conflict.getResolution())
+      );
+    } else {
+      // Show resolution form for OPEN conflicts
+      String currentUrl = "/conflicts/view?token=";
+      return """
+      <div class="section">
+        <div class="section-title">冲突解决</div>
+        <form id="resolutionForm" style="padding: 15px; background: #f9f9f9; border-radius: 4px;">
+          <div style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 10px; color: #555;">
+              选择权威数据源 (Authoritative Database):
+            </label>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <label style="display: flex; align-items: center; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;">
+                <input type="radio" name="authoritativeDb" value="MYSQL" required style="margin-right: 8px; cursor: pointer;">
+                <span>MYSQL</span>
+              </label>
+              <label style="display: flex; align-items: center; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;">
+                <input type="radio" name="authoritativeDb" value="POSTGRES" required style="margin-right: 8px; cursor: pointer;">
+                <span>POSTGRES</span>
+              </label>
+              <label style="display: flex; align-items: center; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;">
+                <input type="radio" name="authoritativeDb" value="SQLSERVER" required style="margin-right: 8px; cursor: pointer;">
+                <span>SQLSERVER</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" style="background: #1976d2; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%;">
+            解决冲突 (Resolve Conflict)
+          </button>
+          <div id="message" style="margin-top: 15px; padding: 10px; border-radius: 4px; display: none;"></div>
+        </form>
+        <script>
+          document.getElementById('resolutionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const authoritativeDb = document.querySelector('input[name="authoritativeDb"]:checked');
+            if (!authoritativeDb) {
+              showMessage('请选择一个权威数据源', 'error');
+              return;
+            }
+            
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = '正在处理...';
+            messageDiv.style.display = 'block';
+            messageDiv.style.background = '#e3f2fd';
+            messageDiv.style.color = '#1976d2';
+            
+            const token = new URLSearchParams(window.location.search).get('token');
+            fetch('/conflicts/resolve?token=' + encodeURIComponent(token), {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                authoritativeDb: authoritativeDb.value
+              })
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                showMessage('冲突已成功解决！页面将在3秒后刷新...', 'success');
+                setTimeout(() => window.location.reload(), 3000);
+              } else {
+                showMessage('错误: ' + (data.message || '未知错误'), 'error');
+              }
+            })
+            .catch(error => {
+              showMessage('网络错误: ' + error.message, 'error');
+            });
+          });
+          
+          function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.style.display = 'block';
+            if (type === 'success') {
+              messageDiv.style.background = '#e8f5e9';
+              messageDiv.style.color = '#2e7d32';
+            } else {
+              messageDiv.style.background = '#ffebee';
+              messageDiv.style.color = '#c62828';
+            }
+          }
+        </script>
+      </div>
+      """;
+    }
   }
-  
+
   private String formatJson(String json) {
     if (json == null || json.trim().isEmpty() || "{}".equals(json.trim())) {
       return "{}";
@@ -352,7 +436,7 @@ public class ConflictViewController {
       return json;
     }
   }
-  
+
   private String errorPage(String message) {
     return """
 <!DOCTYPE html>
@@ -410,16 +494,67 @@ public class ConflictViewController {
 </html>
 """.formatted(escapeHtml(message));
   }
-  
+
   private String escapeHtml(String text) {
     if (text == null) {
       return "";
     }
     return text
-      .replace("&", "&amp;")
-      .replace("<", "&lt;")
-      .replace(">", "&gt;")
-      .replace("\"", "&quot;")
-      .replace("'", "&#x27;");
+            .replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+            .replace("\"", "&quot;")
+            .replace("'", "&#x27;");
+  }
+
+  @PostMapping("/conflicts/resolve")
+  @ResponseBody
+  public Map<String, Object> resolveConflict(
+          @RequestParam("token") String token,
+          @RequestBody Map<String, String> request) {
+    try {
+      // Parse and validate token
+      Claims claims = tokenService.parse(token);
+      Object conflictIdObj = claims.get("conflictId");
+
+      if (conflictIdObj == null) {
+        return Map.of("success", false, "message", "Invalid token: missing conflict ID");
+      }
+
+      long conflictId;
+      if (conflictIdObj instanceof Number) {
+        conflictId = ((Number) conflictIdObj).longValue();
+      } else {
+        conflictId = Long.parseLong(String.valueOf(conflictIdObj));
+      }
+
+      String adminUsername = (String) claims.get("admin");
+      if (adminUsername == null || adminUsername.trim().isEmpty()) {
+        return Map.of("success", false, "message", "Invalid token: missing admin username");
+      }
+
+      String authoritativeDb = request.get("authoritativeDb");
+      if (authoritativeDb == null || authoritativeDb.trim().isEmpty()) {
+        return Map.of("success", false, "message", "Missing authoritativeDb parameter");
+      }
+
+      // Perform conflict resolution
+      resolutionService.resolveConflict(conflictId, authoritativeDb, adminUsername);
+
+      return Map.of("success", true, "message", "Conflict resolved successfully");
+
+    } catch (io.jsonwebtoken.ExpiredJwtException e) {
+      log.warn("Expired token for conflict resolution: {}", e.getMessage());
+      return Map.of("success", false, "message", "Token has expired. Please request a new link.");
+    } catch (io.jsonwebtoken.JwtException e) {
+      log.warn("Invalid token for conflict resolution: {}", e.getMessage());
+      return Map.of("success", false, "message", "Invalid or malformed token");
+    } catch (IllegalArgumentException | IllegalStateException e) {
+      log.warn("Conflict resolution validation error: {}", e.getMessage());
+      return Map.of("success", false, "message", e.getMessage());
+    } catch (Exception e) {
+      log.error("Error resolving conflict", e);
+      return Map.of("success", false, "message", "An internal error occurred: " + e.getMessage());
+    }
   }
 }

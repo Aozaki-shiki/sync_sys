@@ -132,4 +132,10 @@ public interface SqlServerSyncBusinessMapper {
     END
   """)
   int upsertOrder(Map<String, Object> row);
+
+  @Update("EXEC sp_set_session_context @key=N'sss_skip_changelog', @value=1")
+  void setSkipChangeLog();
+
+  @Update("EXEC sp_set_session_context @key=N'sss_skip_changelog', @value=0")
+  void clearSkipChangeLog();
 }

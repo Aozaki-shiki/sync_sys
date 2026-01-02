@@ -14,6 +14,12 @@ CREATE TRIGGER dbo.trg_user_info_log
 BEGIN
   SET NOCOUNT ON;
 
+  -- Check skip flag
+  IF CAST(SESSION_CONTEXT(N'sss_skip_changelog') AS INT) = 1
+BEGIN
+    RETURN;
+END;
+
   -- INSERT/UPDATE：inserted 有值
 INSERT INTO dbo.change_log(db_code, table_name, op_type, pk_value, row_version, row_updated_at, payload_json)
 SELECT
@@ -53,6 +59,12 @@ CREATE TRIGGER dbo.trg_category_info_log ON dbo.category_info
 BEGIN
   SET NOCOUNT ON;
 
+  -- Check skip flag
+  IF CAST(SESSION_CONTEXT(N'sss_skip_changelog') AS INT) = 1
+BEGIN
+    RETURN;
+END;
+
 INSERT INTO dbo.change_log(db_code, table_name, op_type, pk_value, row_version, row_updated_at, payload_json)
 SELECT 'SQLSERVER','category_info',
        CASE WHEN d.category_id IS NULL THEN 'INSERT' ELSE 'UPDATE' END,
@@ -77,6 +89,12 @@ CREATE TRIGGER dbo.trg_supplier_info_log ON dbo.supplier_info
     AS
 BEGIN
   SET NOCOUNT ON;
+
+  -- Check skip flag
+  IF CAST(SESSION_CONTEXT(N'sss_skip_changelog') AS INT) = 1
+BEGIN
+    RETURN;
+END;
 
 INSERT INTO dbo.change_log(db_code, table_name, op_type, pk_value, row_version, row_updated_at, payload_json)
 SELECT 'SQLSERVER','supplier_info',
@@ -103,6 +121,12 @@ CREATE TRIGGER dbo.trg_product_info_log ON dbo.product_info
 BEGIN
   SET NOCOUNT ON;
 
+  -- Check skip flag
+  IF CAST(SESSION_CONTEXT(N'sss_skip_changelog') AS INT) = 1
+BEGIN
+    RETURN;
+END;
+
 INSERT INTO dbo.change_log(db_code, table_name, op_type, pk_value, row_version, row_updated_at, payload_json)
 SELECT 'SQLSERVER','product_info',
        CASE WHEN d.product_id IS NULL THEN 'INSERT' ELSE 'UPDATE' END,
@@ -127,6 +151,12 @@ CREATE TRIGGER dbo.trg_order_info_log ON dbo.order_info
     AS
 BEGIN
   SET NOCOUNT ON;
+
+  -- Check skip flag
+  IF CAST(SESSION_CONTEXT(N'sss_skip_changelog') AS INT) = 1
+BEGIN
+    RETURN;
+END;
 
 INSERT INTO dbo.change_log(db_code, table_name, op_type, pk_value, row_version, row_updated_at, payload_json)
 SELECT 'SQLSERVER','order_info',
