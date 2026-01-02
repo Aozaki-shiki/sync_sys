@@ -273,43 +273,61 @@ public class SyncEngineService {
   @org.springframework.transaction.annotation.Transactional(transactionManager = "mysqlTxManager")
   public void upsertProductMysql(Map<String, Object> row) {
     mysqlBiz.setSkipChangeLog();
-    mysqlBiz.upsertProduct(row);
-    mysqlBiz.clearSkipChangeLog();
+    try {
+      mysqlBiz.upsertProduct(row);
+    } finally {
+      mysqlBiz.clearSkipChangeLog();
+    }
   }
 
   @org.springframework.transaction.annotation.Transactional(transactionManager = "mysqlTxManager")
   public void upsertOrderMysql(Map<String, Object> row) {
     mysqlBiz.setSkipChangeLog();
-    mysqlBiz.upsertOrder(row);
-    mysqlBiz.clearSkipChangeLog();
+    try {
+      mysqlBiz.upsertOrder(row);
+    } finally {
+      mysqlBiz.clearSkipChangeLog();
+    }
   }
 
   @org.springframework.transaction.annotation.Transactional(transactionManager = "postgresTxManager")
   public void upsertProductPostgres(Map<String, Object> row) {
     pgBiz.setSkipChangeLog();
-    pgBiz.upsertProduct(row);
-    pgBiz.clearSkipChangeLog();
+    try {
+      pgBiz.upsertProduct(row);
+    } finally {
+      pgBiz.clearSkipChangeLog();
+    }
   }
 
   @org.springframework.transaction.annotation.Transactional(transactionManager = "postgresTxManager")
   public void upsertOrderPostgres(Map<String, Object> row) {
     pgBiz.setSkipChangeLog();
-    pgBiz.upsertOrder(row);
-    pgBiz.clearSkipChangeLog();
+    try {
+      pgBiz.upsertOrder(row);
+    } finally {
+      pgBiz.clearSkipChangeLog();
+    }
   }
 
   @org.springframework.transaction.annotation.Transactional(transactionManager = "readTxManager")
   public void upsertProductSqlServer(Map<String, Object> row) {
     ssBiz.setSkipChangeLog();
-    ssBiz.upsertProduct(row);
-    ssBiz.clearSkipChangeLog();
+    try {
+      ssBiz.upsertProduct(row);
+    } finally {
+      ssBiz.clearSkipChangeLog();
+    }
   }
 
   @org.springframework.transaction.annotation.Transactional(transactionManager = "readTxManager")
   public void upsertOrderSqlServer(Map<String, Object> row) {
     ssBiz.setSkipChangeLog();
-    ssBiz.upsertOrder(row);
-    ssBiz.clearSkipChangeLog();
+    try {
+      ssBiz.upsertOrder(row);
+    } finally {
+      ssBiz.clearSkipChangeLog();
+    }
   }
 
   private Map<String, Object> parsePayloadToRow(String payloadJson, String table) {
