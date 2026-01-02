@@ -80,4 +80,16 @@ public interface MysqlSyncSupportMapper {
     WHERE conflict_id = #{conflictId}
   """)
   ConflictRecordRow getConflictById(@Param("conflictId") long conflictId);
+
+  @Update("""
+    UPDATE conflict_record
+    SET status = 'RESOLVED',
+        resolved_by = #{resolvedBy},
+        resolved_at = NOW(3),
+        resolution = #{resolution}
+    WHERE conflict_id = #{conflictId}
+  """)
+  int resolveConflict(@Param("conflictId") long conflictId,
+                      @Param("resolvedBy") String resolvedBy,
+                      @Param("resolution") String resolution);
 }
