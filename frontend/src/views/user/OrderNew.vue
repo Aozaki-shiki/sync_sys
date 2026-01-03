@@ -40,7 +40,7 @@
             <label for="quantity">Quantity *</label>
             <input
                 id="quantity"
-                v-model="form.quantity"
+                v-model.number="form.quantity"
                 type="number"
                 min="1"
                 placeholder="Enter quantity"
@@ -144,7 +144,7 @@ async function handleSubmit() {
     const payload = {
       userId: authStore.userId,
       productId: form.value.productId,
-      quantity: parseInt(form.value.quantity, 10),
+      quantity: form.value.quantity,
       shippingAddress: form.value.shippingAddress,
       writeDb: form.value.writeDb
     }
