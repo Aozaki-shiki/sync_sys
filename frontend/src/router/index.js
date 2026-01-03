@@ -48,6 +48,12 @@ const routes = [
                 name: 'ConflictManagement',
                 component: () => import('../views/admin/ConflictManagement.vue'),
                 meta: { requiresAuth: true, roles: ['ADMIN'] }
+            },
+            {
+                path: 'products',
+                name: 'ProductManagement',
+                component: () => import('../views/admin/ProductManagement.vue'),
+                meta: { requiresAuth: true, roles: ['ADMIN'] }
             }
         ]
     },

@@ -21,6 +21,11 @@
           <span class="icon" aria-hidden="true">⚠️</span>
           <span>Conflict Management</span>
         </router-link>
+
+        <router-link to="/admin/products" class="nav-item">
+          <span class="icon" aria-hidden="true">📦</span>
+          <span>Product Management</span>
+        </router-link>
       </nav>
 
       <div class="sidebar-footer">

@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;
 
+import java.math.BigDecimal;
+
 @Mapper
 public interface MysqlProductMapper extends BaseMapper<ProductInfo> {
 
@@ -19,4 +21,18 @@ public interface MysqlProductMapper extends BaseMapper<ProductInfo> {
       AND stock >= #{qty}
   """)
   int decreaseStockIfEnough(@Param("productId") Long productId, @Param("qty") int qty);
+
+  @Update("""
+    UPDATE product_info
+    SET product_name = #{productName},
+        price = #{price},
+        stock = #{stock},
+        version = version + 1
+    WHERE product_id = #{productId}
+      AND deleted = 0
+  """)
+  int updateProductFields(@Param("productId") Long productId,
+                          @Param("productName") String productName,
+                          @Param("price") BigDecimal price,
+                          @Param("stock") Integer stock);
 }
