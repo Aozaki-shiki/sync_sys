@@ -27,6 +27,8 @@ public class SecurityConfig {
         .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
         .requestMatchers("/conflicts/view").permitAll()
         .requestMatchers("/conflicts/resolve").permitAll()
+        // Allow static resources (SPA files)
+        .requestMatchers("/", "/index.html", "/assets/**", "/vite.svg").permitAll()
         .anyRequest().authenticated()
       )
       .addFilterBefore(new JwtAuthFilter(jwtUtil),
