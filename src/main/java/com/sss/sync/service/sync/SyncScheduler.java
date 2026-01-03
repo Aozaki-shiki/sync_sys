@@ -7,6 +7,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 @Slf4j
 @Component
 @EnableScheduling
@@ -15,12 +17,41 @@ public class SyncScheduler {
 
   private final SyncProperties props;
   private final SyncEngineService engine;
+  
+  // Mutual exclusion lock to prevent concurrent syncOnce executions
+  private final ReentrantLock syncLock = new ReentrantLock();
 
   @Scheduled(fixedDelayString = "${sss.sync.scheduled.fixedDelayMillis:10000}")
   public void scheduledSync() {
     if (!props.isEnabled()) return;
     if (!props.getScheduled().isEnabled()) return;
-    engine.syncOnce();
+    
+    if (!syncLock.tryLock()) {
+      log.debug("FixedDelay trigger skipped - sync already in progress");
+      return;
+    }
+    try {
+      engine.syncOnce();
+    } finally {
+      syncLock.unlock();
+    }
+  }
+
+  @Scheduled(cron = "${sss.sync.scheduled.cron:0 0 2 * * *}", zone = "Asia/Shanghai")
+  public void cronSync() {
+    if (!props.isEnabled()) return;
+    
+    if (!syncLock.tryLock()) {
+      log.info("Cron trigger skipped - sync already in progress");
+      return;
+    }
+    try {
+      log.info("Cron-triggered sync starting");
+      engine.syncOnce();
+      log.info("Cron-triggered sync completed");
+    } finally {
+      syncLock.unlock();
+    }
   }
 
   @PostConstruct
@@ -31,7 +62,16 @@ public class SyncScheduler {
       log.info("Starting realtime sync loop with poll interval {}ms", props.getPollIntervalMillis());
       while (!Thread.currentThread().isInterrupted()) {
         try {
-          engine.syncOnce();
+          if (!syncLock.tryLock()) {
+            log.debug("Realtime loop skipped - sync already in progress");
+            Thread.sleep(props.getPollIntervalMillis());
+            continue;
+          }
+          try {
+            engine.syncOnce();
+          } finally {
+            syncLock.unlock();
+          }
           Thread.sleep(props.getPollIntervalMillis());
         } catch (InterruptedException e) {
           log.info("Realtime sync loop interrupted, stopping...");

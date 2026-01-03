@@ -18,5 +18,6 @@ public class SyncProperties {
   public static class Scheduled {
     private boolean enabled = false;
     private long fixedDelayMillis = 10000;
+    private String cron = "0 0 2 * * *"; // Default: every day at 02:00 Asia/Shanghai
   }
 }
