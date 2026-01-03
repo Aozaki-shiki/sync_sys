@@ -50,6 +50,12 @@ public class DataSourceMysqlConfig {
     bean.setPlugins(mybatisPlusInterceptor);
     bean.setGlobalConfig(globalConfig);
 
+    // Add mapper XML locations for complex queries
+    bean.setMapperLocations(
+            new org.springframework.core.io.support.PathMatchingResourcePatternResolver()
+                    .getResources("classpath:mapper/mysql/*.xml")
+    );
+
     return bean.getObject();
   }
 

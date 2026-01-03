@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sss.sync.infra.mapper.mysql.MysqlSyncAnalyticsMapper">
+
+    <!--
+    Daily sync statistics query that aggregates data from MySQL tables:
+    - change_log: for synced changes count
+    - conflict_record: for conflict tracking (created and resolved)
+
+    This replaces the SQL Server-based aggregation that relied on dbo.sync_run_daily.
+    Now aggregates directly from MySQL system tables with no dependency on sync_run_daily.
+    -->
+    <select id="getDailySyncStats" resultType="com.sss.sync.web.dto.SyncStatsDTO">
+        WITH RECURSIVE DateRange AS (
+            -- Generate date series for the requested range using MySQL recursive CTE
+            SELECT DATE(#{startDate}) AS stat_date
+        UNION ALL
+        SELECT DATE_ADD(stat_date, INTERVAL 1 DAY)
+        FROM DateRange
+        WHERE stat_date &lt; DATE(#{endDate})
+            ),
+            ChangeStats AS (
+        SELECT
+            DATE(created_at) as log_date,
+            COUNT(*) as change_count
+        FROM change_log
+        WHERE created_at &gt;= #{startDate}
+          AND created_at &lt; DATE_ADD(DATE(#{endDate}), INTERVAL 1 DAY)
+        GROUP BY DATE(created_at)
+            ),
+            ConflictCreatedStats AS (
+        SELECT
+            DATE(created_at) as conflict_date,
+            COUNT(*) as conflict_created_count
+        FROM conflict_record
+        WHERE created_at &gt;= #{startDate}
+          AND created_at &lt; DATE_ADD(DATE(#{endDate}), INTERVAL 1 DAY)
+        GROUP BY DATE(created_at)
+            ),
+            ConflictResolvedStats AS (
+        SELECT
+            DATE(resolved_at) as resolved_date,
+            COUNT(*) as conflict_resolved_count
+        FROM conflict_record
+        WHERE resolved_at &gt;= #{startDate}
+          AND resolved_at &lt; DATE_ADD(DATE(#{endDate}), INTERVAL 1 DAY)
+          AND status = 'RESOLVED'
+        GROUP BY DATE(resolved_at)
+            )
+        SELECT
+            dr.stat_date AS statDate,
+            COALESCE(cs.change_count, 0) AS syncedChanges,
+            COALESCE(cc.conflict_created_count, 0) AS conflictsCreated,
+            COALESCE(cr.conflict_resolved_count, 0) AS conflictsResolved,
+            0 AS failures
+        FROM DateRange dr
+                 LEFT JOIN ChangeStats cs ON dr.stat_date = cs.log_date
+                 LEFT JOIN ConflictCreatedStats cc ON dr.stat_date = cc.conflict_date
+                 LEFT JOIN ConflictResolvedStats cr ON dr.stat_date = cr.resolved_date
+        ORDER BY dr.stat_date
+    </select>
+
+    <select id="getTotalSyncedChanges" resultType="long">
+        SELECT COUNT(*)
+        FROM change_log
+        WHERE created_at &gt;= #{startDate}
+          AND created_at &lt; DATE_ADD(DATE(#{endDate}), INTERVAL 1 DAY)
+    </select>
+
+    <select id="getTotalConflictsCreated" resultType="long">
+        SELECT COUNT(*)
+        FROM conflict_record
+        WHERE created_at &gt;= #{startDate}
+          AND created_at &lt; DATE_ADD(DATE(#{endDate}), INTERVAL 1 DAY)
+    </select>
+
+    <select id="getTotalConflictsResolved" resultType="long">
+        SELECT COUNT(*)
+        FROM conflict_record
+        WHERE resolved_at &gt;= #{startDate}
+          AND resolved_at &lt; DATE_ADD(DATE(#{endDate}), INTERVAL 1 DAY)
+          AND status = 'RESOLVED'
+    </select>
+
+</mapper>
