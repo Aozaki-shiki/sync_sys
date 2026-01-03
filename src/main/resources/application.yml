@@ -53,6 +53,7 @@ sss:
     scheduled:
       enabled: false
       fixedDelayMillis: 10000
+      cron: "0 0 2 * * *"
 
   mail:
     enabled: true
