@@ -94,6 +94,15 @@
 </template>
 
 <script setup>
+/**
+ * Order creation page
+ * 
+ * Note: productId and userId are stored as strings to avoid JavaScript Number precision loss.
+ * JavaScript numbers are IEEE 754 double-precision floats with a safe integer range of
+ * -(2^53 - 1) to (2^53 - 1). Snowflake IDs are 64-bit integers (18-19 digits) that exceed
+ * this limit. Using Number() would truncate the last digits (e.g., 1000000000000000001 becomes
+ * 1000000000000000000), causing backend lookup failures.
+ */
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../../stores/auth'
@@ -131,10 +140,11 @@ async function handleSubmit() {
   error.value = null
   success.value = null
   try {
+    // Keep userId and productId as strings to preserve full precision of 64-bit Snowflake IDs
     const payload = {
-      userId: Number(authStore.userId),
-      productId: Number(form.value.productId),
-      quantity: Number(form.value.quantity),
+      userId: authStore.userId,
+      productId: form.value.productId,
+      quantity: form.value.quantity,
       shippingAddress: form.value.shippingAddress,
       writeDb: form.value.writeDb
     }
