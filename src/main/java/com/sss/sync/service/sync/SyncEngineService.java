@@ -158,10 +158,12 @@ public class SyncEngineService {
     doUpsertOrder(targetDb, srcRow);
   }
 
+  // Conflict detection: target version >= source version is considered a conflict
+  // This ensures user confirmation is required when target has equal or higher version
   private boolean isConflict(Long tgtVer, LocalDateTime tgtUpd, Long srcVer, LocalDateTime srcUpd) {
     if (tgtVer == null || tgtUpd == null || srcVer == null || srcUpd == null) return true;
-    if (tgtVer > srcVer) return true;
-    return tgtVer.equals(srcVer) && tgtUpd.isAfter(srcUpd);
+    if (tgtVer >= srcVer) return true;
+    return false;
   }
 
   // 只展示 recordAndNotify 方法，其他不变
