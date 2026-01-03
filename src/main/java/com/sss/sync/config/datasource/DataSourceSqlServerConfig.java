@@ -52,6 +52,12 @@ public class DataSourceSqlServerConfig {
     bean.setPlugins(mybatisPlusInterceptor);
     bean.setGlobalConfig(globalConfig);
 
+    // Add mapper XML locations
+    bean.setMapperLocations(
+            new org.springframework.core.io.support.PathMatchingResourcePatternResolver()
+                    .getResources("classpath:mapper/read/*.xml")
+    );
+
     return bean.getObject();
   }
 

@@ -83,7 +83,15 @@ public class ConflictResolutionService {
       throw new IllegalStateException("Failed to parse authoritative data from " + authoritativeDb);
     }
 
-    // 5. Propagate to other two databases
+    // 5. Strategy A: Compute max version across all DBs and set finalVersion = max + 1
+    // This ensures the resolved state wins over any pending sync events that may have higher versions
+    long maxVersion = computeMaxVersion(tableName, id);
+    long finalVersion = maxVersion + 1;
+    authRow.put("version", finalVersion);
+    log.info("Setting finalVersion={} (max across DBs was {}) for {} id={}", 
+             finalVersion, maxVersion, tableName, id);
+
+    // 6. Propagate to other two databases
     List<String> targetDbs = new ArrayList<>(List.of("MYSQL", "POSTGRES", "SQLSERVER"));
     targetDbs.remove(authoritativeDb);
 
@@ -96,10 +104,57 @@ public class ConflictResolutionService {
       }
     }
 
-    // 6. Update conflict record to RESOLVED
+    // 7. Update conflict record to RESOLVED
     mysqlSupport.resolveConflict(conflictId, adminUsername, authoritativeDb);
 
     log.info("Conflict {} resolved successfully", conflictId);
+  }
+
+  /**
+   * Computes the maximum version across all three databases for a given table and primary key.
+   * If a row does not exist in a database, treats its version as 0.
+   * 
+   * @param tableName the table name ("product_info" or "order_info")
+   * @param id the primary key value (product_id or order_id)
+   * @return the maximum version across MySQL, Postgres, and SQL Server
+   * @throws IllegalArgumentException if tableName is null or not supported
+   */
+  private long computeMaxVersion(String tableName, long id) {
+    if (tableName == null) {
+      throw new IllegalArgumentException("tableName cannot be null");
+    }
+    
+    long mysqlVersion;
+    long postgresVersion;
+    long sqlserverVersion;
+
+    if ("product_info".equals(tableName)) {
+      mysqlVersion = convertVersionToLong(mysqlBiz.getProductVersion(id));
+      postgresVersion = convertVersionToLong(pgBiz.getProductVersion(id));
+      sqlserverVersion = convertVersionToLong(ssBiz.getProductVersion(id));
+    } else if ("order_info".equals(tableName)) {
+      mysqlVersion = convertVersionToLong(mysqlBiz.getOrderVersion(id));
+      postgresVersion = convertVersionToLong(pgBiz.getOrderVersion(id));
+      sqlserverVersion = convertVersionToLong(ssBiz.getOrderVersion(id));
+    } else {
+      throw new IllegalArgumentException("Unsupported table: " + tableName);
+    }
+
+    long maxVersion = Math.max(mysqlVersion, Math.max(postgresVersion, sqlserverVersion));
+    log.debug("Version check for {} id={}: MySQL={}, Postgres={}, SQLServer={}, max={}", 
+              tableName, id, mysqlVersion, postgresVersion, sqlserverVersion, maxVersion);
+    
+    return maxVersion;
+  }
+
+  /**
+   * Converts a version Integer to long, treating null as 0.
+   * 
+   * @param version the version Integer (may be null if row doesn't exist)
+   * @return the version as long, or 0 if version is null
+   */
+  private long convertVersionToLong(Integer version) {
+    return (version != null) ? version : 0;
   }
 
   private String getProductJson(String db, long id) {

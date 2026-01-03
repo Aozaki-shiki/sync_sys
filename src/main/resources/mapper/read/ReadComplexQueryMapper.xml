@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sss.sync.infra.mapper.read.ReadComplexQueryMapper">
+
+    <!--
+    Complex SQL Query with:
+    1. Multi-table JOIN: order_info, product_info, category_info, supplier_info, user_info
+    2. Aggregations: COUNT, SUM, AVG, GROUP BY
+    3. Common Table Expression (CTE) for calculating top product per category-supplier combination
+    4. Parameterized and paginated for security and performance
+
+    Performance optimizations:
+    - Uses indexes: idx_order_product_time, idx_product_category, idx_product_supplier
+    - Additional composite index on (ordered_at, order_status) for date filtering
+    - CTE reduces redundant subquery execution
+    -->
+    <select id="queryOrderAnalytics" resultType="com.sss.sync.web.dto.OrderAnalyticsDTO">
+        WITH TopProducts AS (
+        SELECT
+        p.category_id,
+        p.supplier_id,
+        p.product_name,
+        SUM(o.quantity) as total_qty,
+        ROW_NUMBER() OVER (PARTITION BY p.category_id, p.supplier_id ORDER BY SUM(o.quantity) DESC) as rn
+        FROM dbo.order_info o
+        INNER JOIN dbo.product_info p ON o.product_id = p.product_id
+        WHERE o.deleted = 0
+        AND p.deleted = 0
+        AND o.ordered_at &gt;= #{startDate}
+        AND o.ordered_at &lt; DATEADD(DAY, 1, #{endDate})
+        GROUP BY p.category_id, p.supplier_id, p.product_name
+        )
+        SELECT
+        c.category_name AS categoryName,
+        s.supplier_name AS supplierName,
+        COUNT(DISTINCT o.order_id) AS totalOrders,
+        SUM(o.quantity) AS totalQuantity,
+        SUM(o.quantity * p.price) AS totalRevenue,
+        AVG(o.quantity * p.price) AS avgOrderValue,
+        COUNT(DISTINCT o.user_id) AS uniqueCustomers,
+        (SELECT TOP 1 product_name FROM TopProducts tp WHERE tp.category_id = c.category_id AND tp.supplier_id = s.supplier_id AND tp.rn = 1) AS topProduct
+        FROM dbo.order_info o
+        INNER JOIN dbo.product_info p ON o.product_id = p.product_id
+        INNER JOIN dbo.category_info c ON p.category_id = c.category_id
+        INNER JOIN dbo.supplier_info s ON p.supplier_id = s.supplier_id
+        INNER JOIN dbo.user_info u ON o.user_id = u.user_id
+        WHERE o.deleted = 0
+        AND p.deleted = 0
+        AND c.deleted = 0
+        AND s.deleted = 0
+        AND u.deleted = 0
+        AND o.ordered_at &gt;= #{startDate}
+        AND o.ordered_at &lt; DATEADD(DAY, 1, #{endDate})
+        <if test="categoryName != null and categoryName != ''">
+            AND c.category_name LIKE CONCAT('%', #{categoryName}, '%')
+        </if>
+        <if test="supplierName != null and supplierName != ''">
+            AND s.supplier_name LIKE CONCAT('%', #{supplierName}, '%')
+        </if>
+        GROUP BY c.category_id, c.category_name, s.supplier_id, s.supplier_name
+        ORDER BY totalRevenue DESC
+        OFFSET #{offset} ROWS
+        FETCH NEXT #{limit} ROWS ONLY
+    </select>
+
+    <select id="countOrderAnalytics" resultType="long">
+        SELECT COUNT(*)
+        FROM (
+        SELECT DISTINCT c.category_id, s.supplier_id
+        FROM dbo.order_info o
+        INNER JOIN dbo.product_info p ON o.product_id = p.product_id
+        INNER JOIN dbo.category_info c ON p.category_id = c.category_id
+        INNER JOIN dbo.supplier_info s ON p.supplier_id = s.supplier_id
+        INNER JOIN dbo.user_info u ON o.user_id = u.user_id
+        WHERE o.deleted = 0
+        AND p.deleted = 0
+        AND c.deleted = 0
+        AND s.deleted = 0
+        AND u.deleted = 0
+        AND o.ordered_at &gt;= #{startDate}
+        AND o.ordered_at &lt; DATEADD(DAY, 1, #{endDate})
+        <if test="categoryName != null and categoryName != ''">
+            AND c.category_name LIKE CONCAT('%', #{categoryName}, '%')
+        </if>
+        <if test="supplierName != null and supplierName != ''">
+            AND s.supplier_name LIKE CONCAT('%', #{supplierName}, '%')
+        </if>
+        ) AS UniqueGroups
+    </select>
+
+</mapper>

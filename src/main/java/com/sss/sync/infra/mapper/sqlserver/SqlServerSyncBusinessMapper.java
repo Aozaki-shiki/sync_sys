@@ -22,6 +22,20 @@ public interface SqlServerSyncBusinessMapper {
   Map<String, Object> getOrderMeta(@Param("id") long id);
 
   @Select("""
+    SELECT TOP 1 version
+    FROM dbo.product_info
+    WHERE product_id = #{id}
+  """)
+  Integer getProductVersion(@Param("id") long id);
+
+  @Select("""
+    SELECT TOP 1 version
+    FROM dbo.order_info
+    WHERE order_id = #{id}
+  """)
+  Integer getOrderVersion(@Param("id") long id);
+
+  @Select("""
     SELECT TOP 1 (
       SELECT p.* FOR JSON PATH, WITHOUT_ARRAY_WRAPPER
     ) AS json
