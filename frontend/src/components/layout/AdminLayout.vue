@@ -1,36 +1,36 @@
 <template>
   <div class="admin-layout">
-    <aside class="sidebar">
+    <aside class="sidebar" role="navigation" aria-label="Admin navigation">
       <div class="sidebar-header">
         <h2>🔧 Admin Console</h2>
         <p class="username">{{ authStore.username }}</p>
       </div>
       
-      <nav class="sidebar-nav">
+      <nav class="sidebar-nav" aria-label="Main admin menu">
         <router-link to="/admin/queries/complex" class="nav-item">
-          <span class="icon">📊</span>
+          <span class="icon" aria-hidden="true">📊</span>
           <span>Complex Query</span>
         </router-link>
         
         <router-link to="/admin/reports/daily-sync" class="nav-item">
-          <span class="icon">📈</span>
+          <span class="icon" aria-hidden="true">📈</span>
           <span>Daily Sync Report</span>
         </router-link>
         
         <router-link to="/admin/conflicts" class="nav-item">
-          <span class="icon">⚠️</span>
+          <span class="icon" aria-hidden="true">⚠️</span>
           <span>Conflict Management</span>
         </router-link>
       </nav>
       
       <div class="sidebar-footer">
-        <button @click="handleLogout" class="btn-logout">
+        <button @click="handleLogout" class="btn-logout" aria-label="Logout from admin console">
           Logout
         </button>
       </div>
     </aside>
     
-    <main class="main-content">
+    <main class="main-content" role="main">
       <router-view />
     </main>
   </div>
