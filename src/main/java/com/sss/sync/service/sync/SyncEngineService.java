@@ -166,21 +166,20 @@ public class SyncEngineService {
     return false;
   }
 
-  // 只展示 recordAndNotify 方法，其他不变
   private void recordAndNotify(String table, String pk, String sourceDb, String targetDb,
                                Long srcVer, Long tgtVer, LocalDateTime srcUpd, LocalDateTime tgtUpd,
                                String srcJson, String tgtJson) {
 
-    // 1) 先查是否已经有 OPEN 冲突（幂等：避免重复发邮件、避免重复插入）
+    //先查是否已经有 OPEN 冲突（幂等：避免重复发邮件、避免重复插入）
     Long existingId = mysqlSupport.findOpenConflictId(table, pk);
     System.out.println("[DEBUG] srcJson=" + srcJson);
     System.out.println("[DEBUG] tgtJson=" + tgtJson);
     if (existingId != null) {
-      // 已有 open 冲突：不再重复发邮件（你想重复发也可以改成发）
+      // 已有 open 冲突：不再重复发邮件
       return;
     }
 
-    // 2) 再 insert
+    //再 insert
     ConflictRecordRow cr = new ConflictRecordRow();
     cr.setTableName(table);
     cr.setPkValue(pk);
@@ -196,7 +195,7 @@ public class SyncEngineService {
 
     mysqlSupport.insertConflictPure(cr);
 
-    // 3) 取到 conflictId（insert 后应当有；兜底再查一次）
+    // 取到 conflictId（insert 后应当有；兜底再查一次）
     Long conflictId = cr.getConflictId();
     if (conflictId == null) {
       conflictId = mysqlSupport.findOpenConflictId(table, pk);
@@ -206,7 +205,7 @@ public class SyncEngineService {
       return;
     }
 
-    // 4) 发邮件
+    // 发邮件
     String token = linkTokenService.generate(conflictId, "admin");
     String url = mailProps.getConflictViewBaseUrl() + "/conflicts/view?token=" + token;
 
@@ -216,7 +215,7 @@ public class SyncEngineService {
             "检测到数据同步冲突。\n\n"
                     + "table=" + table + ", pk=" + pk + "\n"
                     + "source=" + sourceDb + ", target=" + targetDb + "\n\n"
-                    + "查看详情（PC/移动端通用）：\n" + url + "\n"
+                    + "查看详情：\n" + url + "\n"
     );
   }
 

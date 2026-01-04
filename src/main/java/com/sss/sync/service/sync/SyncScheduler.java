@@ -17,8 +17,8 @@ public class SyncScheduler {
 
   private final SyncProperties props;
   private final SyncEngineService engine;
-  
-  // Mutual exclusion lock to prevent concurrent syncOnce executions
+
+  // 同步锁，防止并发
   private final ReentrantLock syncLock = new ReentrantLock();
 
   @Scheduled(fixedDelayString = "${sss.sync.scheduled.fixedDelayMillis:10000}")

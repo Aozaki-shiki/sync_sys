@@ -1,22 +1,6 @@
 USE sss_db;
 GO
 
-/*
- * Performance Optimization Indexes for Complex Query Feature
- *
- * Purpose: Support the complex order analytics query that includes:
- * - Multi-table joins across order_info, product_info, category_info, supplier_info, user_info
- * - Date range filtering on order_info.ordered_at
- * - Aggregations and grouping by category and supplier
- * - Sorting by total revenue
- *
- * Query Performance Analysis:
- * BEFORE indexes: Table scans on order_info and product_info, estimated cost ~500-1000 units
- * AFTER indexes: Index seeks with key lookups, estimated cost ~50-150 units (10x improvement)
- *
- * The indexes below are designed to minimize disk I/O and improve query execution time
- * from several seconds to sub-second response times for typical date ranges (30-90 days).
- */
 
 -- Index 1: Composite index on order_info for date range queries with status
 -- Covers the most selective filter (date range) and includes commonly needed columns
@@ -103,26 +87,3 @@ PRINT '- Indexes will be automatically maintained by SQL Server';
 PRINT '- Consider rebuilding indexes monthly if data volume grows significantly';
 PRINT '- Monitor index fragmentation using sys.dm_db_index_physical_stats';
 GO
-
-/*
- * Query Execution Plan Analysis Examples:
- *
- * To verify index usage, run these EXPLAIN queries:
- *
- * -- Before indexes (table scan):
- * SET STATISTICS IO ON;
- * SET STATISTICS TIME ON;
- * -- Run the complex query here
- * -- Expected: Multiple table scans, high logical reads (>10000)
- *
- * -- After indexes (index seeks):
- * SET STATISTICS IO ON;
- * SET STATISTICS TIME ON;
- * -- Run the complex query here
- * -- Expected: Index seeks, reduced logical reads (<2000)
- *
- * To view execution plan:
- * SET SHOWPLAN_ALL ON;
- * -- Run query
- * SET SHOWPLAN_ALL OFF;
- */
