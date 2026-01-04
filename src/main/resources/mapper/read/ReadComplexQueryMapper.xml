@@ -3,18 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sss.sync.infra.mapper.read.ReadComplexQueryMapper">
 
-    <!--
-    Complex SQL Query with:
-    1. Multi-table JOIN: order_info, product_info, category_info, supplier_info, user_info
-    2. Aggregations: COUNT, SUM, AVG, GROUP BY
-    3. Common Table Expression (CTE) for calculating top product per category-supplier combination
-    4. Parameterized and paginated for security and performance
 
-    Performance optimizations:
-    - Uses indexes: idx_order_product_time, idx_product_category, idx_product_supplier
-    - Additional composite index on (ordered_at, order_status) for date filtering
-    - CTE reduces redundant subquery execution
-    -->
     <select id="queryOrderAnalytics" resultType="com.sss.sync.web.dto.OrderAnalyticsDTO">
         WITH TopProducts AS (
         SELECT

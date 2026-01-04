@@ -70,20 +70,3 @@ PRINT 'Created index: idx_conflict_dates_status on conflict_record';
 END
 GO
 
--- Display index information for verification
-PRINT '';
-PRINT '=== Index Creation Complete ===';
-PRINT 'Indexes created to optimize:';
-PRINT '1. Complex order analytics query (multi-table JOIN + aggregations + CTE)';
-PRINT '2. Daily sync analytics report (time-series aggregations)';
-PRINT '';
-PRINT 'Expected Performance Improvements:';
-PRINT '- Order analytics query: 10x faster (from ~5s to ~0.5s for 30-day range)';
-PRINT '- Daily sync report: 5x faster (from ~2s to ~0.4s for 30-day range)';
-PRINT '- Reduced disk I/O by 80-90% through covering indexes';
-PRINT '';
-PRINT 'Maintenance Notes:';
-PRINT '- Indexes will be automatically maintained by SQL Server';
-PRINT '- Consider rebuilding indexes monthly if data volume grows significantly';
-PRINT '- Monitor index fragmentation using sys.dm_db_index_physical_stats';
-GO
